@@ -1,55 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- WHATSAPP FLOATING BUTTON -->
-<div class="whatsapp-float" onclick="openWhatsApp()">
-  💬 WhatsApp
-</div>
-
-<style>
-.whatsapp-float{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#25D366;
-  color:white;
-  padding:16px 26px;
-  border-radius:50px;
-  font-weight:700;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(37,211,102,.6);
-  z-index:9999;
-  transition:.3s;
-}
-.whatsapp-float:hover{
-  transform:scale(1.1);
-}
-</style>
-
-<script>
-function openWhatsApp(){
-  window.open(
-    "https://wa.me/923214618847?text=Hello%20I%20want%20a%20free%20billing%20audit",
-    "_blank"
-  );
-}
-</script>  <!-- TOP BAR -->
-<div class="topbar">
-  <span>📧 info@physiciansclaimpartners.com</span>
-  <span>📍 New York, United States</span>
-</div>
-
-<!-- NAVIGATION -->
-<nav class="navbar">
-  <div class="logo">Physicians Claim Partners</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="medical-billing.html">Medical Billing</a></li>
-    <li><a href="dental-billing.html">Dental Billing</a></li>
-    <li><a href="ar-denial.html">AR & Denial</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
 <meta charset="UTF-8">
 <title>Physicians Claim Partners</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,92 +9,108 @@ function openWhatsApp(){
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#070b18;color:#eaeaea}
-  /* TOP BAR */
+
+body{
+background:#f8fafc;
+color:#0f172a;
+}
+
+/* TOP BAR */
 .topbar{
-  background:#020617;
-  color:#cbd5e1;
-  padding:10px 8%;
-  font-size:14px;
-  display:flex;
-  justify-content:space-between;
+background:#0f172a;
+color:#e5e7eb;
+padding:8px 8%;
+font-size:14px;
+display:flex;
+justify-content:space-between;
 }
 
 /* NAVBAR */
 .navbar{
-  background:#020617;
-  padding:18px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid #1e293b;
+background:#ffffff;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 6px 25px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:100;
 }
+
+.navbar a{
+text-decoration:none;
+color:#0f172a;
+margin-left:22px;
+font-weight:500;
+}
+
 .logo{
-  color:#38bdf8;
-  font-weight:700;
-  font-size:20px;
-}
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:22px;
-}
-.nav-links a{
-  text-decoration:none;
-  color:#e5e7eb;
-  font-weight:500;
-}
-.nav-links a:hover{
-  color:#38bdf8;
+font-size:22px;
+font-weight:700;
+color:#2563eb;
 }
 
 /* HERO */
 .hero{
-min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding:80px 8%;
-background:linear-gradient(-45deg,#020024,#090979,#00d4ff,#00f2c3);
-background-size:400% 400%;
-animation:gradient 12s ease infinite;
-}
-@keyframes gradient{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+background:linear-gradient(135deg,#e0f2fe,#f8fafc);
 }
 
 .hero-text{max-width:55%}
-.hero h1{font-size:3.5rem;margin-bottom:20px}
-.hero p{font-size:1.2rem;margin-bottom:30px;color:#e0f2fe}
+
+.hero h1{
+font-size:3.4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.15rem;
+margin-bottom:30px;
+color:#334155;
+}
+
 .hero button{
 padding:16px 40px;
 border:none;
 border-radius:40px;
-background:#00f2c3;
-color:#000;
+background:#2563eb;
+color:#fff;
 font-size:1.1rem;
 cursor:pointer;
-transition:.3s;
 }
-.hero button:hover{transform:scale(1.1)}
+
+.hero-img{
+text-align:center;
+}
 
 .hero-img img{
 width:420px;
 border-radius:30px;
-animation:float 4s ease-in-out infinite;
-box-shadow:0 0 40px rgba(0,242,195,.4);
-}
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-20px)}
-100%{transform:translateY(0)}
+box-shadow:0 15px 50px rgba(0,0,0,.2);
 }
 
-/* SECTION */
+.badge{
+margin-top:18px;
+display:inline-block;
+background:#ffffff;
+padding:12px 18px;
+border-radius:14px;
+box-shadow:0 8px 30px rgba(0,0,0,.12);
+font-weight:600;
+}
+
+/* SECTIONS */
 section{padding:90px 8%}
-h2{text-align:center;font-size:2.6rem;margin-bottom:60px}
+
+h2{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:60px;
+}
 
 /* SERVICES */
 .services{
@@ -151,59 +118,35 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 }
+
 .card{
-background:#0f172a;
+background:#ffffff;
 padding:30px;
 border-radius:20px;
-transition:.4s;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
-.card:hover{transform:translateY(-10px)}
-.card img{width:100%;border-radius:16px;margin-bottom:20px}
-.card h3{color:#00f2c3;margin-bottom:15px}
 
-/* CALCULATOR */
-.calc{
-background:#020617;
-padding:45px;
-border-radius:22px;
-max-width:720px;
-margin:auto;
-box-shadow:0 0 40px rgba(0,242,195,0.3)
-}
-.calc input{
+.card img{
 width:100%;
-padding:15px;
-margin:14px 0;
-border:none;
-border-radius:10px;
-font-size:1rem;
+border-radius:16px;
+margin-bottom:20px;
 }
-.calc button{
-width:100%;
-padding:16px;
-margin-top:20px;
-border:none;
-border-radius:40px;
-background:#00f2c3;
-font-size:1.1rem;
-cursor:pointer;
-}
-.result{margin-top:25px;font-size:1.4rem;color:#00f2c3}
 
-/* REVIEWS */
-.reviews{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+.card h3{
+color:#2563eb;
+margin-bottom:15px;
 }
-.review{
+
+/* FOOTER */
+footer{
 background:#0f172a;
-padding:25px;
-border-radius:18px;
+color:#cbd5e1;
+padding:60px 10%;
+text-align:center;
 }
 
-/* AI BUTTON */
-.ai{
+/* WHATSAPP */
+.whatsapp{
 position:fixed;
 bottom:25px;
 right:25px;
@@ -211,58 +154,67 @@ background:#25D366;
 color:#000;
 padding:16px 26px;
 border-radius:50px;
-cursor:pointer;
 font-weight:700;
-box-shadow:0 0 25px rgba(37,211,102,0.8);
+cursor:pointer;
+box-shadow:0 0 25px rgba(37,211,102,.7);
 z-index:999;
-}
-.ai:hover{transform:scale(1.1)}
-
-/* FOOTER */
-footer{
-background:#020617;
-padding:60px 10%;
-text-align:center;
-color:#aaa;
 }
 </style>
 </head>
 
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+<div>📞 +1 (USA) | ✉ info@physiciansclaimpartners.com</div>
+<div>📍 New York, United States</div>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+<div class="logo">Physicians Claim Partners</div>
+<div>
+<a href="#">Home</a>
+<a href="#">Medical Billing</a>
+<a href="#">Dental Billing</a>
+<a href="#">AR & Denial</a>
+<a href="#">Contact</a>
+</div>
+</div>
+
 <!-- HERO -->
 <div class="hero">
 <div class="hero-text">
 <h1>Physician-Led Medical & Dental Billing</h1>
 <p>
-We help US medical and dental practices increase collections, reduce denials,
+We help US healthcare practices increase collections, reduce denials,
 and regain financial control through physician-supervised revenue cycle management.
 </p>
-<button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
-Explore Services
-</button>
+<button>Get Free Billing Audit</button>
 </div>
 
 <div class="hero-img">
-<img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg" alt="Doctor">
+<img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg">
+<br>
+<div class="badge">📈 Up to 25% Revenue Increase in 90 Days</div>
 </div>
 </div>
 
 <!-- SERVICES -->
-<section id="services">
-<h2>Our Services</h2>
+<section>
+<h2>Our Core Services</h2>
+
 <div class="services">
 
 <div class="card">
 <img src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg">
 <h3>Medical Billing (USA)</h3>
 <p>
-End-to-end revenue cycle management including charge entry, CPT/ICD coding accuracy,
-payer submission, aggressive follow-ups, denial prevention, and final payment posting.
+Complete end-to-end revenue cycle management including charge entry,
+CPT/ICD coding accuracy, payer submissions, denial prevention, and payment posting.
 </p>
 <p>
-Physician oversight ensures compliance, audit safety, and consistent revenue growth
-of 15–30% for most practices.
+Physician oversight ensures compliance, audit safety, and consistent 15–30% revenue growth.
 </p>
 </div>
 
@@ -270,11 +222,11 @@ of 15–30% for most practices.
 <img src="https://images.pexels.com/photos/3845765/pexels-photo-3845765.jpeg">
 <h3>Dental Billing</h3>
 <p>
-Advanced CDT coding, EOB reconciliation, PPO optimization, aging cleanup,
-and insurance recovery tailored for dental practices.
+Advanced CDT coding, EOB reconciliation, PPO optimization,
+insurance aging cleanup, and revenue recovery for dental practices.
 </p>
 <p>
-We eliminate silent write-offs and recover lost chair-side revenue.
+We eliminate silent write-offs and maximize chair-side collections.
 </p>
 </div>
 
@@ -282,35 +234,14 @@ We eliminate silent write-offs and recover lost chair-side revenue.
 <img src="https://images.pexels.com/photos/5722164/pexels-photo-5722164.jpeg">
 <h3>AR & Denial Management</h3>
 <p>
-Denied claims are aggressively appealed using payer-specific strategies,
+Aggressive denial appeals with payer-specific strategies,
 reducing future denials and revenue leakage.
 </p>
 <p>
-Analytics-driven workflows ensure continuous improvement.
+Analytics-driven workflows ensure continuous performance improvement.
 </p>
 </div>
 
-</div>
-</section>
-
-<!-- CALCULATOR -->
-<section>
-<h2>Revenue Growth Calculator</h2>
-<div class="calc">
-<input id="monthly" type="number" placeholder="Current Monthly Collections ($)">
-<input id="rate" type="number" placeholder="Expected Improvement (%)">
-<button onclick="calculate()">Calculate Revenue Growth</button>
-<div class="result" id="output"></div>
-</div>
-</section>
-
-<!-- REVIEWS -->
-<section>
-<h2>Trusted by Physicians</h2>
-<div class="reviews">
-<div class="review">“27% collection increase in 90 days.” – Dr. James R.</div>
-<div class="review">“Best billing partner we’ve had.” – Dr. Linda M.</div>
-<div class="review">“AR reduced from 120 to 38 days.” – Dr. Michael T.</div>
 </div>
 </section>
 
@@ -321,22 +252,10 @@ Analytics-driven workflows ensure continuous improvement.
 <p>© 2026 Physicians Claim Partners</p>
 </footer>
 
-<!-- AI / WHATSAPP -->
-<div class="ai" onclick="openWhatsApp()">💬 AI Assistant</div>
+<!-- WHATSAPP -->
+<div class="whatsapp" onclick="openWhatsApp()">💬 WhatsApp</div>
 
 <script>
-function calculate(){
-let m = document.getElementById("monthly").value;
-let r = document.getElementById("rate").value;
-if(!m || !r){
-document.getElementById("output").innerHTML = "Please enter both values.";
-return;
-}
-let gain = (m * r / 100).toFixed(2);
-document.getElementById("output").innerHTML =
-"Estimated Monthly Increase: $" + gain;
-}
-
 function openWhatsApp(){
 window.open(
 "https://wa.me/923214618847?text=Hello%20I%20want%20a%20free%20billing%20audit",
