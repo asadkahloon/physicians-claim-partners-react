@@ -1,362 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Physician-Led Medical & Dental Billing</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
+:root {
+  --bg-main: #070b14;
+  --bg-section: #0d1424;
+  --bg-card: #121b30;
+  --primary: #00d1b2;
+  --secondary: #4f8cff;
+  --accent: #f4c430;
+  --text-main: #f5f7fb;
+  --text-muted: #b8c1d9;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: #fff;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  scroll-behavior: smooth;
 }
 
 /* HERO */
-<section class="hero">
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h1>
-      Physician-Led <span>Medical & Dental Billing</span><br/>
-      That Increases Revenue — Not Excuses
-    </h1>
-
-    <p>
-      We help US medical and dental practices recover lost revenue,
-      eliminate denials, and increase monthly collections by up to
-      <strong>25–40%</strong> using physician-supervised billing workflows.
-    </p>
-
-    <div class="hero-buttons">
-      <button onclick="openAssistant()">Free Revenue Review</button>
-      <button class="secondary" onclick="scrollToServices()">Explore Services</button>
-    </div>
-  </div>
-
-  <div class="hero-images">
-    <img src="https://images.unsplash.com/photo-1580281657521-7c5b0c5a8c7c" />
-    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" />
-    <img src="https://images.unsplash.com/photo-1606813902919-6b1c2c3a6d0e" />
-  </div>
-</section>
-<style>
 .hero {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(79,140,255,0.15), transparent 40%),
+    linear-gradient(135deg, #0b1220, #0a1f2e);
+  display: flex;
+  align-items: center;
+  padding: 90px;
   position: relative;
-  height: 100vh;
-  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
   overflow: hidden;
-  color: white;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  padding: 80px;
 }
 
 .hero h1 {
-  font-size: 52px;
-  line-height: 1.2;
+  font-size: 56px;
+  line-height: 1.15;
+  font-weight: 700;
 }
 
-.hero h1 span {
-  color: #4fd1c5;
+.hero span {
+  color: var(--primary);
 }
 
 .hero p {
   font-size: 18px;
-  margin-top: 20px;
+  max-width: 680px;
+  margin-top: 22px;
+  color: var(--text-muted);
 }
 
-.hero-buttons button {
-  margin-top: 25px;
-  padding: 14px 26px;
-  border-radius: 30px;
+.hero button {
+  margin-top: 35px;
+  padding: 18px 38px;
+  border-radius: 50px;
   border: none;
-  cursor: pointer;
   font-size: 16px;
-}
-
-.hero-buttons .secondary {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
-  margin-left: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #001018;
+  box-shadow: 0 15px 40px rgba(0,209,178,0.25);
 }
 
 .hero-images {
   position: absolute;
-  right: -100px;
-  top: 20%;
+  right: -120px;
   display: flex;
-  gap: 20px;
-  animation: floatImages 20s linear infinite;
+  gap: 24px;
+  animation: float 20s infinite ease-in-out;
 }
 
 .hero-images img {
-  width: 220px;
-  border-radius: 20px;
+  width: 260px;
+  border-radius: 22px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
-@keyframes floatImages {
+@keyframes float {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-40px); }
+  50% { transform: translateY(-60px); }
   100% { transform: translateY(0); }
 }
-</style>
 
 /* SECTIONS */
-<section class="service-detail">
-  <h2>Medical Billing Services (USA)</h2>
-
-  <p>
-    Our medical billing services are designed specifically for US-based
-    physician practices that are tired of inconsistent collections,
-    delayed reimbursements, and payer excuses.
-  </p>
-
-  <p>
-    We handle the entire revenue cycle — from patient eligibility and
-    charge entry to CPT/ICD-10 accuracy, claim submission, aggressive
-    payer follow-ups, and denial prevention strategies supervised by
-    physician leadership.
-  </p>
-
-  <p>
-    Unlike traditional billing companies, our workflows are built to
-    protect compliance, improve cash flow predictability, and identify
-    hidden revenue leakage that most practices never see.
-  </p>
-
-  <p>
-    Practices working with us typically see measurable improvement in
-    collections within the first 60–90 days.
-  </p>
-</section>
-
-/* SERVICES */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 20px;
+section {
+  padding: 90px;
+  background: var(--bg-section);
 }
 
-.card {
-  background: #020617;
-  padding: 25px;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+h2 {
+  font-size: 38px;
+  margin-bottom: 26px;
+  color: var(--primary);
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  background: #020617dd;
+/* SERVICE CARDS */
+.service {
+  background: linear-gradient(180deg, var(--bg-card), #0b1324);
+  padding: 36px;
+  border-radius: 22px;
+  margin-bottom: 34px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
 }
 
-.details {
-  display: none;
-  margin-top: 15px;
-  font-size: 0.95rem;
-  color: #cbd5f5;
-}
-
-/* CALCULATOR */
-.calc {
-  background: #020617;
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 600px;
-  margin: auto;
-}
-
-.calc input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: none;
-}
-
-.calc button {
-  width: 100%;
-  padding: 12px;
-  background: #22c55e;
-  border: none;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  cursor: pointer;
+.service p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 16px;
 }
 
 /* REVIEWS */
-<section class="reviews">
-  <h2>What Physicians Say</h2>
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 28px;
+}
 
-  <div class="review">
-    <img src="https://randomuser.me/api/portraits/men/45.jpg"/>
-    <p>
-      “Our collections increased by nearly 32% in the first quarter.
-      Their denial management alone paid for itself.”
-    </p>
-    <strong>Dr. Michael R. Thompson</strong><br/>
-    <span>Internal Medicine – Texas</span>
-  </div>
+.review {
+  background: linear-gradient(180deg, var(--bg-card), #0a1222);
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+}
 
-  <div class="review">
-    <img src="https://randomuser.me/api/portraits/women/52.jpg"/>
-    <p>
-      “Finally a billing company that understands clinical workflows.
-      Clean reporting, fast responses, real results.”
-    </p>
-    <strong>Dr. Sarah K. Williams</strong><br/>
-    <span>Dental Practice Owner – California</span>
-  </div>
-</section>
+.review strong {
+  color: var(--accent);
+}
+
+.review img {
+  width: 64px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+/* CALCULATOR */
+.calculator {
+  background: linear-gradient(160deg, #0d162b, #0a1e33);
+  padding: 45px;
+  border-radius: 24px;
+  max-width: 520px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+}
+
 /* AI BOT */
-<script>
-function openAssistant() {
-  alert("Hi! I can help estimate revenue growth or explain our services. You'll be connected to a billing specialist next.");
-  window.location.href = "https://wa.me/923214618847?text=Hi%20I%20want%20a%20free%20billing%20review";
-}
-</script>
-
-.bot button {
-  margin-top: 10px;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background: #0ea5e9;
-  color: #fff;
-  border-radius: 8px;
+.bot {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #001018;
+  padding: 16px 24px;
+  border-radius: 50px;
+  font-weight: 600;
   cursor: pointer;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #020617;
+  box-shadow: 0 15px 40px rgba(79,140,255,0.35);
 }
 </style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <h1>Physician-Led Medical & Dental Billing That Maximizes Revenue</h1>
-    <p>We increase collections, eliminate denials, and scale your practice with precision-driven billing systems.</p>
-    <button onclick="document.getElementById('services').scrollIntoView()">Explore Services</button>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section id="services">
-<h2>Our Services</h2>
-
-<div class="services">
-
-<div class="card" onclick="toggle(this)">
-Medical Billing (USA)
-<div class="details">
-End-to-end claim management, CPT/ICD accuracy, payer follow-ups, and compliance-driven billing that increases net collections.
-</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-Dental Billing
-<div class="details">
-Full CDT coding, EOB reconciliation, insurance aging recovery, and PPO optimization.
-</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-AR & Denial Management
-<div class="details">
-Aggressive denial recovery, appeal submissions, payer escalation, and revenue leakage prevention.
-</div>
-</div>
-
-<div class="card" onclick="toggle(this)">
-Credentialing
-<div class="details">
-Fast payer enrollments, CAQH management, and state-wise credentialing support.
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- CALCULATOR -->
-<section>
-<h2 style="text-align:center">Revenue Growth Calculator</h2>
-
-<div class="calc">
-<input id="rev" placeholder="Current Monthly Revenue ($)">
-<input id="loss" placeholder="Estimated % Revenue Loss">
-<button onclick="calc()">Calculate Growth</button>
-<p id="result"></p>
-</div>
-</section>
-
-<!-- REVIEWS -->
-<section>
-<h2>What Practices Say</h2>
-
-<div class="reviews">
-<div class="review">“Our collections increased by 32% in 90 days.” – Internal Medicine, TX</div>
-<div class="review">“Denials dropped dramatically.” – Dental Group, CA</div>
-<div class="review">“Best billing decision we made.” – Family Practice, FL</div>
-<div class="review">“Professional, transparent, effective.” – Ortho Clinic, NY</div>
-<div class="review">“AR recovery exceeded expectations.” – Cardiology, NJ</div>
-<div class="review">“Seamless onboarding.” – Multi-Specialty Group</div>
-<div class="review">“Revenue stabilized within weeks.” – Psychiatry Practice</div>
-<div class="review">“Accurate, compliant billing.” – Pediatric Clinic</div>
-<div class="review">“Highly responsive team.” – Dental Office</div>
-<div class="review">“Results speak for themselves.” – Primary Care</div>
-</div>
-</section>
-
-<!-- AI BOT -->
-<div class="bot">
-<b>AI Assistant</b>
-<p>How can I help you today?</p>
-<button onclick="wa()">Billing Services</button>
-<button onclick="wa()">Revenue Growth</button>
-<button onclick="wa()">Free Audit</button>
-</div>
-
-<footer>
-© Physician-Led Revenue Solutions | USA Operations
-</footer>
-
-<script>
-function toggle(el){
-  const d = el.querySelector('.details');
-  d.style.display = d.style.display === 'block' ? 'none' : 'block';
-}
-
-function calc(){
-  const r = document.getElementById('rev').value;
-  const l = document.getElementById('loss').value;
-  const gain = r * (l/100);
-  document.getElementById('result').innerText =
-    "Estimated Monthly Revenue Recovery: $" + gain.toFixed(0);
-}
-
-function wa(){
-  window.open("https://wa.me/923214618847","_blank");
-}
-</script>
-
-</body>
-</html>
