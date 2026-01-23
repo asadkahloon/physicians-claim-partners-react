@@ -1,157 +1,253 @@
-<style>
-:root {
-  --bg-main: #070b14;
-  --bg-section: #0d1424;
-  --bg-card: #121b30;
-  --primary: #00d1b2;
-  --secondary: #4f8cff;
-  --accent: #f4c430;
-  --text-main: #f5f7fb;
-  --text-muted: #b8c1d9;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Physicians Claim Partners</title>
 
-body {
-  margin: 0;
-  font-family: "Inter", "Segoe UI", sans-serif;
-  background: var(--bg-main);
-  color: var(--text-main);
-  scroll-behavior: smooth;
-}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#0b1324;color:#eaeaea;line-height:1.7}
 
 /* HERO */
-.hero {
-  min-height: 100vh;
-  background:
-    radial-gradient(circle at top right, rgba(79,140,255,0.15), transparent 40%),
-    linear-gradient(135deg, #0b1220, #0a1f2e);
-  display: flex;
-  align-items: center;
-  padding: 90px;
-  position: relative;
-  overflow: hidden;
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+animation:bgmove 12s infinite alternate;
+padding:60px 20px;
 }
+@keyframes bgmove{0%{background-position:0%}100%{background-position:100%}}
 
-.hero h1 {
-  font-size: 56px;
-  line-height: 1.15;
-  font-weight: 700;
-}
+.hero h1{font-size:3.2rem;margin-bottom:20px}
+.hero p{max-width:900px;font-size:1.2rem;margin-bottom:35px}
 
-.hero span {
-  color: var(--primary);
+.hero button{
+padding:16px 40px;
+border:none;
+border-radius:40px;
+background:#00f2c3;
+color:#000;
+font-size:1.1rem;
+cursor:pointer;
+transition:.3s;
 }
+.hero button:hover{transform:scale(1.08)}
 
-.hero p {
-  font-size: 18px;
-  max-width: 680px;
-  margin-top: 22px;
-  color: var(--text-muted);
-}
+/* SECTION */
+section{padding:80px 8%}
+h2{text-align:center;font-size:2.4rem;margin-bottom:50px}
 
-.hero button {
-  margin-top: 35px;
-  padding: 18px 38px;
-  border-radius: 50px;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #001018;
-  box-shadow: 0 15px 40px rgba(0,209,178,0.25);
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
-
-.hero-images {
-  position: absolute;
-  right: -120px;
-  display: flex;
-  gap: 24px;
-  animation: float 20s infinite ease-in-out;
+.card{
+background:#131b2f;
+padding:30px;
+border-radius:16px;
+transition:.3s;
 }
-
-.hero-images img {
-  width: 260px;
-  border-radius: 22px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-60px); }
-  100% { transform: translateY(0); }
-}
-
-/* SECTIONS */
-section {
-  padding: 90px;
-  background: var(--bg-section);
-}
-
-h2 {
-  font-size: 38px;
-  margin-bottom: 26px;
-  color: var(--primary);
-}
-
-/* SERVICE CARDS */
-.service {
-  background: linear-gradient(180deg, var(--bg-card), #0b1324);
-  padding: 36px;
-  border-radius: 22px;
-  margin-bottom: 34px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
-}
-
-.service p {
-  color: var(--text-muted);
-  line-height: 1.75;
-  font-size: 16px;
-}
-
-/* REVIEWS */
-.reviews {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 28px;
-}
-
-.review {
-  background: linear-gradient(180deg, var(--bg-card), #0a1222);
-  padding: 28px;
-  border-radius: 22px;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.4);
-}
-
-.review strong {
-  color: var(--accent);
-}
-
-.review img {
-  width: 64px;
-  border-radius: 50%;
-  margin-bottom: 12px;
-}
+.card:hover{transform:translateY(-8px)}
+.card h3{margin-bottom:15px;color:#00f2c3}
 
 /* CALCULATOR */
-.calculator {
-  background: linear-gradient(160deg, #0d162b, #0a1e33);
-  padding: 45px;
-  border-radius: 24px;
-  max-width: 520px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+.calc{
+background:#0f172a;
+border-radius:20px;
+padding:40px;
+max-width:700px;
+margin:auto;
+}
+.calc input{
+width:100%;
+padding:14px;
+margin:12px 0;
+border-radius:8px;
+border:none;
+font-size:1rem;
+}
+.calc button{
+margin-top:20px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:30px;
+background:#00f2c3;
+font-size:1.1rem;
+cursor:pointer;
+}
+.result{margin-top:20px;font-size:1.2rem}
+
+/* REVIEWS */
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+.review{
+background:#131b2f;
+padding:25px;
+border-radius:16px;
 }
 
-/* AI BOT */
-.bot {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #001018;
-  padding: 16px 24px;
-  border-radius: 50px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 15px 40px rgba(79,140,255,0.35);
+/* AI ASSISTANT */
+.ai{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#00f2c3;
+color:#000;
+padding:16px 20px;
+border-radius:40px;
+cursor:pointer;
+font-weight:600;
+}
+
+/* FOOTER */
+footer{
+background:#020617;
+padding:40px;
+text-align:center;
+color:#aaa;
 }
 </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Physician-Led Medical & Dental Billing</h1>
+<p>
+We help medical and dental practices significantly increase collections, reduce claim denials,
+and regain complete financial control through physician-guided revenue cycle management.
+</p>
+<button onclick="scrollToServices()">Explore Services</button>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Medical Billing (USA)</h3>
+<p>
+Our end-to-end medical billing service covers the entire revenue lifecycle — from charge entry
+to final payment posting. We follow strict CPT/ICD compliance, payer-specific rules,
+and aggressive follow-ups to ensure claims are paid correctly and on time.
+</p>
+<p>
+Physician oversight ensures accuracy, reduced audits, and long-term payer trust.
+Practices typically see a 15–30% improvement in net collections within months.
+</p>
+</div>
+
+<div class="card">
+<h3>Dental Billing</h3>
+<p>
+We specialize in CDT coding, EOB reconciliation, PPO fee optimization,
+and insurance aging cleanup for dental practices.
+</p>
+<p>
+Our structured approach helps practices recover lost revenue,
+optimize insurance participation, and eliminate silent write-offs.
+</p>
+</div>
+
+<div class="card">
+<h3>AR & Denial Management</h3>
+<p>
+Denied claims are not lost claims — if handled correctly.
+We identify root causes, submit appeals, escalate payer disputes,
+and prevent recurring revenue leakage.
+</p>
+<p>
+Our denial analytics system ensures continuous improvement and payer accountability.
+</p>
+</div>
+
+<div class="card">
+<h3>Credentialing</h3>
+<p>
+Fast, accurate provider enrollment across Medicare, Medicaid,
+and commercial payers.
+</p>
+<p>
+We minimize credentialing delays so practices can start billing faster
+and avoid revenue gaps.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- CALCULATOR -->
+<section>
+<h2>Revenue Growth Calculator</h2>
+
+<div class="calc">
+<input type="number" id="monthly" placeholder="Current Monthly Collections ($)">
+<input type="number" id="rate" placeholder="Expected Improvement (%)">
+<button onclick="calculate()">Calculate Growth</button>
+<div class="result" id="output"></div>
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section>
+<h2>What Physicians Say</h2>
+
+<div class="reviews">
+<div class="review">“Collections increased by 27% within 90 days.” – Dr. James R., Internal Medicine</div>
+<div class="review">“Their AR cleanup alone paid for itself.” – Dr. Linda M., Family Practice</div>
+<div class="review">“Best billing decision we ever made.” – Dr. Michael T., Cardiology</div>
+<div class="review">“Zero compliance issues, strong payer follow-ups.” – Dr. Sarah K., Pediatrics</div>
+<div class="review">“Clear reports and real financial control.” – Dr. Ahmed S., Psychiatry</div>
+<div class="review">“Revenue stabilized even during staffing shortages.” – Dr. Robert L., Orthopedics</div>
+<div class="review">“Dental AR reduced from 120 days to under 40.” – Dr. Emily D., DDS</div>
+<div class="review">“Professional, responsive, and accurate.” – Dr. Jonathan P., Surgery</div>
+<div class="review">“Physician-led makes a real difference.” – Dr. Karen W., OB-GYN</div>
+<div class="review">“Finally a billing partner we trust.” – Dr. Daniel H., Urgent Care</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Physicians Claim Partners · USA-Focused Revenue Cycle Experts
+</footer>
+
+<!-- AI ASSISTANT -->
+<div class="ai" onclick="openWhatsApp()">AI Assistant</div>
+
+<script>
+function scrollToServices(){
+document.getElementById('services').scrollIntoView({behavior:'smooth'})
+}
+
+function calculate(){
+let m = document.getElementById('monthly').value;
+let r = document.getElementById('rate').value;
+if(!m||!r){return}
+let gain = (m*r/100).toFixed(2);
+document.getElementById('output').innerHTML =
+Estimated Monthly Increase: <strong>$${gain}</strong>;
+}
+
+function openWhatsApp(){
+window.open("https://wa.me/923214618847?text=Hello%20I%20want%20a%20free%20billing%20audit","_blank");
+}
+</script>
+
+</body>
+</html>
