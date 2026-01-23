@@ -2,74 +2,95 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Medical Billing Services | Physicians Claim Partners</title>
+<title>Medical Billing Services</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{
-  margin:0;
-  font-family:'Inter',sans-serif;
-  background:#070b18;
-  color:#eaeaea;
-}
-header, footer{
-  background:#020617;
-  padding:30px 8%;
-}
-h1{font-size:2.8rem;color:#38bdf8}
+body{margin:0;font-family:Inter;background:#070b18;color:#eaeaea}
 section{padding:80px 8%}
-p{line-height:1.8;font-size:1.1rem;color:#dbeafe}
-a{color:#38bdf8;text-decoration:none}
+h1,h2{color:#00f2c3}
+
+.faq{max-width:900px;margin:auto}
+.faq-item{
+background:#0f172a;
+margin-bottom:20px;
+border-radius:14px;
+overflow:hidden;
+}
+.faq-question{
+padding:22px;
+cursor:pointer;
+font-weight:600;
+display:flex;
+justify-content:space-between;
+}
+.faq-answer{
+display:none;
+padding:0 22px 22px;
+color:#cbd5e1;
+}
+.faq-item.active .faq-answer{display:block}
 </style>
 </head>
 
 <body>
 
-<header>
-  <a href="index.html">← Back to Home</a>
-  <h1>Medical Billing Services (USA)</h1>
+<header class="topbar">
+  <div class="logo">Physicians Claim Partners</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="medical-billing.html">Medical Billing</a>
+    <a href="contact.html" class="cta">Contact</a>
+  </nav>
 </header>
 
 <section>
+<h1>Medical Billing Services in the USA</h1>
 <p>
-Medical billing is not just claim submission — it is the backbone of a financially
-healthy medical practice. At Physicians Claim Partners, we provide end-to-end
-medical billing services tailored for US healthcare providers.
-</p>
-
-<p>
-Our physician-supervised billing workflows ensure accurate CPT and ICD-10 coding,
-payer-specific claim submission, aggressive follow-ups, and proactive denial
-prevention. This results in faster reimbursements and predictable cash flow.
-</p>
-
-<p>
-Most practices working with us experience a 15–30% improvement in net collections
-within the first 90 days while reducing administrative burden on staff.
-</p>
-
-<h2>What We Handle</h2>
-<ul>
-<li>Eligibility & benefits verification</li>
-<li>Charge entry & coding accuracy</li>
-<li>Claim submission & tracking</li>
-<li>AR follow-up & denial appeals</li>
-<li>Monthly reporting & insights</li>
-</ul>
-
-<h2>Contact Us</h2>
-<p>
-📧 info@physiciansclaimpartners.com<br>
-📍 500 7th Ave, Suite 1400, New York, NY 10018<br>
-💬 <a href="https://wa.me/923214618847">Chat with Billing Specialist</a>
+We provide end-to-end, physician-supervised medical billing services designed to
+increase collections, reduce denials, and ensure full payer compliance.
 </p>
 </section>
 
-<footer>
-© 2026 Physicians Claim Partners
+<section class="faq">
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+  <div class="faq-question">What services are included in medical billing? <span>+</span></div>
+  <div class="faq-answer">
+    We handle charge entry, CPT/ICD coding validation, claim submission,
+    payment posting, denial management, AR follow-ups, and compliance audits.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">How does this increase revenue? <span>+</span></div>
+  <div class="faq-answer">
+    Our physician-led oversight eliminates under-coding, missed follow-ups,
+    payer loopholes, and silent write-offs—typically increasing revenue 15–30%.
+  </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">Do you work with small practices? <span>+</span></div>
+  <div class="faq-answer">
+    Yes. Solo providers, group practices, and hospitals. Our workflows scale to
+    your size and specialty.
+  </div>
+</div>
+
+</section>
+
+<footer style="text-align:center;padding:50px;color:#94a3b8">
+USA Office: 500 7th Ave, Suite 1400, New York, NY 10018
 </footer>
+
+<script>
+document.querySelectorAll(".faq-question").forEach(q=>{
+  q.onclick=()=>q.parentElement.classList.toggle("active")
+})
+</script>
 
 </body>
 </html>
