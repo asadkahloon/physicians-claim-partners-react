@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- TOP BAR -->
+<div class="topbar">
+  <span>📧 info@physiciansclaimpartners.com</span>
+  <span>📍 New York, United States</span>
+</div>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="logo">Physicians Claim Partners</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="medical-billing.html">Medical Billing</a></li>
+    <li><a href="dental-billing.html">Dental Billing</a></li>
+    <li><a href="ar-denial.html">AR & Denial</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 <meta charset="UTF-8">
 <title>Physicians Claim Partners</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +27,43 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
 body{background:#070b18;color:#eaeaea}
+  /* TOP BAR */
+.topbar{
+  background:#020617;
+  color:#cbd5e1;
+  padding:10px 8%;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* NAVBAR */
+.navbar{
+  background:#020617;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #1e293b;
+}
+.logo{
+  color:#38bdf8;
+  font-weight:700;
+  font-size:20px;
+}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:22px;
+}
+.nav-links a{
+  text-decoration:none;
+  color:#e5e7eb;
+  font-weight:500;
+}
+.nav-links a:hover{
+  color:#38bdf8;
+}
 
 /* HERO */
 .hero{
