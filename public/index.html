@@ -2,218 +2,229 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Physicians Claim Partners</title>
 
+<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Animation & Slider -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 <style>
 body {
   margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#f4f9ff;
-  color:#1f2937;
+  font-family:'Poppins', sans-serif;
+  background:#f7f9fc;
+  color:#222;
 }
 
-/* HERO */
 .hero {
   height:100vh;
-  background:linear-gradient(135deg,#004aad,#00c6b8),
-  url('https://images.unsplash.com/photo-1580281657527-47f249e8f36b') center/cover;
+  background: linear-gradient(120deg, #0f4c75, #3282b8);
   color:white;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:40px;
+  padding:20px;
 }
-.hero h1 {font-size:48px;}
-.hero p {font-size:20px;max-width:900px;margin:20px auto;}
-.btn {
-  background:#00ffd5;
-  color:#003366;
+
+.hero h1 {
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.hero p {
+  font-size:1.2rem;
+  max-width:700px;
+}
+
+.cta {
+  margin-top:25px;
+  background:#25D366;
+  color:white;
   padding:15px 35px;
   border-radius:30px;
+  text-decoration:none;
   font-weight:600;
-  display:inline-block;
+  animation:pulse 2s infinite;
 }
 
-/* SECTION */
-section {padding:80px 20px;max-width:1200px;margin:auto;}
-h2 {text-align:center;color:#004aad;font-size:36px;margin-bottom:50px;}
+@keyframes pulse {
+  0% {transform:scale(1);}
+  50% {transform:scale(1.05);}
+  100% {transform:scale(1);}
+}
 
-/* SERVICES */
-.services {
+section {
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2 {
+  text-align:center;
+  margin-bottom:40px;
+  color:#0f4c75;
+}
+
+.swiper img {
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+.cards {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
+  gap:20px;
 }
+
 .card {
   background:white;
-  padding:35px;
-  border-radius:18px;
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
-  transition:.3s;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
-.card:hover {transform:translateY(-10px);}
 
-/* CALCULATOR */
 .calc {
   background:white;
-  padding:40px;
+  padding:30px;
   border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,.1);
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
-.calc input {
+
+.calc input, .calc select {
   width:100%;
   padding:12px;
-  margin:10px 0;
-}
-.calc-result {
-  font-size:22px;
-  color:#004aad;
-  margin-top:15px;
+  margin-bottom:15px;
 }
 
-/* REVIEWS */
-.reviews {
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
+.calc button {
+  width:100%;
+  padding:15px;
+  background:#0f4c75;
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
 }
+
 .review {
-  min-width:300px;
-  background:white;
-  padding:25px;
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:15px;
 }
 
-/* AI CHAT */
-.chat-btn {
+.whatsapp-float {
   position:fixed;
   bottom:20px;
   right:20px;
-  background:#004aad;
+  background:#25D366;
   color:white;
-  padding:15px 18px;
+  padding:15px;
   border-radius:50%;
-  font-size:22px;
-  cursor:pointer;
-  z-index:999;
+  font-size:24px;
+  text-decoration:none;
 }
-.chat-box {
+
+.ai-bot {
   position:fixed;
   bottom:90px;
   right:20px;
-  width:300px;
   background:white;
-  border-radius:18px;
-  box-shadow:0 20px 40px rgba(0,0,0,.2);
-  display:none;
-}
-.chat-box header {
-  background:#004aad;
-  color:white;
+  width:260px;
   padding:15px;
-  border-radius:18px 18px 0 0;
-}
-.chat-box .body {
-  padding:15px;
-  font-size:14px;
-}
-.chat-box button {
-  width:100%;
-  padding:12px;
-  margin-top:8px;
-  background:#00c6b8;
-  border:none;
-  color:white;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-footer {
-  background:#0b1c33;
-  color:#cbd5e1;
-  text-align:center;
-  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-  <div>
-    <h1>Physician-Led Medical & Dental Billing</h1>
-    <p>We increase collections, reduce denials, and improve cash flow for healthcare practices.</p>
-    <a class="btn" href="https://wa.me/923214618847">Chat on WhatsApp</a>
-  </div>
+<!-- HERO -->
+<div class="hero" data-aos="fade-up">
+  <h1>Physician-Led Medical & Dental Billing</h1>
+  <p>Increase collections, reduce denials, and grow revenue with a physician-driven billing team.</p>
+  <a class="cta" href="https://wa.me/923214618847" target="_blank">Chat on WhatsApp</a>
 </div>
 
+<!-- SLIDER -->
+<section>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"></div>
+    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1580281658629-7c57b6b8b6d2"></div>
+  </div>
+</div>
+</section>
+
+<!-- SERVICES -->
 <section>
 <h2>Our Services</h2>
-<div class="services">
-  <div class="card">Medical Billing</div>
+<div class="cards">
+  <div class="card">Medical Billing (US)</div>
   <div class="card">Dental Billing</div>
-  <div class="card">Revenue Cycle Management</div>
-  <div class="card">Denial Management</div>
-  <div class="card">Insurance Verification</div>
+  <div class="card">AR & Denial Management</div>
   <div class="card">Credentialing</div>
 </div>
 </section>
 
+<!-- CALCULATOR -->
 <section>
 <h2>Revenue Growth Calculator</h2>
 <div class="calc">
-  <input id="claims" placeholder="Monthly Claims" />
-  <input id="value" placeholder="Avg Claim Value ($)" />
-  <button class="btn" onclick="calc()">Calculate</button>
-  <div class="calc-result" id="result"></div>
+  <input id="revenue" placeholder="Monthly Collections ($)">
+  <select id="increase">
+    <option value="10">10% Increase</option>
+    <option value="20">20% Increase</option>
+    <option value="30">30% Increase</option>
+  </select>
+  <button onclick="calc()">Calculate</button>
+  <p id="result"></p>
 </div>
 </section>
 
+<!-- REVIEWS -->
 <section>
-<h2>What Practices Say</h2>
-<div class="reviews">
-  <div class="review">⭐⭐⭐⭐⭐<br/>Collections improved within 60 days.</div>
-  <div class="review">⭐⭐⭐⭐⭐<br/>Denials dropped significantly.</div>
-  <div class="review">⭐⭐⭐⭐⭐<br/>Very responsive billing team.</div>
-</div>
+<h2>Client Reviews</h2>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ “Collections increased within 90 days.”</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ “Very professional billing team.”</div>
 </section>
 
-<footer>
-© 2026 Physicians Claim Partners
-</footer>
+<!-- AI BOT -->
+<div class="ai-bot">
+<b>AI Assistant</b>
+<p>How can I help?</p>
+<button onclick="window.open('https://wa.me/923214618847')">Billing Services</button>
+</div>
 
-<!-- AI CHAT -->
-<div class="chat-btn" onclick="toggleChat()">🤖</div>
-<div class="chat-box" id="chat">
-<header>AI Assistant</header>
-<div class="body">
-👋 Hi! I’m the Physicians Claim Partners virtual assistant.<br><br>
-<button onclick="goWA()">🏥 Medical Billing</button>
-<button onclick="goWA()">🦷 Dental Billing</button>
-<button onclick="goWA()">📊 Increase Revenue</button>
-</div>
-</div>
+<a class="whatsapp-float" href="https://wa.me/923214618847" target="_blank">💬</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <script>
+AOS.init();
+
+new Swiper(".mySwiper", {
+  loop:true,
+  autoplay:{delay:2500},
+});
+
 function calc(){
-  let c=document.getElementById('claims').value;
-  let v=document.getElementById('value').value;
-  let revenue=c*v;
-  let increase=revenue*0.15;
-  document.getElementById('result').innerHTML=
-    "Estimated Monthly Revenue Increase: $" + increase.toLocaleString();
-}
-function toggleChat(){
-  let c=document.getElementById('chat');
-  c.style.display=c.style.display==='block'?'none':'block';
-}
-function goWA(){
-  window.open("https://wa.me/923214618847?text=Hi,%20I%20want%20to%20increase%20my%20practice%20revenue","_blank");
+  let r = document.getElementById('revenue').value;
+  let i = document.getElementById('increase').value;
+  let result = r * i / 100;
+  document.getElementById('result').innerHTML =
+    "Estimated additional revenue: $" + result;
 }
 </script>
 
