@@ -1,7 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- TOP BAR -->
+<!-- WHATSAPP FLOATING BUTTON -->
+<div class="whatsapp-float" onclick="openWhatsApp()">
+  💬 WhatsApp
+</div>
+
+<style>
+.whatsapp-float{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:white;
+  padding:16px 26px;
+  border-radius:50px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(37,211,102,.6);
+  z-index:9999;
+  transition:.3s;
+}
+.whatsapp-float:hover{
+  transform:scale(1.1);
+}
+</style>
+
+<script>
+function openWhatsApp(){
+  window.open(
+    "https://wa.me/923214618847?text=Hello%20I%20want%20a%20free%20billing%20audit",
+    "_blank"
+  );
+}
+</script>  <!-- TOP BAR -->
 <div class="topbar">
   <span>📧 info@physiciansclaimpartners.com</span>
   <span>📍 New York, United States</span>
