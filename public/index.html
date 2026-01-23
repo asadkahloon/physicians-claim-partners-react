@@ -2,71 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Physicians Claim Partners</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Physicians Claim Partners - Medical & Dental Billing</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f5f7fa;
-      color: #222;
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      color: #1a1a1a;
     }
+    a { text-decoration: none; }
     header {
-      background: #0d6efd;
+      background: #004aad;
       color: white;
-      padding: 30px;
       text-align: center;
+      padding: 80px 20px;
     }
-    section {
-      padding: 40px;
+    header h1 { font-size: 44px; margin: 0; }
+    header p { font-size: 18px; margin: 15px 0 30px; }
+    .btn-primary {
+      background: #ffba00;
+      color: #1a1a1a;
+      padding: 15px 30px;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    section { padding: 60px 20px; max-width: 1100px; margin: auto; }
+    section h2 { color: #004aad; text-align: center; margin-bottom: 40px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 25px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    }
+    .card h3 { margin-top: 0; color: #004aad; }
+    .why-list {
+      list-style: none;
+      padding: 0;
       max-width: 900px;
       margin: auto;
     }
-    h2 {
-      color: #0d6efd;
+    .why-list li {
+      background: white;
+      margin: 10px 0;
+      padding: 18px 22px;
+      border-radius: 6px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    }
+    .leaders {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    .leader-box {
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    .leader-avatar {
+      width: 100px;
+      height: 100px;
+      background: #e2e2e2;
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 14px;
     }
     footer {
-      background: #0d6efd;
-      color: white;
+      background: #0d1a33;
+      color: #ccc;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Physicians Claim Partners</h1>
-  <p>Medical & Dental Billing Solutions</p>
+  <p>Comprehensive Medical & Dental Billing Services for Healthcare Providers</p>
+  <a class="btn-primary" href="#">Request Free Consultation</a>
 </header>
 
 <section>
-  <h2>About Us</h2>
-  <p>
-    Physicians Claim Partners is a physician-led medical and dental billing
-    company focused on compliance, accuracy, and revenue optimization for
-    healthcare providers across the United States.
-  </p>
-
-  <h2>Leadership</h2>
-  <p><strong>Dr. Rasa Tharp, MD</strong> – Co-CEO</p>
-  <p><strong>Dr. M Asad Mumtaz</strong> – Co-CEO</p>
-
   <h2>Our Services</h2>
-  <ul>
-    <li>Medical Billing & Coding</li>
-    <li>Dental Billing (CDT)</li>
-    <li>Revenue Cycle Management</li>
-    <li>Insurance Verification & Authorizations</li>
-    <li>Denial Management</li>
-    <li>Compliance & Audit Support</li>
+  <div class="services-grid">
+    <div class="card">
+      <h3>Medical Billing & Coding</h3>
+      <p>Expert CPT & ICD-10 coding with accurate claim submission.</p>
+    </div>
+    <div class="card">
+      <h3>Dental Billing Support</h3>
+      <p>Professional CDT coding and claims management for dental practices.</p>
+    </div>
+    <div class="card">
+      <h3>Revenue Cycle Management (RCM)</h3>
+      <p>End-to-end billing process to improve collections and reduce AR.</p>
+    </div>
+    <div class="card">
+      <h3>Denial Management</h3>
+      <p>Proactive follow-up and appeals to reduce denials and rejections.</p>
+    </div>
+    <div class="card">
+      <h3>Insurance Verification</h3>
+      <p>Coverage and eligibility checks before service delivery.</p>
+    </div>
+    <div class="card">
+      <h3>Billing Consulting</h3>
+      <p>Expert advisory to optimize your clinic’s financial operations.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <h2>Why Partner With Us</h2>
+  <ul class="why-list">
+    <li>Physician-led billing expertise</li>
+    <li>HIPAA-aware processes and secure practices</li>
+    <li>Clear reports and transparent billing</li>
+    <li>24/7 support and dedicated account management</li>
   </ul>
 </section>
 
+<section>
+  <h2>Leadership</h2>
+  <div class="leaders">
+    <div class="leader-box">
+      <div class="leader-avatar"></div>
+      <h3>Dr. Rasa Tharp, MD</h3>
+      <p>Co-CEO</p>
+    </div>
+    <div class="leader-box">
+      <div class="leader-avatar"></div>
+      <h3>Dr. M Asad Mumtaz</h3>
+      <p>Co-CEO</p>
+    </div>
+  </div>
+</section>
+
 <footer>
-  © 2026 Physicians Claim Partners
+  © 2026 Physicians Claim Partners — Medical & Dental Billing Services
 </footer>
 
 </body>
