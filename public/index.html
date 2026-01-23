@@ -1,147 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Physicians Claim Partners</title>
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Animation & Slider -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<meta charset="UTF-8">
+<title>Physician-Led Medical & Dental Billing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
-  margin:0;
-  font-family:'Poppins', sans-serif;
-  background:#f7f9fc;
-  color:#222;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #fff;
 }
 
+/* HERO */
 .hero {
-  height:100vh;
-  background: linear-gradient(120deg, #0f4c75, #3282b8);
-  color:white;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
+  height: 100vh;
+  background: linear-gradient(120deg,#0ea5e9,#22c55e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: gradientMove 8s infinite alternate;
+}
+
+@keyframes gradientMove {
+  from {background-position: left;}
+  to {background-position: right;}
 }
 
 .hero h1 {
-  font-size:3rem;
-  margin-bottom:10px;
+  font-size: 3.2rem;
+  max-width: 900px;
 }
 
 .hero p {
-  font-size:1.2rem;
-  max-width:700px;
+  font-size: 1.3rem;
+  margin: 20px auto;
+  max-width: 700px;
 }
 
-.cta {
-  margin-top:25px;
-  background:#25D366;
-  color:white;
-  padding:15px 35px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-  animation:pulse 2s infinite;
+.hero button {
+  padding: 15px 35px;
+  border: none;
+  background: #0f172a;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
 }
 
-@keyframes pulse {
-  0% {transform:scale(1);}
-  50% {transform:scale(1.05);}
-  100% {transform:scale(1);}
-}
-
+/* SECTIONS */
 section {
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
+  padding: 80px 8%;
 }
 
-h2 {
-  text-align:center;
-  margin-bottom:40px;
-  color:#0f4c75;
-}
-
-.swiper img {
-  width:100%;
-  height:350px;
-  object-fit:cover;
-  border-radius:15px;
-}
-
-.cards {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
 }
 
 .card {
-  background:white;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  background: #020617;
+  padding: 25px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
+.card:hover {
+  transform: translateY(-6px);
+  background: #020617dd;
+}
+
+.details {
+  display: none;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
+/* CALCULATOR */
 .calc {
-  background:white;
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  background: #020617;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  margin: auto;
 }
 
-.calc input, .calc select {
-  width:100%;
-  padding:12px;
-  margin-bottom:15px;
+.calc input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
 }
 
 .calc button {
-  width:100%;
-  padding:15px;
-  background:#0f4c75;
-  color:white;
-  border:none;
-  border-radius:10px;
-  font-size:16px;
+  width: 100%;
+  padding: 12px;
+  background: #22c55e;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* REVIEWS */
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
 }
 
 .review {
-  background:#fff;
-  padding:20px;
-  border-radius:15px;
-  margin-bottom:15px;
+  background: #020617;
+  padding: 20px;
+  border-radius: 14px;
 }
 
-.whatsapp-float {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  font-size:24px;
-  text-decoration:none;
+/* AI BOT */
+.bot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #020617;
+  padding: 20px;
+  border-radius: 20px;
+  width: 260px;
 }
 
-.ai-bot {
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  background:white;
-  width:260px;
-  padding:15px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+.bot button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #0ea5e9;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #020617;
 }
 </style>
 </head>
@@ -149,82 +155,110 @@ h2 {
 <body>
 
 <!-- HERO -->
-<div class="hero" data-aos="fade-up">
-  <h1>Physician-Led Medical & Dental Billing</h1>
-  <p>Increase collections, reduce denials, and grow revenue with a physician-driven billing team.</p>
-  <a class="cta" href="https://wa.me/923214618847" target="_blank">Chat on WhatsApp</a>
-</div>
-
-<!-- SLIDER -->
-<section>
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309"></div>
-    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"></div>
-    <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1580281658629-7c57b6b8b6d2"></div>
+<div class="hero">
+  <div>
+    <h1>Physician-Led Medical & Dental Billing That Maximizes Revenue</h1>
+    <p>We increase collections, eliminate denials, and scale your practice with precision-driven billing systems.</p>
+    <button onclick="document.getElementById('services').scrollIntoView()">Explore Services</button>
   </div>
 </div>
-</section>
 
 <!-- SERVICES -->
-<section>
+<section id="services">
 <h2>Our Services</h2>
-<div class="cards">
-  <div class="card">Medical Billing (US)</div>
-  <div class="card">Dental Billing</div>
-  <div class="card">AR & Denial Management</div>
-  <div class="card">Credentialing</div>
+
+<div class="services">
+
+<div class="card" onclick="toggle(this)">
+Medical Billing (USA)
+<div class="details">
+End-to-end claim management, CPT/ICD accuracy, payer follow-ups, and compliance-driven billing that increases net collections.
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+Dental Billing
+<div class="details">
+Full CDT coding, EOB reconciliation, insurance aging recovery, and PPO optimization.
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+AR & Denial Management
+<div class="details">
+Aggressive denial recovery, appeal submissions, payer escalation, and revenue leakage prevention.
+</div>
+</div>
+
+<div class="card" onclick="toggle(this)">
+Credentialing
+<div class="details">
+Fast payer enrollments, CAQH management, and state-wise credentialing support.
+</div>
+</div>
+
 </div>
 </section>
 
 <!-- CALCULATOR -->
 <section>
-<h2>Revenue Growth Calculator</h2>
+<h2 style="text-align:center">Revenue Growth Calculator</h2>
+
 <div class="calc">
-  <input id="revenue" placeholder="Monthly Collections ($)">
-  <select id="increase">
-    <option value="10">10% Increase</option>
-    <option value="20">20% Increase</option>
-    <option value="30">30% Increase</option>
-  </select>
-  <button onclick="calc()">Calculate</button>
-  <p id="result"></p>
+<input id="rev" placeholder="Current Monthly Revenue ($)">
+<input id="loss" placeholder="Estimated % Revenue Loss">
+<button onclick="calc()">Calculate Growth</button>
+<p id="result"></p>
 </div>
 </section>
 
 <!-- REVIEWS -->
 <section>
-<h2>Client Reviews</h2>
-<div class="review">⭐️⭐️⭐️⭐️⭐️ “Collections increased within 90 days.”</div>
-<div class="review">⭐️⭐️⭐️⭐️⭐️ “Very professional billing team.”</div>
+<h2>What Practices Say</h2>
+
+<div class="reviews">
+<div class="review">“Our collections increased by 32% in 90 days.” – Internal Medicine, TX</div>
+<div class="review">“Denials dropped dramatically.” – Dental Group, CA</div>
+<div class="review">“Best billing decision we made.” – Family Practice, FL</div>
+<div class="review">“Professional, transparent, effective.” – Ortho Clinic, NY</div>
+<div class="review">“AR recovery exceeded expectations.” – Cardiology, NJ</div>
+<div class="review">“Seamless onboarding.” – Multi-Specialty Group</div>
+<div class="review">“Revenue stabilized within weeks.” – Psychiatry Practice</div>
+<div class="review">“Accurate, compliant billing.” – Pediatric Clinic</div>
+<div class="review">“Highly responsive team.” – Dental Office</div>
+<div class="review">“Results speak for themselves.” – Primary Care</div>
+</div>
 </section>
 
 <!-- AI BOT -->
-<div class="ai-bot">
+<div class="bot">
 <b>AI Assistant</b>
-<p>How can I help?</p>
-<button onclick="window.open('https://wa.me/923214618847')">Billing Services</button>
+<p>How can I help you today?</p>
+<button onclick="wa()">Billing Services</button>
+<button onclick="wa()">Revenue Growth</button>
+<button onclick="wa()">Free Audit</button>
 </div>
 
-<a class="whatsapp-float" href="https://wa.me/923214618847" target="_blank">💬</a>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<footer>
+© Physician-Led Revenue Solutions | USA Operations
+</footer>
 
 <script>
-AOS.init();
-
-new Swiper(".mySwiper", {
-  loop:true,
-  autoplay:{delay:2500},
-});
+function toggle(el){
+  const d = el.querySelector('.details');
+  d.style.display = d.style.display === 'block' ? 'none' : 'block';
+}
 
 function calc(){
-  let r = document.getElementById('revenue').value;
-  let i = document.getElementById('increase').value;
-  let result = r * i / 100;
-  document.getElementById('result').innerHTML =
-    "Estimated additional revenue: $" + result;
+  const r = document.getElementById('rev').value;
+  const l = document.getElementById('loss').value;
+  const gain = r * (l/100);
+  document.getElementById('result').innerText =
+    "Estimated Monthly Revenue Recovery: $" + gain.toFixed(0);
+}
+
+function wa(){
+  window.open("https://wa.me/923214618847","_blank");
 }
 </script>
 
