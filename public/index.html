@@ -18,9 +18,9 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:80px 8%;
-background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#0f3460);
+background:linear-gradient(-45deg,#020024,#090979,#00d4ff,#00f2c3);
 background-size:400% 400%;
-animation:gradient 10s ease infinite;
+animation:gradient 12s ease infinite;
 }
 @keyframes gradient{
 0%{background-position:0% 50%}
@@ -30,7 +30,7 @@ animation:gradient 10s ease infinite;
 
 .hero-text{max-width:55%}
 .hero h1{font-size:3.5rem;margin-bottom:20px}
-.hero p{font-size:1.2rem;margin-bottom:30px;color:#dbeafe}
+.hero p{font-size:1.2rem;margin-bottom:30px;color:#e0f2fe}
 .hero button{
 padding:16px 40px;
 border:none;
@@ -47,6 +47,7 @@ transition:.3s;
 width:420px;
 border-radius:30px;
 animation:float 4s ease-in-out infinite;
+box-shadow:0 0 40px rgba(0,242,195,.4);
 }
 @keyframes float{
 0%{transform:translateY(0)}
@@ -54,24 +55,24 @@ animation:float 4s ease-in-out infinite;
 100%{transform:translateY(0)}
 }
 
-/* SECTIONS */
+/* SECTION */
 section{padding:90px 8%}
 h2{text-align:center;font-size:2.6rem;margin-bottom:60px}
 
 /* SERVICES */
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 }
 .card{
 background:#0f172a;
 padding:30px;
-border-radius:18px;
+border-radius:20px;
 transition:.4s;
 }
 .card:hover{transform:translateY(-10px)}
-.card img{width:100%;border-radius:14px;margin-bottom:20px}
+.card img{width:100%;border-radius:16px;margin-bottom:20px}
 .card h3{color:#00f2c3;margin-bottom:15px}
 
 /* CALCULATOR */
@@ -81,7 +82,7 @@ padding:45px;
 border-radius:22px;
 max-width:720px;
 margin:auto;
-box-shadow:0 0 40px rgba(0,242,195,0.2)
+box-shadow:0 0 40px rgba(0,242,195,0.3)
 }
 .calc input{
 width:100%;
@@ -101,7 +102,7 @@ background:#00f2c3;
 font-size:1.1rem;
 cursor:pointer;
 }
-.result{margin-top:25px;font-size:1.3rem}
+.result{margin-top:25px;font-size:1.4rem;color:#00f2c3}
 
 /* REVIEWS */
 .reviews{
@@ -114,27 +115,22 @@ background:#0f172a;
 padding:25px;
 border-radius:18px;
 }
-.review img{
-width:55px;
-height:55px;
-border-radius:50%;
-margin-bottom:10px;
-}
 
 /* AI BUTTON */
 .ai{
 position:fixed;
 bottom:25px;
 right:25px;
-background:#00f2c3;
+background:#25D366;
 color:#000;
-padding:16px 22px;
-border-radius:40px;
+padding:16px 26px;
+border-radius:50px;
 cursor:pointer;
-font-weight:600;
-box-shadow:0 0 20px rgba(0,242,195,0.6);
-z-index:9999;
+font-weight:700;
+box-shadow:0 0 25px rgba(37,211,102,0.8);
+z-index:999;
 }
+.ai:hover{transform:scale(1.1)}
 
 /* FOOTER */
 footer{
@@ -156,43 +152,56 @@ color:#aaa;
 We help US medical and dental practices increase collections, reduce denials,
 and regain financial control through physician-supervised revenue cycle management.
 </p>
-<button onclick="scrollToServices()">Explore Services</button>
+<button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+Explore Services
+</button>
 </div>
 
 <div class="hero-img">
-<img src="https://images.unsplash.com/photo-1580281658629-4c1b9bb9a5a1?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg" alt="Doctor">
 </div>
 </div>
 
 <!-- SERVICES -->
 <section id="services">
 <h2>Our Services</h2>
-
 <div class="services">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg">
 <h3>Medical Billing (USA)</h3>
-<p>We manage the complete medical billing lifecycle — charge entry, CPT/ICD accuracy,
-payer submission, follow-ups, and final payment posting.</p>
-<p>Physician oversight ensures compliance, audit safety, and maximized reimbursements.
-Practices typically see 15–30% revenue improvement.</p>
+<p>
+End-to-end revenue cycle management including charge entry, CPT/ICD coding accuracy,
+payer submission, aggressive follow-ups, denial prevention, and final payment posting.
+</p>
+<p>
+Physician oversight ensures compliance, audit safety, and consistent revenue growth
+of 15–30% for most practices.
+</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1606813909024-62b4a84b33c7?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.pexels.com/photos/3845765/pexels-photo-3845765.jpeg">
 <h3>Dental Billing</h3>
-<p>Specialized CDT coding, EOB reconciliation, PPO fee optimization,
-and insurance aging recovery for dental practices.</p>
-<p>We recover lost dental revenue and eliminate silent write-offs.</p>
+<p>
+Advanced CDT coding, EOB reconciliation, PPO optimization, aging cleanup,
+and insurance recovery tailored for dental practices.
+</p>
+<p>
+We eliminate silent write-offs and recover lost chair-side revenue.
+</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.pexels.com/photos/5722164/pexels-photo-5722164.jpeg">
 <h3>AR & Denial Management</h3>
-<p>Denied claims are aggressively appealed with payer-specific strategies,
-reducing future denials and revenue leakage.</p>
-<p>Our analytics-driven approach ensures continuous improvement.</p>
+<p>
+Denied claims are aggressively appealed using payer-specific strategies,
+reducing future denials and revenue leakage.
+</p>
+<p>
+Analytics-driven workflows ensure continuous improvement.
+</p>
 </div>
 
 </div>
@@ -213,34 +222,35 @@ reducing future denials and revenue leakage.</p>
 <section>
 <h2>Trusted by Physicians</h2>
 <div class="reviews">
-<div class="review"><img src="https://randomuser.me/api/portraits/men/45.jpg"><p>“27% collection increase in 90 days.”<br><strong>Dr. James R.</strong></p></div>
-<div class="review"><img src="https://randomuser.me/api/portraits/women/65.jpg"><p>“Best billing partner we’ve had.”<br><strong>Dr. Linda M.</strong></p></div>
-<div class="review"><img src="https://randomuser.me/api/portraits/men/32.jpg"><p>“AR reduced from 120 to 38 days.”<br><strong>Dr. Michael T.</strong></p></div>
+<div class="review">“27% collection increase in 90 days.” – Dr. James R.</div>
+<div class="review">“Best billing partner we’ve had.” – Dr. Linda M.</div>
+<div class="review">“AR reduced from 120 to 38 days.” – Dr. Michael T.</div>
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-<p><strong>USA Office:</strong><br>
-500 7th Ave, Suite 1400, New York, NY 10018, United States</p>
+<p><strong>USA Office</strong><br>
+500 7th Ave, Suite 1400, New York, NY 10018</p>
 <p>© 2026 Physicians Claim Partners</p>
 </footer>
 
-<!-- AI ASSISTANT -->
+<!-- AI / WHATSAPP -->
 <div class="ai" onclick="openWhatsApp()">💬 AI Assistant</div>
 
 <script>
-function scrollToServices(){
-document.getElementById('services').scrollIntoView({behavior:'smooth'});
-}
 function calculate(){
-const m=document.getElementById('monthly').value;
-const r=document.getElementById('rate').value;
-if(!m||!r)return;
-const gain=(m*r/100).toFixed(2);
-document.getElementById('output').innerHTML=
-Estimated Monthly Increase: <b>$${gain}</b>;
+let m = document.getElementById("monthly").value;
+let r = document.getElementById("rate").value;
+if(!m || !r){
+document.getElementById("output").innerHTML = "Please enter both values.";
+return;
 }
+let gain = (m * r / 100).toFixed(2);
+document.getElementById("output").innerHTML =
+"Estimated Monthly Increase: $" + gain;
+}
+
 function openWhatsApp(){
 window.open(
 "https://wa.me/923214618847?text=Hello%20I%20want%20a%20free%20billing%20audit",
