@@ -185,6 +185,21 @@ section, h2, h3, p {
 .visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}/* ===== FLOATING IMAGE ANIMATION ===== */
+@keyframes floatSlow {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.float-img {
+  animation: floatSlow 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.float-img:hover {
+  transform: rotateY(180deg);
+  transition: transform 0.6s ease;
 }
   </style>
 </head>
@@ -228,7 +243,9 @@ section, h2, h3, p {
 <section id="why">
   <div class="two-col">
     <div class="left">
-      <img class="img-float" src="https://images.unsplash.com/photo-1588774069166-1f857e8b4fca?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5a3f3f5f9cfdd6e5b8d1c97bf8c03f6a" alt="stethoscope">
+      <img class="img-float"
+     src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop"
+     alt="stethoscope">
       <h2 style="font-size:34px;font-weight:800;margin-bottom:14px">Why choose us for your Medical / Dental Billing?</h2>
       <p style="color:var(--muted)">Let us handle the complexities of billing so you can focus on patient care. Our team of experts ensures accurate claims, faster submissions, and robust follow-up. We provide regular reporting, appeals management, and a personalized account manager so that revenue becomes predictable.</p>
     </div>
@@ -251,7 +268,7 @@ section, h2, h3, p {
     </a>
 
     <a class="service-card" href="dental-billing.html">
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1e5b2c0d8f7adf3f4c2c6a3919f9b3b5" alt="Dental Billing">
+      <img src="https://picsum.photos/1200/720?random=12" alt="Medical Billing" class="float-img">
       <h3>Dental Billing</h3>
       <p>Specialised dental claim processing, CDT coding, and PPO negotiation to maximize reimbursement.</p>
     </a>
