@@ -6,7 +6,7 @@
   <title>Physicians Claim Partners — Targeted Medical & Dental Billing</title>
 
   <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -19,7 +19,7 @@
       --accent:#0b8fd6;
     }
     *{box-sizing:border-box}
-    body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; color:var(--text); background:var(--bg); line-height:1.45}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; color:var(--text); background:var(--bg); line-height:1.45}perspective:1000px;
     a{color:var(--accent); text-decoration:none}
     header{display:flex;align-items:center;justify-content:space-between;padding:20px 36px;border-bottom:1px solid #eef3f7;background:#fff;position:sticky;top:0;z-index:50}
     /* Monogram */
@@ -28,7 +28,22 @@
     .brand h1{margin:0;font-size:20px;font-weight:700}
     nav{display:flex;gap:18px;align-items:center}
     nav a{padding:10px 6px;font-weight:600}
-    .cta{background:var(--blue); color:#fff; padding:10px 14px;border-radius:8px}
+    .cta{background:var(--blue); color:#fff; padding:10px 14px;border-radius:8px}/* GLOBAL IMAGE ANIMATIONS */
+img {
+  animation: floatImage 6s ease-in-out infinite;
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
+}
+
+img:hover {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+/* Floating effect */
+@keyframes floatImage {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
     /* Hero */
     .hero{display:flex;gap:30px;align-items:center;padding:48px 6%;background:linear-gradient(180deg, #fbfeff 0%, #ffffff 100%)}
     .hero-left{flex:1}
@@ -46,9 +61,29 @@
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:18px}
     .service-card{background:var(--light-blue);padding:18px;border-radius:14px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;cursor:pointer;transition:transform .22s;box-shadow:0 6px 18px rgba(10,20,50,0.04)}
     .service-card:hover{transform:translateY(-6px)}
-    .service-card img{width:100%;height:220px;border-radius:12px;object-fit:cover;float:left}
+    .service-card img{
+  width:100%;
+  height:220px;
+  border-radius:12px;
+  object-fit:cover;
+  float:left;
+  transition:transform 0.6s ease;
+}
+
+.service-card img:hover{
+  transform:rotateY(180deg);
+}
     .service-card h3{margin:0;font-size:18px;font-weight:700}
-    .service-card p{color:var(--muted);margin:0;font-size:14px}
+    .service-card p{color:var(--muted);margin:0;font-size:14px}/* ===== FLOATING IMAGE ANIMATION ===== */
+@keyframes floatSlow {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.float-img{
+  animation: floatSlow 6s ease-in-out infinite;
+}
     /* Benefits row */
     .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
     .benefit{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04);display:flex;gap:12px;align-items:center}
@@ -87,7 +122,36 @@
     button.btn{background:var(--blue);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
     /* Contact form */
     .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
-    /* Footer */
+    /* Footer *//* Social Icons Styling */
+.social-icon{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:18px;
+  transition:all .3s ease;
+  text-transform:lowercase;
+}
+
+.social-icon:hover{
+  transform:translateY(-6px) rotate(6deg);
+  box-shadow:0 10px 20px rgba(0,0,0,0.25);
+}
+
+.social-icon.fb{background:#1877f2;color:#fff}
+.social-icon.ig{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);color:#fff}
+.social-icon.li{background:#0a66c2;color:#fff}
+
+/* Dark footer override */
+footer{
+  background:#0f2a44;
+  color:#fff;
+}
+
+footer a{color:#fff}
     footer{background:#f6fbff;padding:36px 6%;display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
     footer .col{max-width:320px}
     .socials{display:flex;gap:12px}
@@ -104,7 +168,17 @@
       .benefits{grid-template-columns:1fr}
       .contact-grid{grid-template-columns:1fr}
       .stats{flex-direction:column}
-    }
+    }/* SCROLL TEXT ANIMATION */
+section, h2, h3, p {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
   </style>
 </head>
 <body>
@@ -384,6 +458,12 @@
 
     <div class="cost-right">
       <h3>PhysiciansClaimPartners Cost</h3>
+      <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?q=80&w=900&auto=format&fit=crop"
+     alt="Billing savings calculator"
+     style="width:100%;margin:12px 0;border-radius:12px;animation:floatImg 6s ease-in-out infinite;">
+      <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=900&auto=format&fit=crop"
+     alt="In-house billing cost analysis"
+     style="width:100%;margin:12px 0;border-radius:12px;animation:floatImg 6s ease-in-out infinite;"> 
       <p style="color:var(--muted)">We typically charge a percentage of collections — enter your numbers below to estimate savings.</p>
 
       <div style="margin-top:10px">
@@ -481,11 +561,12 @@
 
   <div class="col">
     <strong>Follow us</strong>
-    <div class="socials" style="margin-top:8px">
-      <a href="#" aria-label="facebook">FB</a>
-      <a href="#" aria-label="instagram">IG</a>
-      <a href="#" aria-label="linkedin">LI</a>
-    </div>
+   <div class="socials" style="margin-top:10px;display:flex;gap:14px">
+  <a href="#" aria-label="facebook" style="font-size:22px">📘</a>
+  <a href="#" aria-label="instagram" style="font-size:22px">📸</a>
+  <a href="#" aria-label="linkedin" style="font-size:22px">💼</a>
+  <a href="https://wa.me/923214618847" aria-label="whatsapp" style="font-size:22px">💬</a>
+</div>
   </div>
 </footer>
 
@@ -527,7 +608,23 @@
 
   // schedule modal
   function openSchedule(){document.getElementById('scheduleModal').style.display='flex'}
-  function closeSchedule(){document.getElementById('scheduleModal').style.display='none'}
+  function closeSchedule(){document.getElementById('scheduleModal').style.display='none'}<script>
+document.querySelectorAll("img").forEach(img => {
+  img.onerror = () => {
+    img.src = "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200";
+  };
+});// SCROLL ANIMATION OBSERVER
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll("section, h2, h3, p").forEach(el => {
+  observer.observe(el);
+});
 </script>
 
 </body>
