@@ -169,10 +169,12 @@ footer a{color:#fff}
       .contact-grid{grid-template-columns:1fr}
       .stats{flex-direction:column}
     }/* SCROLL TEXT ANIMATION */
+/* reveal text immediately (temporary fix) */
 section, h2, h3, p {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.45s ease;
+}
 }
 
 .visible {
