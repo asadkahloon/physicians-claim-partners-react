@@ -2,283 +2,286 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Physicians Claim Partners</title>
+<title>Physicians Claim Partners | Medical & Dental Billing</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#070b18;color:#eaeaea}
-
-/* TOP BAR */
-.topbar{
-  background:#020617;
-  color:#cbd5e1;
-  padding:10px 8%;
-  font-size:14px;
-  display:flex;
-  justify-content:space-between;
+:root{
+  --blue:#1e88e5;
+  --light-blue:#e3f2fd;
+  --green:#2ecc71;
+  --dark:#0f172a;
+  --gray:#64748b;
 }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#ffffff;color:#0f172a}
 
-/* NAVBAR */
-.navbar{
-  background:#020617;
-  padding:18px 8%;
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:1000;
+  background:#fff;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  border-bottom:1px solid #1e293b;
+  padding:18px 8%;
+  box-shadow:0 4px 20px rgba(0,0,0,.06)
 }
 .logo{
-  color:#38bdf8;
-  font-weight:700;
-  font-size:20px;
+  display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px
 }
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:22px;
+.monogram{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:800
 }
-.nav-links a{
-  text-decoration:none;
-  color:#e5e7eb;
-  font-weight:500;
-}
-.nav-links a:hover{
-  color:#38bdf8;
-}
+nav ul{list-style:none;display:flex;gap:22px}
+nav a{text-decoration:none;color:#0f172a;font-weight:600}
+nav a:hover{color:var(--blue)}
 
 /* HERO */
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:80px 8%;
-  background:linear-gradient(-45deg,#020024,#090979,#00d4ff,#00f2c3);
-  background-size:400% 400%;
-  animation:gradient 12s ease infinite;
+  padding:90px 8%;
+  background:linear-gradient(135deg,#f5fbff,#ecfff5);
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:40px;
+  align-items:center
 }
-@keyframes gradient{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+.hero h1{font-size:3.2rem;margin-bottom:16px}
+.hero p{color:var(--gray);font-size:1.1rem;margin-bottom:20px;line-height:1.7}
+.hero .cta{display:flex;gap:16px}
+.btn{
+  padding:14px 30px;border-radius:40px;
+  background:var(--blue);color:#fff;
+  text-decoration:none;font-weight:700
 }
-.hero-text{max-width:55%}
-.hero h1{font-size:3.5rem;margin-bottom:20px}
-.hero p{font-size:1.2rem;margin-bottom:30px;color:#e0f2fe}
-.hero button{
-  padding:16px 40px;
-  border:none;
-  border-radius:40px;
-  background:#00f2c3;
-  color:#000;
-  font-size:1.1rem;
-  cursor:pointer;
-}
-.hero-img img{
-  width:420px;
-  border-radius:30px;
-  animation:float 4s ease-in-out infinite;
-  box-shadow:0 0 40px rgba(0,242,195,.4);
-}
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-20px)}
-  100%{transform:translateY(0)}
-}
+.btn.alt{background:var(--green)}
+.hero img{width:100%;border-radius:20px}
 
 /* SECTIONS */
 section{padding:90px 8%}
-h2{text-align:center;font-size:2.6rem;margin-bottom:60px}
+.section-title{text-align:center;font-size:2.4rem;margin-bottom:20px}
+.section-sub{text-align:center;color:var(--gray);max-width:800px;margin:0 auto 50px}
 
 /* SERVICES */
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
 .card{
-  background:#0f172a;
-  padding:30px;
-  border-radius:20px;
+  background:#fff;padding:26px;border-radius:18px;
+  box-shadow:0 8px 30px rgba(0,0,0,.05)
 }
-.card img{width:100%;border-radius:16px;margin-bottom:20px}
-.card h3{color:#00f2c3;margin-bottom:15px}
+.card h3{margin-bottom:12px;color:var(--blue)}
+.card p{color:var(--gray);line-height:1.6}
+
+/* BENEFITS */
+.benefits .card{border-left:6px solid var(--green)}
+
+/* STATS */
+.stats{
+  background:linear-gradient(135deg,#f0f9ff,#ecfff5);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;text-align:center
+}
+.stat{padding:30px}
+.stat h3{font-size:2.2rem;color:var(--blue)}
+.stat p{color:var(--gray)}
+
+/* PROCESS */
+.process .card{border-top:6px solid var(--blue)}
+
+/* FAQ */
+.faq details{
+  background:#f8fafc;
+  padding:18px;border-radius:12px;margin-bottom:12px
+}
+.faq summary{font-weight:700;cursor:pointer}
+
+/* COST COMPARISON */
+.compare{
+  display:grid;grid-template-columns:1fr 1fr;gap:30px
+}
+.compare .card{border-top:6px solid var(--green)}
+.compare h4{margin-bottom:10px}
 
 /* CALCULATOR */
 .calc{
-  background:#020617;
-  padding:45px;
-  border-radius:22px;
-  max-width:720px;
-  margin:auto;
-  box-shadow:0 0 40px rgba(0,242,195,0.3)
+  max-width:600px;margin:auto;
+  background:#fff;padding:30px;border-radius:20px;
+  box-shadow:0 10px 40px rgba(0,0,0,.08)
 }
-.calc input{
-  width:100%;
-  padding:15px;
-  margin:14px 0;
-  border:none;
-  border-radius:10px;
-}
-.calc button{
-  width:100%;
-  padding:16px;
-  border:none;
-  border-radius:40px;
-  background:#00f2c3;
-  font-size:1.1rem;
-  cursor:pointer;
-}
-.result{margin-top:25px;font-size:1.4rem;color:#00f2c3}
-
-/* REVIEWS */
-.reviews{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-.review{
-  background:#0f172a;
-  padding:25px;
-  border-radius:18px;
-}
+.calc input{width:100%;padding:14px;margin:10px 0;border-radius:10px;border:1px solid #ccc}
+.calc button{width:100%;padding:14px;border:none;border-radius:40px;background:var(--blue);color:#fff;font-weight:700}
+.calc .result{margin-top:15px;font-weight:700;color:var(--green)}
 
 /* FOOTER */
 footer{
-  background:#020617;
-  padding:60px 10%;
-  text-align:center;
-  color:#aaa;
+  background:#0f172a;color:#cbd5e1;padding:60px 8%
+}
+footer .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer a{color:#cbd5e1;text-decoration:none}
+footer a:hover{color:#fff}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;bottom:25px;right:25px;
+  background:#25D366;color:#fff;
+  padding:14px 24px;border-radius:50px;
+  font-weight:800;text-decoration:none;
+  box-shadow:0 10px 30px rgba(37,211,102,.4);
+  z-index:9999
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#25D366;
-  color:#ffffff;
-  padding:18px 28px;
-  border-radius:50px;
-  font-weight:700;
-  font-size:16px;
-  cursor:pointer;
-  box-shadow:0 10px 30px rgba(37,211,102,.9);
-  z-index:99999;
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;text-align:center}
+  nav ul{display:none}
 }
-.whatsapp:hover{transform:scale(1.1)}
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-  <span>📧 info@physiciansclaimpartners.com</span>
-  <span>📍 New York, United States</span>
-</div>
-
-<!-- NAVIGATION -->
-<nav class="navbar">
-  <div class="logo">Physicians Claim Partners</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="medical-billing.html">Medical Billing</a></li>
-    <li><a href="dental-billing.html">Dental Billing</a></li>
-    <li><a href="ar-denial.html">AR & Denial</a></li>
+<nav>
+  <div class="logo">
+    <div class="monogram">PCP</div>
+    Physicians Claim Partners
+  </div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-text">
-    <h1>Physician-Led Medical & Dental Billing</h1>
+  <div>
+    <h1>TARGETED BILLING TO TURBOCHARGE REVENUE</h1>
     <p>
-      We help US medical and dental practices increase collections, reduce denials,
-      and regain financial control through physician-supervised revenue cycle management.
+      Physicians Claim Partners delivers physician-led medical and dental billing
+      solutions designed to dramatically increase collections, reduce denials,
+      and optimize revenue cycle performance across the United States.
     </p>
-    <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
-      Explore Services
-    </button>
+    <p>
+      Our research-based approach combines advanced analytics, compliance-driven
+      workflows, and payer-specific strategies to unlock 40–50% revenue growth
+      within 6 months.
+    </p>
+    <div class="cta">
+      <a class="btn" href="contact.html">Get Started Today</a>
+      <a class="btn alt" href="contact.html">Schedule a Demo</a>
+    </div>
   </div>
-  <div class="hero-img">
-    <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg" alt="Doctor">
-  </div>
+  <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg">
 </div>
+
+<!-- WHY CHOOSE US -->
+<section>
+  <h2 class="section-title">Why Choose Us for Medical & Dental Billing</h2>
+  <p class="section-sub">
+    Physician-supervised billing, deep payer expertise, and a data-driven model
+    that consistently outperforms in-house billing teams.
+  </p>
+</section>
 
 <!-- SERVICES -->
 <section id="services">
-<h2>Our Services</h2>
-<div class="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="grid">
+    <div class="card"><h3>Medical Billing</h3><p>End-to-end US medical billing with CPT/ICD accuracy.</p></div>
+    <div class="card"><h3>Dental Billing</h3><p>Advanced CDT coding, PPO optimization, revenue recovery.</p></div>
+    <div class="card"><h3>AR & Denial Management</h3><p>Aggressive appeals and AR clean-up.</p></div>
+    <div class="card"><h3>Out-of-Network Negotiations</h3><p>Maximized reimbursements with strategic payer negotiations.</p></div>
+    <div class="card"><h3>Insurance Eligibility Verification</h3><p>Real-time benefits verification to prevent denials.</p></div>
+    <div class="card"><h3>Auditing & DRG Review</h3><p>Comprehensive audits ensuring compliance and accuracy.</p></div>
+    <div class="card"><h3>Practice Marketing</h3><p>Patient growth strategies aligned with revenue goals.</p></div>
+  </div>
+</section>
 
-<div class="card">
-<img src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg">
-<h3>Medical Billing (USA)</h3>
-<p>End-to-end revenue cycle management with 15–30% revenue improvement.</p>
-</div>
+<!-- BENEFITS -->
+<section id="benefits" class="benefits">
+  <h2 class="section-title">Benefits</h2>
+  <div class="grid">
+    <div class="card">Boost Your Bottom Line</div>
+    <div class="card">Focus on What Matters</div>
+    <div class="card">Enhanced Efficiency</div>
+    <div class="card">Expertise at Your Fingertips</div>
+    <div class="card">Improved Patient Experience</div>
+    <div class="card">Gain Valuable Insights</div>
+    <div class="card">Practice Marketing Strategies</div>
+  </div>
+</section>
 
-<div class="card">
-<img src="https://images.pexels.com/photos/3845765/pexels-photo-3845765.jpeg">
-<h3>Dental Billing</h3>
-<p>Advanced CDT coding, PPO optimization, and revenue recovery.</p>
-</div>
+<!-- STATS -->
+<section class="stats">
+  <div class="stat"><h3>HIPAA</h3><p>100% Compliance</p></div>
+  <div class="stat"><h3>99%</h3><p>Clean Claims</p></div>
+  <div class="stat"><h3>24/7</h3><p>Support</p></div>
+  <div class="stat"><h3>40–50%</h3><p>Revenue Growth</p></div>
+</section>
 
-<div class="card">
-<img src="https://images.pexels.com/photos/5722164/pexels-photo-5722164.jpeg">
-<h3>AR & Denial Management</h3>
-<p>Aggressive appeals and analytics-driven denial reduction.</p>
-</div>
+<!-- PROCESS -->
+<section id="process" class="process">
+  <h2 class="section-title">Our Process</h2>
+  <div class="grid">
+    <div class="card"><h3>Data Verification</h3><p>Eligibility, coding and documentation review.</p></div>
+    <div class="card"><h3>Billing Process</h3><p>Submission, tracking, follow-ups and appeals.</p></div>
+    <div class="card"><h3>Account Management</h3><p>Dedicated managers with transparent reporting.</p></div>
+  </div>
+</section>
 
-</div>
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <details><summary>How quickly can we start?</summary><p>Typically within 7–10 business days.</p></details>
+  <details><summary>Do you sign BAAs?</summary><p>Yes, fully HIPAA compliant.</p></details>
+  <details><summary>What revenue increase can we expect?</summary><p>40–50% within 6 months.</p></details>
+</section>
+
+<!-- COST COMPARISON -->
+<section>
+  <h2 class="section-title">In-House vs Physicians Claim Partners</h2>
+  <div class="compare">
+    <div class="card"><h4>In-House Billing</h4><p>Annual salary, overheads, training, high denial risk.</p></div>
+    <div class="card"><h4>Physicians Claim Partners</h4><p>Lower cost, higher collections, expert team.</p></div>
+  </div>
 </section>
 
 <!-- CALCULATOR -->
 <section>
-<h2>Revenue Growth Calculator</h2>
-<div class="calc">
-<input id="monthly" type="number" placeholder="Current Monthly Collections ($)">
-<input id="rate" type="number" placeholder="Expected Improvement (%)">
-<button onclick="calculate()">Calculate Revenue Growth</button>
-<div class="result" id="output"></div>
-</div>
+  <h2 class="section-title">Revenue Calculator</h2>
+  <div class="calc">
+    <input id="rev" placeholder="Current Monthly Revenue ($)">
+    <button onclick="calc()">Calculate Growth</button>
+    <div class="result" id="out"></div>
+  </div>
 </section>
 
-<!-- REVIEWS -->
-<section>
-<h2>Trusted by Physicians</h2>
-<div class="reviews">
-<div class="review">“27% collection increase in 90 days.” – Dr. James R.</div>
-<div class="review">“Best billing partner we’ve had.” – Dr. Linda M.</div>
-<div class="review">“AR reduced from 120 to 38 days.” – Dr. Michael T.</div>
-</div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-<p><strong>USA Office</strong><br>
-500 7th Ave, Suite 1400, New York, NY 10018</p>
-<p>© 2026 Physicians Claim Partners</p>
+  <div class="grid">
+    <div>
+      <strong>Physicians Claim Partners</strong><br>
+      500 7th Ave, Suite 1400<br>New York, NY 10018
+    </div>
+    <div>
+      <strong>Follow Us</strong><br>
+      Facebook · Instagram · LinkedIn
+    </div>
+  </div>
 </footer>
 
-<!-- WHATSAPP -->
-<div class="whatsapp" onclick="openWhatsApp()">💬 WhatsApp</div>
+<a class="whatsapp" href="https://wa.me/923214618847" target="_blank">WhatsApp</a>
 
 <script>
-function calculate(){
-  let m=document.getElementById("monthly").value;
-  let r=document.getElementById("rate").value;
-  if(!m||!r){document.getElementById("output").innerHTML="Enter both values";return;}
-  document.getElementById("output").innerHTML="Estimated Monthly Increase: $"+(m*r/100).toFixed(2);
-}
-function openWhatsApp(){
-  window.open(
-    "https://wa.me/923214618847?text=Hello%20I%20want%20a%20free%20billing%20audit",
-    "_blank"
-  );
+function calc(){
+  let v=document.getElementById('rev').value;
+  if(!v)return;
+  let gain=(v*0.45).toFixed(0);
+  document.getElementById('out').innerText=
+    "Estimated Monthly Increase: $" + gain;
 }
 </script>
 
