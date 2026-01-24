@@ -1,182 +1,78 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Physicians Claim Partners — Targeted Medical & Dental Billing</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Physicians Claim Partners — Targeted Medical & Dental Billing</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --blue:#1ea7f2;
-      --green:#7ed487;
-      --dark:#0c1b2a;
-      --light:#f6fbff;
-      --text:#1f2933;
-      --muted:#6b7280;
-    }
+<style>
+:root{
+  --blue:#1ea7f2;
+  --green:#7ed487;
+  --light-blue:#e9f6ff;
+  --text:#222;
+  --muted:#6b6b6b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Montserrat;color:var(--text);background:#fff}
 
-    *{box-sizing:border-box}
+/* ================= FLOATING ANIMATION ================= */
+@keyframes float {
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-18px)}
+  100%{transform:translateY(0)}
+}
+img{animation:float 6s ease-in-out infinite}
 
-    body{
-      margin:0;
-      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      color:var(--text);
-      background:#ffffff;
-      line-height:1.6;
-    }
+/* ================= HEADER ================= */
+header{display:flex;justify-content:space-between;align-items:center;
+padding:20px 36px;border-bottom:1px solid #eef3f7;position:sticky;top:0;background:#fff;z-index:100}
 
-    a{text-decoration:none;color:inherit}
+/* Attractive PCP monogram */
+.monogram{
+  width:70px;height:70px;border-radius:18px;
+  background:radial-gradient(circle at top left,#1ea7f2,#7ed487);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:900;font-size:22px;
+  box-shadow:0 15px 40px rgba(0,0,0,.25)
+}
+.brand{display:flex;gap:14px;align-items:center}
+nav a{margin:0 10px;font-weight:600;text-decoration:none;color:#0b8fd6}
+.cta{background:#1ea7f2;color:#fff;padding:10px 16px;border-radius:8px}
 
-    /* ================= HEADER ================= */
-    header{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:#ffffff;
-      border-bottom:1px solid #eef2f7;
-      padding:18px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+/* ================= HERO ================= */
+.hero{display:flex;gap:40px;align-items:center;padding:60px 6%}
+.hero img{width:420px;height:380px;object-fit:cover;border-radius:18px;
+box-shadow:0 30px 60px rgba(0,0,0,.2)}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
+/* ================= COMMON ================= */
+section{padding:60px 6%}
+.services-grid,.benefits,.process{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card,.benefit,.proc-box{
+  background:#f8fbff;padding:20px;border-radius:18px;
+  box-shadow:0 20px 40px rgba(0,0,0,.08)
+}
+.service-card img{width:100%;height:220px;object-fit:cover;border-radius:14px}
 
-    /* Stylish Monogram */
-    .monogram{
-      width:68px;
-      height:68px;
-      border-radius:18px;
-      background:
-        radial-gradient(circle at top left,#7ed487,#1ea7f2);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-      letter-spacing:1px;
-      color:#fff;
-      font-size:22px;
-      box-shadow:0 18px 40px rgba(30,167,242,.35);
-      animation:floatSlow 6s ease-in-out infinite;
-    }
+/* ================= STATS ================= */
+.stats{display:flex;gap:20px}
+.stat{flex:1;background:#fff;padding:20px;border-radius:16px;text-align:center;
+box-shadow:0 15px 30px rgba(0,0,0,.08)}
 
-    .brand h1{
-      margin:0;
-      font-size:22px;
-      font-weight:800;
-    }
+/* ================= FOOTER ================= */
+footer{background:#0b1324;color:#fff;padding:60px 6%}
+.socials img{width:34px}
 
-    .brand small{
-      color:var(--muted);
-      font-size:13px;
-      font-weight:600;
-    }
-
-    nav{
-      display:flex;
-      gap:22px;
-      align-items:center;
-    }
-
-    nav a{
-      font-weight:700;
-      font-size:14px;
-      color:#1f2933;
-    }
-
-    .cta{
-      background:linear-gradient(135deg,#1ea7f2,#7ed487);
-      color:#fff;
-      padding:12px 18px;
-      border-radius:10px;
-      font-weight:800;
-      box-shadow:0 10px 25px rgba(30,167,242,.35);
-    }
-
-    /* ================= HERO ================= */
-    .hero{
-      padding:70px 6%;
-      display:flex;
-      gap:40px;
-      align-items:center;
-      background:
-        linear-gradient(180deg,#f8fcff 0%, #ffffff 100%);
-    }
-
-    .hero-left{
-      flex:1;
-    }
-
-    .hero h2{
-      font-size:54px;
-      line-height:1.05;
-      margin:0 0 20px;
-      font-weight:900;
-    }
-
-    .hero p{
-      font-size:20px;
-      color:var(--muted);
-      max-width:640px;
-      margin-bottom:26px;
-      font-weight:500;
-    }
-
-    .hero .buttons{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-
-    .hero .secondary{
-      border:2px solid #cfe9fb;
-      padding:12px 18px;
-      border-radius:10px;
-      font-weight:800;
-      color:#1ea7f2;
-    }
-
-    .hero img{
-      width:440px;
-      height:380px;
-      object-fit:cover;
-      border-radius:22px;
-      box-shadow:0 30px 60px rgba(12,27,42,.25);
-      animation:floatHero 7s ease-in-out infinite;
-    }
-
-    /* ================= FLOATING ANIMATIONS ================= */
-    @keyframes floatHero{
-      0%{transform:translateY(0)}
-      50%{transform:translateY(-18px)}
-      100%{transform:translateY(0)}
-    }
-
-    @keyframes floatSlow{
-      0%{transform:translateY(0)}
-      50%{transform:translateY(-10px)}
-      100%{transform:translateY(0)}
-    }
-
-    /* Responsive */
-    @media(max-width:1000px){
-      .hero{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-      .hero img{
-        width:100%;
-        height:320px;
-      }
-    }
-  </style>
+/* ================= WHATSAPP ================= */
+.whatsapp{
+position:fixed;right:20px;bottom:20px;width:62px;height:62px;
+background:#25D366;color:#fff;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+font-size:28px;box-shadow:0 20px 40px rgba(0,0,0,.3);z-index:999
+}
+</style>
 </head>
 
 <body>
@@ -185,307 +81,67 @@
   <div class="brand">
     <div class="monogram">PCP</div>
     <div>
-      <h1>Physicians Claim Partners</h1>
+      <strong>Physicians Claim Partners</strong><br>
       <small>Medical & Dental Revenue Recovery</small>
     </div>
   </div>
-
   <nav>
     <a href="#services">Services</a>
     <a href="#benefits">Benefits</a>
     <a href="#process">Process</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact">Contact</a>
-    <a class="cta" href="#schedule" onclick="openSchedule()">Schedule Demo</a>
+    <a class="cta" href="#contact">Contact</a>
   </nav>
 </header>
 
-<section class="hero" id="hero">
-  <div class="hero-left">
-    <h2>Targeted Billing That<br>Turbocharges Revenue</h2>
-    <p>
-      End claim denials. Accelerate cash flow.  
-      We deliver precision medical & dental billing built for predictable growth.
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1 style="font-size:48px;font-weight:900">TARGETED BILLING TO TURBOCHARGE REVENUE</h1>
+    <p style="font-size:18px;color:var(--muted)">
+      Targeted medical & dental billing designed to increase collections,
+      reduce denials, and stabilize cash flow.
     </p>
-    <div class="buttons">
-      <a class="cta" href="#services">Explore Services</a>
-      <a class="secondary" href="#benefits">Why Choose Us</a>
-    </div>
   </div>
+  <img src="https://images.unsplash.com/photo-1600959907703-125ba1374a12?w=1200&q=80">
+</section>
 
-  <img
-    src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1600&auto=format&fit=crop"
-    alt="Medical billing professionals">
-</section><!-- ================= WHY CHOOSE US ================= -->
-<section id="why" style="padding:70px 6%">
-  <div style="display:flex;gap:40px;align-items:center;flex-wrap:wrap">
-
-    <img
-      src="https://images.unsplash.com/photo-1588774069166-1f857e8b4fca?q=80&w=1400&auto=format&fit=crop"
-      style="width:360px;height:360px;border-radius:22px;object-fit:cover;
-             box-shadow:0 28px 60px rgba(0,0,0,.2);
-             animation:floatHero 6s ease-in-out infinite">
-
-    <div style="flex:1">
-      <h2 style="font-size:40px;font-weight:900;margin-bottom:16px">
-        Why Practices Choose Us
-      </h2>
-      <p style="font-size:18px;color:#6b7280">
-        We remove billing chaos completely. Our specialists handle eligibility,
-        coding accuracy, aggressive follow-ups, and denials—so your revenue
-        becomes stable, predictable, and scalable.
-      </p>
-    </div>
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card"><img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&q=80"><h3>Medical Billing</h3></div>
+    <div class="service-card"><img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1200&q=80"><h3>Dental Billing</h3></div>
+    <div class="service-card"><img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=1200&q=80"><h3>AR & Denials</h3></div>
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
-<section id="services" style="padding:70px 6%;background:#f6fbff">
-  <h2 style="font-size:40px;font-weight:900;margin-bottom:10px">Our Services</h2>
-  <p style="color:#6b7280;font-size:18px;max-width:800px">
-    End-to-end medical & dental revenue cycle services—built for growth.
-  </p>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-              gap:28px;margin-top:36px">
-
-    <a href="medical-billing.html" class="service-card">
-      <img src="https://images.unsplash.com/photo-1551601651-4f95a0a29357?q=80&w=1400&auto=format&fit=crop">
-      <h3>Medical Billing & Coding</h3>
-      <p>Clean claims, accurate CPT/ICD coding, faster reimbursements.</p>
-    </a>
-
-    <a href="dental-billing.html" class="service-card">
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367e?q=80&w=1400&auto=format&fit=crop">
-      <h3>Dental Billing</h3>
-      <p>CDT coding, PPO optimization, maximum dental collections.</p>
-    </a>
-
-    <a href="ar-denial.html" class="service-card">
-      <img src="https://images.unsplash.com/photo-1582719478175-33a1f0f38d0f?q=80&w=1400&auto=format&fit=crop">
-      <h3>AR & Denial Management</h3>
-      <p>Aggressive appeals and payer follow-ups to recover lost revenue.</p>
-    </a>
-  </div>
+<!-- USA MAP -->
+<section>
+  <h2>Coast-to-Coast USA Coverage</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Map_of_USA_with_state_names.svg"
+       style="width:100%;max-width:600px">
+  <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+       style="width:220px;margin-top:20px">
 </section>
 
-<!-- ================= BENEFITS ================= -->
-<section id="benefits" style="padding:70px 6%">
-  <h2 style="font-size:40px;font-weight:900;margin-bottom:30px">Benefits</h2>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-              gap:28px">
-
-    <div class="benefit">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop">
-      <div>
-        <h4>Higher Collections</h4>
-        <p>Recover 40–50% more revenue within 6 months.</p>
-      </div>
-    </div>
-
-    <div class="benefit">
-      <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=800&auto=format&fit=crop">
-      <div>
-        <h4>Zero Admin Stress</h4>
-        <p>Your staff focuses on patients—we handle billing.</p>
-      </div>
-    </div>
-
-    <div class="benefit">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop">
-      <div>
-        <h4>Full Transparency</h4>
-        <p>Monthly reports and real-time revenue tracking.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= STATS + REVIEWS ================= -->
-<section style="padding:70px 6%;background:#f6fbff">
-  <div style="display:flex;gap:40px;flex-wrap:wrap">
-
-    <div style="flex:1;display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
-      <div class="stat"><h3>100%</h3><p>HIPAA Compliant</p></div>
-      <div class="stat"><h3>98%</h3><p>Clean Claims</p></div>
-      <div class="stat"><h3>24/7</h3><p>Support</p></div>
-      <div class="stat"><h3>50%</h3><p>Revenue Growth</p></div>
-    </div>
-
-    <div style="width:420px">
-      <h3 style="font-size:28px;font-weight:900">Doctor Reviews</h3>
-
-      <div class="review">
-        <img src="https://randomuser.me/api/portraits/men/34.jpg">
-        <strong>Dr. Sarah M.</strong>
-        <p>Collections increased within the first month.</p>
-      </div>
-
-      <div class="review">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg">
-        <strong>Dr. James L.</strong>
-        <p>Professional, fast, and extremely reliable.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROCESS ================= -->
-<section id="process" style="padding:70px 6%">
-  <h2 style="font-size:40px;font-weight:900;margin-bottom:30px">Our Process</h2>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-              gap:30px">
-
-    <div class="proc-box">
-      <h3>01</h3>
-      <h4>Verification</h4>
-      <p>Eligibility checks, authorizations, data cleanup.</p>
-    </div>
-
-    <div class="proc-box">
-      <h3>02</h3>
-      <h4>Billing</h4>
-      <p>Accurate coding, clean claims, payer follow-ups.</p>
-    </div>
-
-    <div class="proc-box">
-      <h3>03</h3>
-      <h4>Recovery</h4>
-      <p>Denials, appeals, reporting, account management.</p>
-    </div>
-  </div>
-</section><!-- ================= COAST TO COAST COVERAGE ================= -->
-<section id="pricing" style="padding:80px 6%;background:#ffffff">
-  <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:center">
-
-    <div style="flex:1">
-      <h2 style="font-size:40px;font-weight:900">Coast-to-Coast USA Coverage</h2>
-      <p style="font-size:18px;color:#6b7280;max-width:700px">
-        We support medical and dental practices in all 50 states with payer-specific expertise,
-        compliance, and reimbursement strategies.
-      </p>
-
-      <div style="margin-top:20px;font-weight:700;color:#0b8fd6">
-        🇺🇸 United States · Nationwide Billing Support
-      </div>
-    </div>
-
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Map_of_USA_with_state_names.svg"
-      alt="USA Map"
-      style="width:460px;border-radius:20px;
-             box-shadow:0 30px 70px rgba(0,0,0,.2);
-             animation:floatHero 7s ease-in-out infinite">
-  </div>
-</section>
-
-<!-- ================= COST COMPARISON + CALCULATOR ================= -->
-<section style="padding:80px 6%;background:#f6fbff">
-  <div style="display:flex;gap:30px;flex-wrap:wrap">
-
-    <div style="flex:1;background:#fff;padding:28px;border-radius:20px;
-                box-shadow:0 20px 50px rgba(0,0,0,.08)">
-      <h3 style="font-size:28px;font-weight:900">In-House Billing Costs</h3>
-      <table style="width:100%;margin-top:20px">
-        <tr><td>Annual Salary</td><td>$30,000</td></tr>
-        <tr><td>Overheads</td><td>$20,000</td></tr>
-        <tr><th>Total</th><th>$50,000</th></tr>
-      </table>
-    </div>
-
-    <div style="width:420px;background:#ffffff;padding:28px;border-radius:20px;
-                box-shadow:0 20px 50px rgba(0,0,0,.08)">
-      <h3 style="font-size:26px;font-weight:900">Savings Calculator</h3>
-
-      <label>Annual Collections ($)</label>
-      <input type="number" id="collections" value="100000">
-
-      <label style="margin-top:10px">Our Fee (%)</label>
-      <input type="number" id="ourRate" value="2.5">
-
-      <button class="btn" style="margin-top:14px" onclick="calculate()">Calculate</button>
-      <div id="calcResult" style="margin-top:14px;font-weight:700"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" style="padding:80px 6%">
-  <h2 style="font-size:40px;font-weight:900">Let’s Talk</h2>
-  <p style="color:#6b7280;font-size:18px">Schedule a free demo or message us anytime.</p>
-
-  <div style="display:grid;grid-template-columns:1fr 420px;gap:30px;margin-top:30px">
-
-    <form style="background:#fff;padding:30px;border-radius:20px;
-                 box-shadow:0 20px 50px rgba(0,0,0,.08)">
-      <input placeholder="Your Name">
-      <input placeholder="Email" style="margin-top:10px">
-      <textarea placeholder="Message" rows="5" style="margin-top:10px"></textarea>
-      <button class="btn" style="margin-top:14px">Send Message</button>
-    </form>
-
-    <img
-      src="https://images.unsplash.com/photo-1580281657521-3a1a55f8f9b4?q=80&w=1200&auto=format&fit=crop"
-      style="width:100%;border-radius:20px;
-             animation:floatHero 6s ease-in-out infinite">
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer style="background:#0b1324;color:#fff;padding:60px 6%">
-  <div style="display:flex;gap:40px;flex-wrap:wrap">
-
+<!-- FOOTER -->
+<footer>
+  <div class="brand">
+    <div class="monogram">PCP</div>
     <div>
-      <div class="monogram" style="margin-bottom:10px">PCP</div>
-      <strong>Physicians Claim Partners</strong>
-      <p style="color:#cbd5e1">
-        Nationwide Medical & Dental Billing<br>
-        WhatsApp: +92 321 4618847
-      </p>
+      <strong>Physicians Claim Partners</strong><br>
+      USA Nationwide Billing
     </div>
+  </div>
 
-    <div>
-      <strong>Services</strong>
-      <p>Medical Billing<br>Dental Billing<br>AR & Denials</p>
-    </div>
-
-    <div>
-      <strong>Follow Us</strong>
-      <div style="display:flex;gap:14px;margin-top:10px">
-        <span>📘</span>
-        <span>📸</span>
-        <span>🔗</span>
-      </div>
-    </div>
+  <div class="socials" style="margin-top:20px">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png">
   </div>
 </footer>
 
-<!-- ================= WHATSAPP FLOAT ================= -->
-<a href="https://wa.me/923214618847"
-   style="position:fixed;right:22px;bottom:22px;width:62px;height:62px;
-          background:#25D366;color:white;border-radius:50%;
-          display:flex;align-items:center;justify-content:center;
-          font-size:28px;box-shadow:0 20px 40px rgba(0,0,0,.3);
-          z-index:999">💬</a>
+<a class="whatsapp" href="https://wa.me/923214618847" target="_blank">💬</a>
 
-<!-- ================= ANIMATIONS + JS ================= -->
-<style>
-@keyframes floatHero {
-  0% {transform:translateY(0)}
-  50% {transform:translateY(-18px)}
-  100% {transform:translateY(0)}
-}
-</style>
-
-<script>
-function calculate(){
-  const c = Number(document.getElementById('collections').value || 0);
-  const r = Number(document.getElementById('ourRate').value || 0);
-  const fee = c * r / 100;
-  const savings = 50000 - fee;
-  document.getElementById('calcResult').innerHTML =
-    "Estimated Annual Savings: $" + savings.toLocaleString();
-}
-</script>
+</body>
+</html>
