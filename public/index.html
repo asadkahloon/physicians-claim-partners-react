@@ -169,11 +169,16 @@ footer a{color:#fff}
       .contact-grid{grid-template-columns:1fr}
       .stats{flex-direction:column}
     }/* SCROLL TEXT ANIMATION */
-/* reveal text immediately (temporary fix) */
+/* text hidden until .visible is added */
 section, h2, h3, p {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.45s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
 }
 }
 
@@ -628,6 +633,18 @@ document.querySelectorAll("section, h2, h3, p").forEach(el => {
   observer.observe(el);
 });
 </script>
+<script>
+  // add .visible to elements when they enter viewport
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
 
+  // watch major content blocks (sections, h2, paragraphs)
+  document.querySelectorAll('section, h2, h3, p').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
