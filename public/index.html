@@ -1,214 +1,492 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Physicians Claim Partners | Medical & Dental Billing</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Physicians Claim Partners — Targeted Medical & Dental Billing</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --blue:#0b8fd6;
-  --green:#2ec4a6;
-  --light:#eef8ff;
-  --dark:#081b2b;
-  --text:#1c2b36;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Montserrat,Arial;
-  color:var(--text);
-  background:white;
-  line-height:1.55;
-}
-h1,h2,h3{font-weight:800}
-section{padding:70px 7%}
+  <style>
+    :root{
+      --blue:#1ea7f2;
+      --light-blue:#e9f6ff;
+      --green:#7ed487;
+      --bg:#ffffff;
+      --text:#222;
+      --muted:#6b6b6b;
+      --accent:#0b8fd6;
+      --dark:#0b1f33;
+    }
 
-/* FLOATING */
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-14px)}
-  100%{transform:translateY(0)}
-}
-.float{animation:float 6s ease-in-out infinite}
+    *{box-sizing:border-box}
+    body{
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      margin:0;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55
+    }
 
-/* HEADER */
-header{
-  position:sticky;top:0;z-index:99;
-  background:white;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 7%;
-  box-shadow:0 6px 24px rgba(0,0,0,.06)
-}
-.brand{display:flex;align-items:center;gap:14px}
-nav a{margin-left:18px;font-weight:700;text-decoration:none;color:var(--blue)}
-.cta{background:var(--blue);color:white;padding:10px 16px;border-radius:8px}
+    a{text-decoration:none;color:inherit}
 
-/* HERO */
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
-.hero h1{font-size:48px;line-height:1.05}
-.hero p{font-size:18px;color:#516a7a}
+    /* ================= HEADER ================= */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 36px;
+      border-bottom:1px solid #eef3f7;
+      background:#fff;
+      position:sticky;
+      top:0;
+      z-index:50
+    }
 
-/* VISUAL BLOCKS */
-.visual{
-  width:100%;height:340px;border-radius:22px;
-  background:linear-gradient(135deg,var(--blue),var(--green));
-  display:flex;align-items:center;justify-content:center;
-  color:white;font-size:28px;font-weight:800;
-  box-shadow:0 30px 60px rgba(0,0,0,.18)
-}
+    .brand{display:flex;align-items:center;gap:14px}
 
-/* CARDS */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.card{
-  background:var(--light);
-  padding:28px;border-radius:20px;
-  box-shadow:0 14px 40px rgba(0,0,0,.06)
-}
-.card h3{margin-top:0}
+    /* STYLISH MONOGRAM */
+    .monogram{
+      width:64px;
+      height:64px;
+      border-radius:16px;
+      background:
+        linear-gradient(135deg,#1ea7f2,#7ed487);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:800;
+      font-size:22px;
+      letter-spacing:1px;
+      box-shadow:
+        0 10px 25px rgba(30,167,242,0.35),
+        inset 0 0 12px rgba(255,255,255,0.25);
+      animation:floatSlow 6s ease-in-out infinite;
+    }
 
-/* PROCESS */
-.process{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.step{
-  padding:34px;border-radius:24px;color:white;
-  font-size:18px;font-weight:700
-}
-.s1{background:#ff6b9a}
-.s2{background:#6b7cff}
-.s3{background:#2ec4ff}
+    .brand h1{margin:0;font-size:20px;font-weight:700}
 
-/* USA */
-.usa{
-  display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center
-}
-.map{
-  height:260px;border-radius:22px;
-  background:linear-gradient(135deg,#002868,#bf0a30);
-  color:white;display:flex;align-items:center;justify-content:center;
-  font-size:26px;font-weight:900
-}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{font-weight:600;color:#234}
+    .cta{
+      background:var(--blue);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:10px
+    }
 
-/* FOOTER */
-footer{
-  background:var(--dark);
-  color:#cfe6ff;
-  padding:60px 7%
-}
-.footer-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px
-}
-.social svg{width:28px;fill:#cfe6ff;margin-right:10px}
+    /* ================= FLOATING ANIMATIONS ================= */
+    @keyframes floatSlow{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+      100%{transform:translateY(0)}
+    }
 
-/* WHATSAPP */
-.whatsapp{
-  position:fixed;right:22px;bottom:22px;
-  width:60px;height:60px;border-radius:50%;
-  background:#25d366;color:white;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:900;font-size:20px;
-  box-shadow:0 18px 40px rgba(0,0,0,.3)
-}
+    @keyframes floatFast{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
+      100%{transform:translateY(0)}
+    }
 
-@media(max-width:900px){
-  .hero,.grid,.process,.usa,.footer-grid{grid-template-columns:1fr}
-}
-</style>
-</head>
+    img{
+      animation:floatSlow 7s ease-in-out infinite;
+    }
 
+    .service-card img,
+    .benefit img,
+    .review img{
+      animation:floatFast 5s ease-in-out infinite;
+    }
+
+    /* ================= HERO ================= */
+    .hero{
+      display:flex;
+      gap:30px;
+      align-items:center;
+      padding:52px 6%;
+      background:linear-gradient(180deg,#fbfeff,#ffffff)
+    }
+
+    .hero-left{flex:1}
+    .hero h2{
+      font-size:48px;
+      margin:0 0 14px;
+      font-weight:800;
+      line-height:1.1
+    }
+
+    .hero p{
+      font-size:18px;
+      color:var(--muted);
+      max-width:560px
+    }
+
+    .hero img{
+      width:420px;
+      height:380px;
+      border-radius:18px;
+      object-fit:cover;
+      box-shadow:0 18px 40px rgba(10,20,50,0.15)
+    }
+
+    section{padding:48px 6%}
+
+    /* ================= SERVICES ================= */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      margin-top:22px
+    }
+
+    .service-card{
+      background:var(--light-blue);
+      padding:20px;
+      border-radius:18px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      box-shadow:0 10px 25px rgba(10,20,50,0.08);
+      transition:transform .3s
+    }
+
+    .service-card:hover{transform:translateY(-8px)}
+
+    .service-card img{
+      width:100%;
+      height:220px;
+      border-radius:14px;
+      object-fit:cover
+    }
 <body>
 
 <header>
   <div class="brand">
-    <!-- STYLISH MONOGRAM -->
-    <svg width="62" height="62" viewBox="0 0 100 100">
-      <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#0b8fd6"/>
-          <stop offset="100%" stop-color="#2ec4a6"/>
-        </linearGradient>
-      </defs>
-      <rect width="100" height="100" rx="26" fill="url(#g)"/>
-      <text x="50%" y="62%" text-anchor="middle" font-size="38" fill="#fff" font-weight="800">PCP</text>
-    </svg>
+    <div class="monogram">PCP</div>
     <div>
-      <strong>Physicians Claim Partners</strong><br>
-      <small>Medical & Dental Revenue Recovery</small>
+      <h1>Physicians Claim Partners</h1>
+      <div style="font-size:13px;color:#6b6b6b">Medical & Dental Revenue Recovery</div>
     </div>
   </div>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Benefits</a>
-    <a href="#">Process</a>
-    <a href="#">Contact</a>
-    <a class="cta" href="#">Schedule Demo</a>
+    <a href="#hero">Home</a>
+    <a href="#services">Services</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#process">Our Process</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+    <a class="cta" href="#" onclick="openSchedule()">Schedule Demo</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div>
-    <h1>TARGETED BILLING<br>TO TURBOCHARGE REVENUE</h1>
-    <p>We engineer predictable cash flow for medical and dental practices using data-driven billing, aggressive AR recovery, and compliance-first processes.</p>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <h2>Targeted Billing to Turbocharge Your Revenue</h2>
+    <p>
+      We help medical and dental practices unlock their true earning potential.
+      Our precision-driven billing strategies reduce denials, accelerate payments,
+      and turn revenue into a predictable growth engine.
+    </p>
   </div>
 
-  <div class="visual float">
-    Revenue ↑ 40–50% in 6 Months
+  <img src="https://images.unsplash.com/photo-1580281657527-47dfe2c08e06?auto=format&fit=crop&w=1200&q=80" alt="Doctors working">
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div style="display:flex;gap:36px;align-items:center;flex-wrap:wrap">
+    <img class="img-float" src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80" alt="Healthcare billing">
+
+    <div>
+      <h2 style="font-size:36px;font-weight:800">
+        Why Practices Choose Us for Medical & Dental Billing
+      </h2>
+      <p style="color:#6b6b6b;max-width:620px">
+        Billing should never slow down patient care. Our expert-led revenue cycle
+        management ensures every eligible dollar is captured, every claim is followed,
+        and every account is actively optimized — without burdening your staff.
+      </p>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2>Why Choose Physicians Claim Partners</h2>
-  <div class="grid">
-    <div class="card float"><h3>HIPAA-First Operations</h3><p>Security and compliance are built into every workflow.</p></div>
-    <div class="card float"><h3>99% Clean Claims</h3><p>Cleaner submissions mean faster reimbursements.</p></div>
-    <div class="card float"><h3>24/7 AR Monitoring</h3><p>We chase every dollar relentlessly.</p></div>
+<!-- SERVICES -->
+<section id="services">
+  <h2 style="font-size:34px">Our Services</h2>
+  <p style="color:#6b6b6b;max-width:900px">
+    A complete revenue solution designed to support practices at every financial touchpoint.
+  </p>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267b2?auto=format&fit=crop&w=1200&q=80">
+      <h3>Medical Billing & Coding</h3>
+      <p>Accurate CPT/ICD coding, clean claim submission, and aggressive payer follow-up.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=80">
+      <h3>Dental Billing</h3>
+      <p>Specialized CDT coding, PPO handling, and maximum dental reimbursements.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1200&q=80">
+      <h3>AR & Denial Management</h3>
+      <p>Relentless appeals and payer engagement to recover lost revenue.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
+      <h3>Out-of-Network Negotiations</h3>
+      <p>Strategic negotiations to unlock higher reimbursements beyond network limits.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=1200&q=80">
+      <h3>Insurance Eligibility Verification</h3>
+      <p>Real-time eligibility checks that prevent denials before they happen.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80">
+      <h3>Auditing & DRG Review</h3>
+      <p>Compliance-focused audits ensuring accurate documentation and full reimbursement.</p>
+    </div>
+
   </div>
 </section>
 
-<section>
-  <h2>Our Proven Process</h2>
-  <div class="process">
-    <div class="step s1 float">01. Data Verification</div>
-    <div class="step s2 float">02. Billing & Coding</div>
-    <div class="step s3 float">03. AR & Optimization</div>
+<!-- BENEFITS -->
+<section id="benefits">
+  <h2 style="font-size:34px">Practice Benefits</h2>
+
+  <div class="benefits">
+
+    <div class="benefit">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80">
+      <div>
+        <h4>Boost Your Bottom Line</h4>
+        <p>Higher collections without increasing overhead.</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=400&q=80">
+      <div>
+        <h4>Focus on Patient Care</h4>
+        <p>We manage revenue so you manage outcomes.</p>
+      </div>
+    </div>
+
+    <div class="benefit">
+      <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=400&q=80">
+      <div>
+        <h4>Expertise On Demand</h4>
+        <p>Certified billing professionals at your fingertips.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section>
+<!-- USA COVERAGE -->
+<section id="pricing">
   <h2>Coast-to-Coast Coverage</h2>
-  <div class="usa">
-    <p>We serve practices across all 50 states with payer-specific expertise and regional compliance.</p>
-    <div class="map float">UNITED STATES • NATIONWIDE</div>
+  <p style="color:#6b6b6b">
+    Supporting practices across all 50 states with payer-specific expertise.
+  </p>
+
+  <div style="display:flex;gap:30px;flex-wrap:wrap;align-items:center">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg"
+         style="width:140px;border-radius:10px">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Blank_US_Map_%28states_only%29.png"
+         style="max-width:520px;border-radius:14px">
   </div>
 </section>
 
-<footer>
-  <div class="footer-grid">
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Let’s Talk</h2>
+  <p style="color:#6b6b6b">
+    Ready to increase collections? Tell us about your practice.
+  </p>
+
+  <form style="max-width:520px">
+    <input placeholder="Your Name" required>
+    <input placeholder="Email Address" required>
+    <textarea placeholder="How can we help?" rows="5"></textarea>
+    <button class="cta" type="submit">Send Message</button>
+  </form>
+    /* ================= FOOTER ================= */
+    footer{
+      background:var(--dark);
+      color:#dbe7f3;
+      padding:50px 6%;
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      flex-wrap:wrap
+    }
+
+    footer strong{color:#fff}
+
+    .socials{
+      display:flex;
+      gap:14px;
+      margin-top:10px
+    }
+
+    .socials a{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      background:#132f4c;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      transition:.3s
+    }
+
+    .socials a:hover{background:var(--blue)}
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:1000px){
+      .hero{flex-direction:column}
+      .hero img{width:100%;height:300px}
+      .services-grid{grid-template-columns:1fr}
+    }
+  </style><!-- FOOTER -->
+<footer style="background:#0f172a;color:#cbd5e1">
+  <div style="display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between">
+
     <div>
-      <strong>Physicians Claim Partners</strong>
-      <p>Revenue recovery built for modern healthcare.</p>
+      <div style="display:flex;align-items:center;gap:14px">
+        <div class="monogram">PCP</div>
+        <div>
+          <strong style="color:white">Physicians Claim Partners</strong><br>
+          <small>Medical & Dental Revenue Recovery</small>
+        </div>
+      </div>
+      <p style="margin-top:14px;font-size:14px">
+        Helping practices maximize revenue, reduce denials, and grow sustainably
+        through expert-driven billing solutions.
+      </p>
     </div>
 
     <div>
-      <strong>Contact</strong><br>
-      info@physiciansclaimpartners.com<br>
-      +92 321 4618847
+      <strong style="color:white">Services</strong>
+      <ul style="list-style:none;padding:0;margin-top:10px;font-size:14px">
+        <li>Medical Billing</li>
+        <li>Dental Billing</li>
+        <li>AR & Denial Management</li>
+        <li>Eligibility Verification</li>
+        <li>Out-of-Network Negotiations</li>
+      </ul>
     </div>
 
-    <div class="social">
-      <strong>Follow Us</strong><br><br>
-      <!-- Social icons -->
-      <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2V12h2V9.5c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.3V12h2.2l-.4 2.9h-1.8v7A10 10 0 0 0 22 12z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.5.6.3 1 .6 1.5 1.1.5.5.8.9 1.1 1.5.2.4.4 1.1.5 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.3-.3.6-.6 1-1.1 1.5-.5.5-.9.8-1.5 1.1-.4.2-1.1.4-2.3.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.5-.6-.3-1-.6-1.5-1.1-.5-.5-.8-.9-1.1-1.5-.2-.4-.4-1.1-.5-2.3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.3.3-.6.6-1 1.1-1.5.5-.5.9-.8 1.5-1.1.4-.2 1.1-.4 2.3-.5 1.3-.1 1.7-.1 4.9-.1z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 24h4.56V7.98H.22V24zM8.98 7.98h4.37v2.19h.06c.61-1.16 2.1-2.39 4.32-2.39 4.62 0 5.48 3.04 5.48 6.99V24h-4.56v-7.36c0-1.76-.03-4.02-2.45-4.02-2.45 0-2.82 1.91-2.82 3.89V24H8.98V7.98z"/></svg>
+    <div>
+      <strong style="color:white">Contact</strong>
+      <p style="font-size:14px;margin-top:10px">
+        WhatsApp: +92 321 461 8847<br>
+        Email: info@physiciansclaimpartners.com
+      </p>
     </div>
+
+    <div>
+      <strong style="color:white">Follow Us</strong>
+      <div style="display:flex;gap:12px;margin-top:10px">
+
+        <div style="width:42px;height:42px;border-radius:50%;background:#1877f2;
+                    display:flex;align-items:center;justify-content:center;
+                    color:white;font-weight:700">f</div>
+
+        <div style="width:42px;height:42px;border-radius:50%;
+                    background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);
+                    display:flex;align-items:center;justify-content:center;
+                    color:white;font-weight:700">IG</div>
+
+        <div style="width:42px;height:42px;border-radius:50%;background:#0a66c2;
+                    display:flex;align-items:center;justify-content:center;
+                    color:white;font-weight:700">in</div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:40px;border-top:1px solid #1e293b;padding-top:20px;
+              font-size:13px;text-align:center">
+    © 2026 Physicians Claim Partners. All rights reserved.
   </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/923214618847" target="_blank">WA</a>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/923214618847" target="_blank"
+   style="position:fixed;right:22px;bottom:22px;
+          width:60px;height:60px;border-radius:50%;
+          background:#25D366;color:white;
+          display:flex;align-items:center;justify-content:center;
+          font-weight:800;font-size:18px;
+          box-shadow:0 15px 30px rgba(37,211,102,.4);
+          z-index:999">
+  WA
+</a>
+
+<!-- SCHEDULE DEMO MODAL -->
+<div id="scheduleModal"
+     style="display:none;position:fixed;inset:0;
+            background:rgba(0,0,0,.6);
+            align-items:center;justify-content:center;z-index:9999">
+
+  <div style="background:white;padding:26px;border-radius:14px;width:90%;max-width:500px">
+    <h3>Schedule a Free Demo</h3>
+    <p style="color:#6b7280">Tell us when you'd like to connect.</p>
+
+    <input placeholder="Your Name" style="margin-top:10px">
+    <input placeholder="Email" style="margin-top:10px">
+    <input placeholder="Preferred Time" style="margin-top:10px">
+
+    <div style="display:flex;gap:10px;margin-top:14px">
+      <button class="cta" onclick="closeSchedule()">Submit</button>
+      <button onclick="closeSchedule()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Floating animation */
+document.querySelectorAll('img').forEach(img=>{
+  img.style.animation='floaty 6s ease-in-out infinite';
+});
+
+/* Review slider already present */
+
+/* Modal control */
+function openSchedule(){
+  document.getElementById('scheduleModal').style.display='flex';
+}
+function closeSchedule(){
+  document.getElementById('scheduleModal').style.display='none';
+}
+</script>
+
+<style>
+@keyframes floaty{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+  100%{transform:translateY(0)}
+}
+</style>
 
 </body>
 </html>
+</head>
