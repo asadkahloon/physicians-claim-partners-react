@@ -322,6 +322,58 @@ header.scrolled {
 @media(max-width:600px){
   .cert-grid{grid-template-columns:1fr}
   #stats-reviews{padding:36px 4%}
+}/* --- bigger certifications styling --- */
+.cert-grid-large{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:12px;
+}
+.cert-big{
+  background:#fff;
+  border-radius:12px;
+  padding:14px;
+  box-shadow:0 12px 30px rgba(10,20,50,0.06);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+  transition:transform .28s ease, box-shadow .28s ease;
+}
+.cert-big:hover{ transform:translateY(-10px); box-shadow:0 24px 50px rgba(10,20,50,0.09) }
+
+.cert-img-large{
+  width:100%;
+  height:200px;        /* BIGGER image height */
+  object-fit:cover;
+  border-radius:10px;
+  backface-visibility:hidden;
+  transform-style:preserve-3d;
+}
+
+/* body & text */
+.cert-body h4{margin:6px 0 0;font-size:18px}
+.cert-desc{color:var(--muted);font-size:14px;margin:8px 0 0}
+.cert-meta{display:block;color:var(--muted);font-size:12px;margin-top:6px}
+
+/* float animation */
+@keyframes floatSlow {
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+  100%{transform:translateY(0)}
+}
+.float-img{animation:floatSlow 6s ease-in-out infinite}
+
+/* safe flip effect on hover */
+.cert-img-large:hover{ transform:translateY(-6px) rotateY(180deg) }
+
+/* responsive */
+@media(max-width:1100px){
+  .cert-grid-large{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .cert-grid-large{grid-template-columns:1fr}
+  .cert-img-large{height:180px}
 }
   </style>
 </head>
@@ -516,40 +568,57 @@ header.scrolled {
       <h3 style="margin-top:28px;font-size:20px">Certifications & Partnerships</h3>
       <p style="color:var(--muted);margin-bottom:12px">Trusted, audited, and certified — we follow verified standards and work with recognized partners.</p>
 
-      <div class="cert-grid">
-        <figure class="cert">
-          <img class="cert-img float-img" src="https://images.unsplash.com/photo-1581092580496-2a5c0f3c714f?q=80&w=800&auto=format&fit=crop" alt="SOC 2 Certified">
-          <figcaption>
-            <strong>SOC 2 Type II</strong>
-            <div class="cert-text">Independent audit confirming our security & availability controls.</div>
-          </figcaption>
-        </figure>
+    <!-- CERTIFICATIONS - REPLACE EXISTING cert-grid BLOCK WITH THIS -->
+<h3 style="margin-top:28px;font-size:22px">Certifications & Partnerships</h3>
+<p style="color:var(--muted);margin-bottom:12px">
+  Trusted, audited, and certified — we follow verified standards and work with recognized partners.
+</p>
 
-        <figure class="cert">
-          <img class="cert-img float-img" src="https://images.unsplash.com/photo-1529243856184-fd5465488981?q=80&w=800&auto=format&fit=crop" alt="HIPAA Compliant">
-          <figcaption>
-            <strong>HIPAA Compliant</strong>
-            <div class="cert-text">Policies & technical safeguards for protected health information (PHI).</div>
-          </figcaption>
-        </figure>
-
-        <figure class="cert">
-          <img class="cert-img float-img" src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?q=80&w=800&auto=format&fit=crop" alt="PCI DSS">
-          <figcaption>
-            <strong>PCI DSS Ready</strong>
-            <div class="cert-text">Secure payment processing practices and PCI-aware workflows for patient payments.</div>
-          </figcaption>
-        </figure>
-
-        <figure class="cert">
-          <img class="cert-img float-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Partner Networks">
-          <figcaption>
-            <strong>Clearinghouse Partners</strong>
-            <div class="cert-text">Direct integrations with major clearinghouses for faster submissions & rejections handling.</div>
-          </figcaption>
-        </figure>
-      </div>
+<div class="cert-grid-large">
+  <article class="cert-big">
+    <img class="cert-img-large float-img" 
+         src="images/soc2.jpg" 
+         alt="SOC 2 Type II audit">
+    <div class="cert-body">
+      <h4>SOC 2 — Type II</h4>
+      <p class="cert-desc">Independent audit confirming our security, availability and processing controls. Annual third-party audit; continuous monitoring.</p>
+      <small class="cert-meta">Report available upon request • ISO-aligned controls</small>
     </div>
+  </article>
+
+  <article class="cert-big">
+    <img class="cert-img-large float-img" 
+         src="images/hipaa.jpg" 
+         alt="HIPAA compliance">
+    <div class="cert-body">
+      <h4>HIPAA Compliant</h4>
+      <p class="cert-desc">Administrative, physical and technical safeguards for protected health information (PHI). Employee training and signed BAA with vendors.</p>
+      <small class="cert-meta">Encrypted storage • Access logging</small>
+    </div>
+  </article>
+
+  <article class="cert-big">
+    <img class="cert-img-large float-img" 
+         src="images/pci.jpg" 
+         alt="PCI-ready payments">
+    <div class="cert-body">
+      <h4>PCI & Payment Security</h4>
+      <p class="cert-desc">Payment handling policies and secure gateways that reduce risk for patient payments and refunds. Tokenization-ready solutions.</p>
+      <small class="cert-meta">Tokenization • Secure receipts</small>
+    </div>
+  </article>
+
+  <article class="cert-big">
+    <img class="cert-img-large float-img" 
+         src="images/clearinghouse.jpg" 
+         alt="Clearinghouse partners">
+    <div class="cert-body">
+      <h4>Clearinghouse Partners</h4>
+      <p class="cert-desc">Direct integrations with major clearinghouses to speed submissions and reduce rejections — faster EDI routing and automated remittance handling.</p>
+      <small class="cert-meta">Direct EDI • 835/834 support</small>
+    </div>
+  </article>
+</div>
 
     <!-- REVIEWS column (keeps your reviews) -->
     <div style="width:460px;min-width:320px;">
