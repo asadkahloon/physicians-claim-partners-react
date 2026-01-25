@@ -265,6 +265,63 @@ header.scrolled {
 @media(max-width:1000px){
   .benefits{grid-template-columns:1fr;gap:18px}
   .benefit{min-height:auto}
+}/* ---- BIG STATS & CERTIFICATIONS styling ---- */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-bottom:18px;
+}
+.stat-card{
+  background:linear-gradient(180deg,#ffffff,#fbfeff);
+  padding:22px;border-radius:14px;
+  box-shadow:0 10px 28px rgba(10,20,50,0.05);
+  min-height:140px;
+  display:flex;flex-direction:column;gap:6px;align-items:flex-start;
+}
+.stat-num{font-size:44px;font-weight:900;color:var(--blue);line-height:1}
+.stat-suffix{font-size:22px;margin-left:4px}
+.stat-label{font-weight:700;margin-top:6px}
+.stat-desc{color:var(--muted);font-size:14px;margin-top:6px}
+
+/* Certifications grid */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:12px;
+}
+.cert{
+  background:#fff;border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center;
+  box-shadow:0 8px 20px rgba(10,20,50,0.04);
+  transition:transform .28s ease, box-shadow .28s ease;
+}
+.cert:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(10,20,50,0.08)}
+.cert-img{width:100%;height:100px;object-fit:cover;border-radius:8px;backface-visibility:hidden;transform-style:preserve-3d}
+
+/* float animation and flip on hover */
+@keyframes floatSlow {
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+.float-img{animation:floatSlow 6s ease-in-out infinite}
+
+/* flip on hover (safe approach) */
+.cert-img:hover{transform:translateY(-6px) rotateY(180deg)}
+
+/* certification caption */
+.cert figcaption strong{display:block;font-weight:800;margin-bottom:6px}
+.cert .cert-text{color:var(--muted);font-size:13px}
+
+/* Responsive adjustments */
+@media(max-width:1100px){
+  .stats-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .cert-grid{grid-template-columns:1fr}
+  #stats-reviews{padding:36px 4%}
 }
   </style>
 </head>
@@ -424,26 +481,78 @@ header.scrolled {
   </div>
 </section>
 <!-- STATS & REVIEWS -->
-<section>
-  <div style="display:flex;gap:20px;align-items:center;">
-    <div style="flex:1;">
-      <div class="stats">
-        <div class="stat">
-          <h3>100%</h3><p>HIPAA Compliance</p>
+<section id="stats-reviews" style="padding:54px 6%;">
+  <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;">
+    <!-- BIG STATS & CERTIFICATIONS column -->
+    <div style="flex:1;min-width:320px;">
+      <!-- Big stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">100<span class="stat-suffix">%</span></div>
+          <div class="stat-label">HIPAA Compliance</div>
+          <div class="stat-desc">All processes follow strict HIPAA security standards, encrypted data storage and access logging.</div>
         </div>
-        <div class="stat">
-          <h3>98%</h3><p>Clean Claims</p>
+
+        <div class="stat-card">
+          <div class="stat-num">98<span class="stat-suffix">%</span></div>
+          <div class="stat-label">Clean Claims</div>
+          <div class="stat-desc">High accuracy and proactive edits lead to an industry-leading clean-claim percentage.</div>
         </div>
-        <div class="stat">
-          <h3>24/7</h3><p>Support</p>
+
+        <div class="stat-card">
+          <div class="stat-num">24<span class="stat-suffix">/7</span></div>
+          <div class="stat-label">Support</div>
+          <div class="stat-desc">Around-the-clock support for practices and patients (tiered SLA options available).</div>
         </div>
-        <div class="stat">
-          <h3>40–50%</h3><p>Increase in collections (in 6 months)</p>
+
+        <div class="stat-card">
+          <div class="stat-num">40–50<span class="stat-suffix">%</span></div>
+          <div class="stat-label">Increase in collections</div>
+          <div class="stat-desc">Typical lift in net collections within the first 6 months of engagement for many clients.</div>
         </div>
+      </div>
+
+      <!-- Certifications row (new) -->
+      <h3 style="margin-top:28px;font-size:20px">Certifications & Partnerships</h3>
+      <p style="color:var(--muted);margin-bottom:12px">Trusted, audited, and certified — we follow verified standards and work with recognized partners.</p>
+
+      <div class="cert-grid">
+        <figure class="cert">
+          <img class="cert-img float-img" src="https://images.unsplash.com/photo-1581092580496-2a5c0f3c714f?q=80&w=800&auto=format&fit=crop" alt="SOC 2 Certified">
+          <figcaption>
+            <strong>SOC 2 Type II</strong>
+            <div class="cert-text">Independent audit confirming our security & availability controls.</div>
+          </figcaption>
+        </figure>
+
+        <figure class="cert">
+          <img class="cert-img float-img" src="https://images.unsplash.com/photo-1529243856184-fd5465488981?q=80&w=800&auto=format&fit=crop" alt="HIPAA Compliant">
+          <figcaption>
+            <strong>HIPAA Compliant</strong>
+            <div class="cert-text">Policies & technical safeguards for protected health information (PHI).</div>
+          </figcaption>
+        </figure>
+
+        <figure class="cert">
+          <img class="cert-img float-img" src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?q=80&w=800&auto=format&fit=crop" alt="PCI DSS">
+          <figcaption>
+            <strong>PCI DSS Ready</strong>
+            <div class="cert-text">Secure payment processing practices and PCI-aware workflows for patient payments.</div>
+          </figcaption>
+        </figure>
+
+        <figure class="cert">
+          <img class="cert-img float-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Partner Networks">
+          <figcaption>
+            <strong>Clearinghouse Partners</strong>
+            <div class="cert-text">Direct integrations with major clearinghouses for faster submissions & rejections handling.</div>
+          </figcaption>
+        </figure>
       </div>
     </div>
 
-    <div style="width:420px;">
+    <!-- REVIEWS column (keeps your reviews) -->
+    <div style="width:460px;min-width:320px;">
       <h3 style="margin-top:0">What doctors say</h3>
       <div class="reviews" id="reviews">
         <div class="review">
@@ -464,14 +573,14 @@ header.scrolled {
           <p style="color:var(--muted)">“Saved us time and recovered a large appeal.”</p>
         </div>
       </div>
-      <div style="margin-top:10px;">
+
+      <div style="margin-top:10px;display:flex;gap:8px">
         <button class="btn" onclick="prevReview()">‹</button>
         <button class="btn" onclick="nextReview()">›</button>
       </div>
     </div>
   </div>
 </section>
-
 <!-- OUR PROCESS -->
 <section id="process">
   <h2 style="font-size:32px">Our Process</h2>
@@ -764,6 +873,14 @@ document.querySelectorAll("section, h2, h3, p").forEach(el => {
       btn.textContent = isOpen ? 'Read more' : 'Show less';
     });
   });
+</script><script>
+  // ensure float animations reflow nicely (no-op but safe)
+  document.querySelectorAll('.float-img').forEach(img=>{
+    img.style.willChange = 'transform';
+  });
+
+  // keep review carousel working if your existing functions exist
+  if(typeof showReviews === 'function') showReviews();
 </script>
 </body>
 </html>
