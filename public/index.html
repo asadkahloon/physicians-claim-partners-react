@@ -47,7 +47,36 @@
 .float-img:hover{
   transform:rotateY(180deg);
 }
-</style>
+</style>/* ===== IMAGE FIX (NO MORE CORRUPTION) ===== */
+.coding-image{
+  width:100%;
+  height:280px;
+  border-radius:18px;
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+  animation:floatSlow 6s ease-in-out infinite;
+}
+
+/* Specific images */
+.icd-img{
+  background-image:url("https://images.unsplash.com/photo-1580281657521-6b38c2d2c6a8?q=80&w=1600");
+}
+
+.cpt-img{
+  background-image:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600");
+}
+
+.cdt-img{
+  background-image:url("https://images.unsplash.com/photo-1606813902914-5f39a1f92e86?q=80&w=1600");
+}
+
+/* Float animation */
+@keyframes floatSlow{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
   <style>
     :root{
       --blue:#1ea7f2;
@@ -849,8 +878,7 @@ document.querySelectorAll('.float-img').forEach(img => img.style.willChange = 't
   <div class="big-grid">
 
     <div class="big-card">
-     <img class="float-img" 
-src="https://images.unsplash.com/photo-1580281657521-6b38c2d2c6a8?q=80&w=1400&auto=format&fit=crop" 
+     <div class="coding-image icd-img"></div>https://images.unsplash.com/photo-1580281657521-6b38c2d2c6a8?q=80&w=1400&auto=format&fit=crop" 
 alt="ICD Coding">
       <h3>ICD-10 & ICD-11</h3>
       <p>
@@ -860,8 +888,7 @@ alt="ICD Coding">
     </div>
 
     <div class="big-card">
-      <img class="float-img" 
-src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400&auto=format&fit=crop" 
+      <div class="coding-image cpt-img"></div>https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400&auto=format&fit=crop" 
 alt="CPT Coding">
       <h3>Real CPT Pairing</h3>
       <p>
@@ -871,8 +898,7 @@ alt="CPT Coding">
     </div>
 
     <div class="big-card">
-      <img class="float-img" 
-src="https://images.unsplash.com/photo-1606813902914-5f39a1f92e86?q=80&w=1400&auto=format&fit=crop" 
+     <div class="coding-image icd-img"></div>https://images.unsplash.com/photo-1606813902914-5f39a1f92e86?q=80&w=1400&auto=format&fit=crop" 
 alt="Dental Coding">
       <h3>CDT (Dental Coding)</h3>
       <p>
