@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Insurance Eligibility Verification | Physicians Claim Partners</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f5f7fa;
+  color:#1f2933;
+}
+
+/* LAYOUT */
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0f2f44,#1e6091);
+  color:#ffffff;
+  padding:90px 0;
+  position:relative;
+  overflow:hidden;
+}
+.hero h1{
+  font-size:44px;
+  margin-bottom:15px;
+}
+.hero p{
+  font-size:18px;
+  max-width:850px;
+  line-height:1.6;
+}
+
+/* FLOATING IMAGES */
+.float-img{
+  position:absolute;
+  width:260px;
+  border-radius:18px;
+  box-shadow:0 30px 60px rgba(0,0,0,.25);
+  animation:float 9s ease-in-out infinite;
+}
+.img1{ top:18%; right:6%; }
+.img2{ bottom:18%; right:22%; animation-delay:2s; }
+
+@keyframes float{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-22px); }
+  100%{ transform:translateY(0); }
+}
+
+/* SECTIONS */
+.section{
+  padding:80px 0;
+}
+.section h2{
+  font-size:34px;
+  margin-bottom:20px;
+}
+.section p{
+  font-size:16px;
+  line-height:1.8;
+  max-width:900px;
+}
+
+/* HIGHLIGHT */
+.highlight{
+  background:#eef3f9;
+  border-left:6px solid #1e6091;
+  padding:25px;
+  border-radius:12px;
+  margin:35px 0;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+.card{
+  background:#ffffff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 18px 40px rgba(0,0,0,.08);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-10px);
+}
+.card h3{
+  margin-bottom:10px;
+}
+
+/* CTA */
+.cta{
+  background:#0f2f44;
+  color:#fff;
+  text-align:center;
+  padding:80px 20px;
+}
+.cta a{
+  display:inline-block;
+  margin-top:25px;
+  background:#ffffff;
+  color:#0f2f44;
+  padding:14px 34px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <h1>Insurance Eligibility Verification</h1>
+    <p>
+      Accurate, real-time insurance eligibility verification to prevent denials,
+      reduce patient balance surprises, and ensure services are reimbursed correctly
+      before care is delivered.
+    </p>
+  </div>
+
+  <!-- FLOATING VISUALS -->
+  <img class="float-img img1"
+       src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=800&q=80">
+  <img class="float-img img2"
+       src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
+</div>
+
+<!-- WHY IT MATTERS -->
+<div class="section container">
+  <h2>Why Eligibility Verification Is Critical</h2>
+  <p>
+    Eligibility errors remain one of the leading causes of claim denials in the United States.
+    Verifying insurance coverage prior to services protects providers from avoidable write-offs
+    and improves patient financial transparency.
+  </p>
+
+  <div class="highlight">
+    <strong>Industry Research:</strong><br>
+    According to CAQH and MGMA data, <strong>over 25% of claim denials</strong>
+    are directly linked to eligibility and coverage verification errors.
+  </div>
+</div>
+
+<!-- OUR PROCESS -->
+<div class="section container">
+  <h2>Our Verification Process</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Real-Time Eligibility Checks</h3>
+      <p>
+        We verify coverage directly through payer portals, clearinghouses,
+        and real-time eligibility systems prior to the date of service.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Benefits & Limitations Review</h3>
+      <p>
+        Coverage details include active policy status, deductible balances,
+        co-payments, co-insurance, exclusions, and benefit limitations.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Authorization Requirements</h3>
+      <p>
+        We identify prior authorization and referral requirements
+        to prevent medical necessity and technical denials.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Patient Responsibility Estimation</h3>
+      <p>
+        Estimated patient responsibility is calculated
+        to support transparent financial discussions before treatment.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- DATA BACKED RESULTS -->
+<div class="section container">
+  <h2>Data-Backed Results</h2>
+  <p>
+    Practices that implement structured eligibility verification
+    experience immediate financial and operational improvements.
+  </p>
+
+  <div class="highlight">
+    • Reduction in eligibility-related denials: <strong>30–55%</strong><br>
+    • Faster claim adjudication cycles<br>
+    • Improved patient satisfaction and payment compliance<br>
+    • Reduced front-desk administrative burden
+  </div>
+</div>
+
+<!-- WHO WE SUPPORT -->
+<div class="section container">
+  <h2>Who We Support</h2>
+  <p>
+    • Medical and dental practices of all sizes<br>
+    • Surgical centers and hospital-based providers<br>
+    • Multi-specialty and multi-state organizations<br>
+    • Practices managing high deductible plans and complex payer mixes
+  </p>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>Eliminate Preventable Denials</h2>
+  <p>Let us verify coverage before it becomes a revenue problem.</p>
+  <a href="contact.html">Schedule a Consultation</a>
+</div>
+
+</body>
+</html>
