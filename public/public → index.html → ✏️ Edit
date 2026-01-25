@@ -1,109 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Physicians Claim Partners</title>
+  <meta charset="UTF-8" />
+  <title>Physicians Claim Partners | Medical Billing & RCM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- CONTROL+F: STYLE START -->
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#f9fbfd;
-      color:#222;
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f8fb;
+      color: #1f2937;
+      overflow-x: hidden;
     }
 
-    .section{
-      padding:80px 6%;
+    /* HERO */
+    .hero {
+      height: 95vh;
+      background: linear-gradient(
+        rgba(0, 74, 173, 0.85),
+        rgba(0, 74, 173, 0.85)
+      ),
+      url("https://images.unsplash.com/photo-1580281657527-47f249e8f36b") center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+      animation: fadeIn 1.5s ease;
     }
 
-    h2{
-      font-size:36px;
-      margin-bottom:10px;
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
     }
 
-    p{
-      font-size:16px;
-      line-height:1.6;
+    .hero p {
+      font-size: 20px;
+      max-width: 900px;
+      margin: auto;
+      margin-bottom: 30px;
     }
 
-    /* IMAGE BLOCKS */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-      gap:40px;
-      margin-top:50px;
+    .btn {
+      background: #00d1b2;
+      color: #003366;
+      padding: 16px 36px;
+      font-size: 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
     }
 
-    .card{
-      background:#fff;
-      border-radius:20px;
-      padding:30px;
-      box-shadow:0 20px 40px rgba(0,0,0,.08);
-      transition:.4s;
+    .btn:hover {
+      background: #ffffff;
+      transform: translateY(-3px);
     }
 
-    .card:hover{
-      transform:translateY(-8px) rotateY(6deg);
+    section {
+      padding: 90px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .img-box{
-      height:260px;
-      border-radius:18px;
-      background-size:cover;
-      background-position:center;
-      margin-bottom:20px;
-      animation: float 6s ease-in-out infinite;
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 60px;
+      color: #004aad;
     }
 
-    @keyframes float{
-      0%{transform:translateY(0)}
-      50%{transform:translateY(-12px)}
-      100%{transform:translateY(0)}
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      animation: slideUp 1s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+    }
+
+    .card img {
+      width: 70px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #003366;
+    }
+
+    /* WHY US */
+    .why {
+      background: linear-gradient(135deg, #eef4ff, #f9fbff);
+      border-radius: 30px;
+      padding: 70px 30px;
+    }
+
+    .why ul {
+      list-style: none;
+      padding: 0;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .why li {
+      background: white;
+      padding: 20px;
+      margin-bottom: 18px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+      animation: fadeIn 1.2s ease;
+    }
+
+    /* LEADERS */
+    .leaders {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .leader {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+
+    .leader:hover {
+      transform: translateY(-10px);
+    }
+
+    .leader img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #004aad, #00b3a4);
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    footer {
+      background: #0b1c33;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
-  <!-- CONTROL+F: STYLE END -->
 </head>
-</body><!-- CONTROL+F: CODING SECTION -->
-<section class="section" id="coding">
 
-  <h2>ICD-10 / ICD-11 / CPT / CDT Coding Expertise</h2>
-  <p>
-    We support multi-specialty practices with accurate diagnosis-procedure pairing
-    using current ICD-10, ICD-11, CPT and CDT standards.
-  </p>
+<body>
 
-  <div class="grid">
-
-    <div class="card">
-      <div class="img-box" style="background-image:url('https://images.unsplash.com/photo-1580281657521-6b38c2d2c6a8?auto=format&fit=crop&w=1200');"></div>
-      <h3>ICD-10 & ICD-11</h3>
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h1>Physician-Led Medical & Dental Billing</h1>
       <p>
-        Coding aligned with CMS, WHO and payer-specific rules.
-        Covers internal medicine, psychiatry, surgery and multi-specialty practices.
+        Physicians Claim Partners helps healthcare providers increase revenue,
+        reduce denials, and stay compliant through expert billing and RCM services.
       </p>
+      <a href="#" class="btn">Request Free Consultation</a>
     </div>
-
-    <div class="card">
-      <div class="img-box" style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200');"></div>
-      <h3>Real CPT Pairing</h3>
-      <p>
-        Accurate E/M leveling, surgical coding and modifier usage based on documentation.
-        Prevents under-coding and denials.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="img-box" style="background-image:url('https://images.unsplash.com/photo-1606813902914-5f39a1f92e86?auto=format&fit=crop&w=1200');"></div>
-      <h3>CDT (Dental Coding)</h3>
-      <p>
-        Correct CDT usage, PPO fee schedules and narrative-based submissions
-        to maximize dental reimbursements.
-      </p>
-    </div>
-
   </div>
-</section>
-<!-- CONTROL+F: CODING SECTION END -->
+
+  <!-- SERVICES -->
+  <section>
+    <h2>Our Core Services</h2>
+    <div class="services">
+      <div class="card">
+        <img src="https://img.icons8.com/color/96/medical-doctor.png"/>
+        <h3>Medical Billing</h3>
+        <p>Accurate CPT & ICD-10 coding with clean claims and fast reimbursement.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/color/96/tooth.png"/>
+        <h3>Dental Billing</h3>
+        <p>Expert CDT billing, insurance follow-ups, and payment posting.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/color/96/combo-chart.png"/>
+        <h3>RCM Services</h3>
+        <p>End-to-end revenue cycle management for maximum collections.</p>
+      </div>
+      <div class="card">
+        <img src="https://img.icons8.com/color/96/approval.png"/>
+        <h3>Denial Management</h3>
+        <p>Advanced denial analysis and aggressive appeals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why">
+    <h2>Why Physicians Choose Us</h2>
+    <ul>
+      <li>Physician-led leadership with real clinical understanding</li>
+      <li>HIPAA-conscious workflows and US healthcare standards</li>
+      <li>Reduced denials and improved cash flow</li>
+      <li>Transparent reporting and dedicated account managers</li>
+    </ul>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section>
+    <h2>Leadership</h2>
+    <div class="leaders">
+      <div class="leader">
+        <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464"/>
+        <h3>Dr. Rasa Tharp, MD</h3>
+        <p>Co-CEO</p>
+      </div>
+      <div class="leader">
+        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54"/>
+        <h3>Dr. M Asad Mumtaz</h3>
+        <p>Co-CEO</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Ready to Increase Your Revenue?</h2>
+    <p>Schedule a free consultation with our billing experts today.</p>
+    <a href="#" class="btn">Contact Us</a>
+  </div>
+
+  <footer>
+    © 2026 Physicians Claim Partners — Medical & Dental Billing Services
+  </footer>
 </body>
 </html>
