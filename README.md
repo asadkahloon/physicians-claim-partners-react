@@ -5,7 +5,7 @@ led by physician executives.
 
 ## Leadership
 - Dr. Rasa Tharp, MD – Co-CEO
-- Dr. M Asad Mumtaz – Co-CEO
+- Dr. M Asad Mumtaz – Co-CEO joint
 
 ## Services
 - Medical Billing
