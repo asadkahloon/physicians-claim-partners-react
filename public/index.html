@@ -298,7 +298,49 @@ header.scrolled {
 }
 .cert:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(10,20,50,0.08)}
 .cert-img{width:100%;height:100px;object-fit:cover;border-radius:8px;backface-visibility:hidden;transform-style:preserve-3d}
+.certifications-big {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
 
+.cert-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+.cert-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #0f3d57;
+}
+
+.cert-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.cert-card ul {
+  padding-left: 18px;
+}
+
+.cert-card ul li {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .certifications-big {
+    grid-template-columns: 1fr;
+  }
+}
 /* float animation and flip on hover */
 @keyframes floatSlow {
   0%{transform:translateY(0)}
@@ -569,57 +611,65 @@ header.scrolled {
       <p style="color:var(--muted);margin-bottom:12px">Trusted, audited, and certified — we follow verified standards and work with recognized partners.</p>
 
     <!-- CERTIFICATIONS - REPLACE EXISTING cert-grid BLOCK WITH THIS -->
-<h3 style="margin-top:28px;font-size:22px">Certifications & Partnerships</h3>
-<p style="color:var(--muted);margin-bottom:12px">
-  Trusted, audited, and certified — we follow verified standards and work with recognized partners.
-</p>
+<div class="certifications-big">
 
-<div class="cert-grid-large">
-  <article class="cert-big">
-    <img class="cert-img-large float-img" 
-         src="images/soc2.jpg" 
-         alt="SOC 2 Type II audit">
-    <div class="cert-body">
-      <h4>SOC 2 — Type II</h4>
-      <p class="cert-desc">Independent audit confirming our security, availability and processing controls. Annual third-party audit; continuous monitoring.</p>
-      <small class="cert-meta">Report available upon request • ISO-aligned controls</small>
-    </div>
-  </article>
+  <div class="cert-card">
+    <h3>SOC 2 Type II Certified</h3>
+    <p>
+      Our operations undergo an independent SOC 2 Type II audit to validate
+      security, availability, and data handling controls over an extended period.
+    </p>
+    <ul>
+      <li>✔ Continuous monitoring of systems and access controls</li>
+      <li>✔ Verified safeguards for billing data and PHI</li>
+      <li>✔ Proven operational reliability for medical practices</li>
+      <li>✔ Annual third-party audit compliance</li>
+    </ul>
+  </div>
 
-  <article class="cert-big">
-    <img class="cert-img-large float-img" 
-         src="images/hipaa.jpg" 
-         alt="HIPAA compliance">
-    <div class="cert-body">
-      <h4>HIPAA Compliant</h4>
-      <p class="cert-desc">Administrative, physical and technical safeguards for protected health information (PHI). Employee training and signed BAA with vendors.</p>
-      <small class="cert-meta">Encrypted storage • Access logging</small>
-    </div>
-  </article>
+  <div class="cert-card">
+    <h3>HIPAA Compliant Operations</h3>
+    <p>
+      We strictly follow HIPAA regulations to protect patient health information
+      across all billing, coding, and revenue cycle workflows.
+    </p>
+    <ul>
+      <li>✔ Administrative, technical, and physical safeguards</li>
+      <li>✔ Encrypted access to patient and claims data</li>
+      <li>✔ Role-based system permissions</li>
+      <li>✔ Staff trained on HIPAA privacy & security rules</li>
+    </ul>
+  </div>
 
-  <article class="cert-big">
-    <img class="cert-img-large float-img" 
-         src="images/pci.jpg" 
-         alt="PCI-ready payments">
-    <div class="cert-body">
-      <h4>PCI & Payment Security</h4>
-      <p class="cert-desc">Payment handling policies and secure gateways that reduce risk for patient payments and refunds. Tokenization-ready solutions.</p>
-      <small class="cert-meta">Tokenization • Secure receipts</small>
-    </div>
-  </article>
+  <div class="cert-card">
+    <h3>PCI-DSS Ready Payment Handling</h3>
+    <p>
+      Our billing processes follow PCI-DSS aligned practices for handling
+      patient payments, refunds, and financial data securely.
+    </p>
+    <ul>
+      <li>✔ Secure payment workflows</li>
+      <li>✔ Reduced risk of payment data exposure</li>
+      <li>✔ Compliance-aware billing systems</li>
+      <li>✔ Trusted handling of patient financial information</li>
+    </ul>
+  </div>
 
-  <article class="cert-big">
-    <img class="cert-img-large float-img" 
-         src="images/clearinghouse.jpg" 
-         alt="Clearinghouse partners">
-    <div class="cert-body">
-      <h4>Clearinghouse Partners</h4>
-      <p class="cert-desc">Direct integrations with major clearinghouses to speed submissions and reduce rejections — faster EDI routing and automated remittance handling.</p>
-      <small class="cert-meta">Direct EDI • 835/834 support</small>
-    </div>
-  </article>
+  <div class="cert-card">
+    <h3>Clearinghouse Integrations</h3>
+    <p>
+      We work directly with leading medical and dental clearinghouses to ensure
+      faster claim submissions and reduced rejection rates.
+    </p>
+    <ul>
+      <li>✔ Direct EDI claim submission</li>
+      <li>✔ Faster payer acknowledgements</li>
+      <li>✔ Improved first-pass claim acceptance</li>
+      <li>✔ Streamlined denial and rejection handling</li>
+    </ul>
+  </div>
+
 </div>
-
     <!-- REVIEWS column (keeps your reviews) -->
     <div style="width:460px;min-width:320px;">
       <h3 style="margin-top:0">What doctors say</h3>
