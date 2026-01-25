@@ -1001,5 +1001,287 @@ document.querySelectorAll("section, h2, h3, p").forEach(el => {
   // keep review carousel working if your existing functions exist
   if(typeof showReviews === 'function') showReviews();
 </script>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physicians Claim Partners</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#1ea7f2;
+  --dark:#0b2b40;
+  --light:#f4fbff;
+  --green:#33c58d;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Poppins,Arial,sans-serif;
+  background:#fff;
+  color:#222;
+}
+
+/* ================= FLOAT + FLIP ================= */
+@keyframes floatSlow{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+  100%{transform:translateY(0)}
+}
+
+img{
+  animation:floatSlow 6s ease-in-out infinite;
+  transition:transform .9s ease, box-shadow .5s ease;
+  backface-visibility:hidden;
+}
+
+img:hover{
+  transform:rotateY(180deg) scale(1.05);
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+/* ================= SECTIONS ================= */
+section{
+  padding:70px 6%;
+}
+
+h2{
+  font-size:42px;
+  margin-bottom:12px;
+  color:var(--dark);
+}
+
+p{
+  color:#555;
+  max-width:900px;
+}
+
+/* ================= HERO ================= */
+.hero{
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+
+.hero img{
+  width:420px;
+  border-radius:18px;
+}
+
+/* ================= CODING SECTIONS ================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.card{
+  background:var(--light);
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.06);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  border-radius:14px;
+  margin-bottom:15px;
+}
+
+/* ================= TABLE ================= */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:25px;
+  background:#fff;
+}
+
+th,td{
+  padding:14px;
+  border:1px solid #e3eef6;
+  text-align:left;
+}
+
+th{
+  background:var(--blue);
+  color:#fff;
+}
+
+/* ================= CERTS ================= */
+.certs{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.cert{
+  background:#fff;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.07);
+}
+
+.cert img{
+  width:120px;
+  margin-bottom:12px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#081f2f;
+  color:#fff;
+  padding:50px 6%;
+}
+
+.socials a{
+  color:#fff;
+  margin-right:15px;
+  font-weight:700;
+  font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div>
+    <h2>Medical & Dental Coding Excellence</h2>
+    <p>ICD-10, ICD-11 & CPT driven virtual billing solutions built on compliance, accuracy, and revenue performance.</p>
+  </div>
+  <img src="https://images.unsplash.com/photo-1580281657521-4c9d2d7b37b0?w=1200">
+</section>
+
+<!-- ================= ICD 10 / 11 ================= -->
+<section>
+<h2>ICD-10 & ICD-11 — Multi-Specialty</h2>
+
+<div class="grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200">
+    <h3>ICD-10 Examples</h3>
+    <ul>
+      <li>E11.9 — Type 2 Diabetes Mellitus</li>
+      <li>I10 — Essential Hypertension</li>
+      <li>F32.9 — Major Depressive Disorder</li>
+      <li>J45.909 — Asthma</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1600959907703-125ba1374a12?w=1200">
+    <h3>ICD-11 Examples</h3>
+    <ul>
+      <li>5A11 — Type 2 Diabetes</li>
+      <li>HA60 — Hypertensive Disorder</li>
+      <li>6A70 — Depressive Episode</li>
+      <li>CA23 — Asthma</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ================= CPT ================= -->
+<section>
+<h2>Real CPT Codes (Multi-Specialty)</h2>
+
+<table>
+<tr>
+<th>Specialty</th>
+<th>CPT</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Office Visit</td>
+<td>99213</td>
+<td>Established patient E/M</td>
+</tr>
+<tr>
+<td>Psychiatry</td>
+<td>90791</td>
+<td>Psychiatric diagnostic evaluation</td>
+</tr>
+<tr>
+<td>Radiology</td>
+<td>71045</td>
+<td>Chest X-ray single view</td>
+</tr>
+<tr>
+<td>Surgery</td>
+<td>47562</td>
+<td>Laparoscopic cholecystectomy</td>
+</tr>
+</table>
+</section>
+
+<!-- ================= ICD CPT PAIRING ================= -->
+<section>
+<h2>ICD–CPT Pairing (Clean Claims)</h2>
+
+<table>
+<tr>
+<th>ICD Code</th>
+<th>CPT Code</th>
+<th>Clinical Match</th>
+</tr>
+<tr>
+<td>E11.9</td>
+<td>99213</td>
+<td>Diabetes follow-up visit</td>
+</tr>
+<tr>
+<td>F32.9</td>
+<td>90791</td>
+<td>Depression evaluation</td>
+</tr>
+<tr>
+<td>I10</td>
+<td>93000</td>
+<td>Hypertension ECG</td>
+</tr>
+</table>
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section>
+<h2>AAPC & AHIMA Certified Expertise</h2>
+
+<div class="certs">
+  <div class="cert">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AAPC_logo.png">
+    <h3>AAPC</h3>
+    <p>Certified Professional Coders (CPC, COC, CRC)</p>
+  </div>
+
+  <div class="cert">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/AHIMA_logo.png">
+    <h3>AHIMA</h3>
+    <p>RHIT & RHIA certified compliance professionals</p>
+  </div>
+</div>
+</section>
+
+<footer>
+<p><strong>Physicians Claim Partners</strong></p>
+<p>Compliance-driven ICD-10, ICD-11 & CPT billing</p>
+<div class="socials">
+  <a href="#">Facebook</a>
+  <a href="#">Instagram</a>
+  <a href="#">LinkedIn</a>
+  <a href="https://wa.me/923214618847">WhatsApp</a>
+</div>
+</footer>
+
 </body>
 </html>
