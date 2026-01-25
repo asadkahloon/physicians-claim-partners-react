@@ -223,6 +223,48 @@ header .cta{
 header.scrolled {
   backdrop-filter: blur(4px);
   background: rgba(245,251,255,0.95) !important;
+}/* BENEFITS — larger feature cards */
+.benefits{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:28px;
+  align-items:start;
+}
+.benefit{
+  background:#fff;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(10,20,50,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-height:340px;
+  transition:transform .25s ease, box-shadow .25s ease;
+  overflow:hidden;
+}
+.benefit:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(10,20,50,0.08);
+}
+.benefit img{
+  width:100%;
+  height:180px;
+  border-radius:12px;
+  object-fit:cover;
+  display:block;
+}
+.benefit .title{font-weight:800;font-size:20px;margin:6px 0}
+.benefit .desc{color:var(--muted);font-size:15px;margin:0}
+.benefit .extra{margin-top:8px;color:var(--muted);font-size:14px;display:none}
+.benefit .more-btn{
+  margin-top:auto;
+  background:transparent;
+  border:0;color:var(--accent);font-weight:700;cursor:pointer;padding:8px 0;
+}
+@media(max-width:1000px){
+  .benefits{grid-template-columns:1fr;gap:18px}
+  .benefit{min-height:auto}
 }
   </style>
 </head>
@@ -340,36 +382,47 @@ header.scrolled {
 
 <!-- BENEFITS -->
 <section id="benefits">
-  <h2 style="font-size:32px">Benefits</h2>
-  <p style="color:var(--muted)">Everything you need to run a more profitable practice—without headaches.</p>
+  <h2 style="font-size:36px;margin-bottom:8px">Benefits</h2>
+  <p style="color:var(--muted);max-width:1100px;margin-bottom:18px">Everything you need to run a more profitable practice—without headaches. Each service below is delivered with clear SLAs, KPI tracking, and dedicated account support.</p>
 
   <div class="benefits">
-    <div class="benefit">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b8eab2b0b0ed1f0e7e2e5cd2e4f3b1a" alt="">
-      <div>
-        <h4>Boost your bottom line</h4>
-        <p>Increase collections with optimized claim submission and proactive follow-up.</p>
+    <article class="benefit">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" alt="Boost bottom line" class="float-img">
+      <div class="content">
+        <h4 class="title">Boost your bottom line</h4>
+        <p class="desc">Increase collections with optimized claim submission, automated scrubbing, and proactive follow-up to reduce days-in-AR. We focus on maximizing net collections while reducing denials.</p>
+        <div class="extra" aria-hidden="true">
+          <p style="margin:8px 0 0;color:var(--muted)">What’s included: charge-entry QC, payer-specific edits, appeals management, KPI dashboarding, and monthly recovery reports. Typical clients see a measurable lift in collections within 90 days.</p>
+        </div>
+        <button class="more-btn">Read more</button>
       </div>
-    </div>
+    </article>
 
-    <div class="benefit">
-      <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6d0d6a3b3f5c4d2e1b3f4c5d6a7e8f9a" alt="">
-      <div>
-        <h4>Focus on what matters</h4>
-        <p>Free up your staff to focus on patient care while we handle billing complexities.</p>
+    <article class="benefit">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop" alt="Focus on what matters" class="float-img">
+      <div class="content">
+        <h4 class="title">Focus on what matters</h4>
+        <p class="desc">Free up your staff to focus on patient care while we handle billing complexities, prior-authorizations and patient statements. Reduce admin overhead and burn-out.</p>
+        <div class="extra" aria-hidden="true">
+          <p style="margin:8px 0 0;color:var(--muted)">What’s included: eligibility checks, prior auth support, patient statement generation, payment posting and secure patient communications.</p>
+        </div>
+        <button class="more-btn">Read more</button>
       </div>
-    </div>
+    </article>
 
-    <div class="benefit">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=92b3b8a3e5b6b6b8c8d8e8f8a9a1b2c3" alt="">
-      <div>
-        <h4>Enhanced efficiency</h4>
-        <p>Automated workflows, accurate coding and faster payer responses.</p>
+    <article class="benefit">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop" alt="Enhanced efficiency" class="float-img">
+      <div class="content">
+        <h4 class="title">Enhanced efficiency</h4>
+        <p class="desc">Automated workflows, accurate coding and faster payer responses. We reduce rework and use data to continuously improve billing accuracy.</p>
+        <div class="extra" aria-hidden="true">
+          <p style="margin:8px 0 0;color:var(--muted)">What’s included: coding QA, clearinghouse optimizations, payer appeals, denial root-cause analysis and process improvement plans tailored to your practice.</p>
+        </div>
+        <button class="more-btn">Read more</button>
       </div>
-    </div>
+    </article>
   </div>
 </section>
-
 <!-- STATS & REVIEWS -->
 <section>
   <div style="display:flex;gap:20px;align-items:center;">
@@ -699,6 +752,17 @@ document.querySelectorAll("section, h2, h3, p").forEach(el => {
   window.addEventListener('scroll', () => {
     if(window.scrollY > 8) headerEl.classList.add('scrolled');
     else headerEl.classList.remove('scrolled');
+  });
+</script><script>
+  // BENEFITS "Read more" toggle
+  document.querySelectorAll('.more-btn').forEach(btn=>{
+    btn.addEventListener('click', () => {
+      const extra = btn.closest('.benefit').querySelector('.extra');
+      if(!extra) return;
+      const isOpen = extra.style.display === 'block';
+      extra.style.display = isOpen ? 'none' : 'block';
+      btn.textContent = isOpen ? 'Read more' : 'Show less';
+    });
   });
 </script>
 </body>
