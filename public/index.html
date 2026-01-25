@@ -566,7 +566,54 @@ header.scrolled {
 </style><script>
 // speed up transform rendering
 document.querySelectorAll('.float-img').forEach(img => img.style.willChange = 'transform');
-</script>
+</script><style>
+/* FORCE IMAGE FIX */
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+/* CODING SECTION IMAGES */
+.icd-img,
+.cpt-img,
+.cdt-img{
+  width:100%;
+  height:280px;
+  border-radius:18px;
+  background-size:cover !important;
+  background-position:center !important;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  animation:float 6s ease-in-out infinite;
+  transition:.5s;
+}
+
+.icd-img:hover,
+.cpt-img:hover,
+.cdt-img:hover{
+  transform:translateY(-10px) rotateY(10deg);
+}
+
+/* REPLACE BROKEN IMAGES */
+.icd-img{
+  background-image:url("https://images.unsplash.com/photo-1580281657527-47d0d0a44e2f?auto=format&fit=crop&w=1600");
+}
+
+.cpt-img{
+  background-image:url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600");
+}
+
+.cdt-img{
+  background-image:url("https://images.unsplash.com/photo-1606813902914-5f39a1f92e86?auto=format&fit=crop&w=1600");
+}
+
+/* FLOATING */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+  100%{transform:translateY(0)}
+}
+</style>
 </head>
 <body>
 
