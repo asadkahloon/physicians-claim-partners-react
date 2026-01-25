@@ -200,6 +200,29 @@ section, h2, h3, p {
 .float-img:hover {
   transform: rotateY(180deg);
   transition: transform 0.6s ease;
+}/* NAVBAR — very light background + link colors (override) */
+header{
+  background: #f5fbff !important;        /* very light pale-blue — change hex below if you want */
+  border-bottom: 1px solid #e9f3f8 !important;
+  transition: background 240ms ease;
+}
+
+/* make nav links slightly darker so they remain visible on the light background */
+header nav a{
+  color: #0b6fb0 !important;             /* link color — darker blue for contrast */
+}
+
+/* keep CTA button visible and unchanged except a subtle border if needed */
+header .cta{
+  background:var(--blue) !important;
+  color:#fff !important;
+  box-shadow:0 6px 18px rgba(11,143,214,0.12);
+}
+
+/* optional: make header slightly translucent when scrolled (nice effect) */
+header.scrolled {
+  backdrop-filter: blur(4px);
+  background: rgba(245,251,255,0.95) !important;
 }
   </style>
 </head>
@@ -671,6 +694,12 @@ document.querySelectorAll("section, h2, h3, p").forEach(el => {
 
   // watch major content blocks (sections, h2, paragraphs)
   document.querySelectorAll('section, h2, h3, p').forEach(el => io.observe(el));
+</script><script>
+  const headerEl = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 8) headerEl.classList.add('scrolled');
+    else headerEl.classList.remove('scrolled');
+  });
 </script>
 </body>
 </html>
