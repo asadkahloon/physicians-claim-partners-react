@@ -71,25 +71,6 @@
 .dark-contact input::placeholder,
 .dark-contact textarea::placeholder{
   color:#94a3b8;
-}/* ===== MARIO WALK ===== */
-.mario-wrap{
-  position:relative;
-  height:80px;
-  overflow:hidden;
-  background:#0f172a;
-}
-
-.mario{
-  position:absolute;
-  bottom:0;
-  left:-80px;
-  width:64px;
-  animation:marioWalk 12s linear infinite;
-}
-
-@keyframes marioWalk{
-  from{left:-80px;}
-  to{left:100%;}
 }
 </style>
   <style>
@@ -1067,15 +1048,7 @@ img{
       <p style="color:var(--muted);margin-top:10px">Prefer a quick call? WhatsApp us any time at <strong>+92 321 4618847</strong></p>
     </div>
   </div>
-</section><!-- Mario Animation -->
-<div class="mario-wrap">
-  <img
-    src="https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif"
-    alt="Mario"
-    class="mario"
-  >
-</div>
-
+</section>
 <!-- Schedule demo modal (simple) -->
 <div id="scheduleModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center">
   <div style="background:#fff;padding:20px;border-radius:12px;max-width:520px;width:95%">
