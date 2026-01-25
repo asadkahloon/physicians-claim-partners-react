@@ -471,7 +471,33 @@ header.scrolled {
   line-height: 1.6;
 }
 
-</style>
+</style><style>
+/* floating + flip */
+@keyframes floatSlow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+.float-img{
+  animation: floatSlow 6s ease-in-out infinite;
+  transition: transform 0.6s ease;
+  backface-visibility: hidden;
+}
+.float-img:hover{
+  transform: rotateY(180deg);
+}
+
+/* card layout (keeps things tidy and bigger) */
+.big-section{padding:60px 6%; background:#fbfcff;}
+.big-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+.big-card{background:#fff;padding:26px;border-radius:14px;box-shadow:0 12px 30px rgba(10,20,50,0.06);}
+.big-card img{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px;}
+.big-card h3{margin:8px 0;font-size:20px}
+.big-card p{color:#556;line-height:1.6}
+</style><script>
+// speed up transform rendering
+document.querySelectorAll('.float-img').forEach(img => img.style.willChange = 'transform');
+</script>
 </head>
 <body>
 
@@ -777,7 +803,40 @@ header.scrolled {
     </div>
   </div>
 </section>
+  <h2>ICD-10 / ICD-11 / CPT / CDT Coding Expertise</h2>
+  <p>We support multi-specialty practices with accurate diagnosis–procedure pairing using current ICD-10, ICD-11, CPT and CDT standards.</p>
 
+  <div class="big-grid">
+
+    <div class="big-card">
+      <img class="float-img" src="https://images.unsplash.com/photo-1542736667-069246bdbc6d?q=80&w=1400&auto=format&fit=crop" alt="ICD Coding">
+      <h3>ICD-10 & ICD-11</h3>
+      <p>
+        We code using both ICD-10-CM and ICD-11 based on payer and regional requirements.
+        Our coders stay updated with WHO releases and CMS mappings to avoid denials.
+      </p>
+    </div>
+
+    <div class="big-card">
+      <img class="float-img" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=1400&auto=format&fit=crop" alt="CPT Coding">
+      <h3>Real CPT Pairing</h3>
+      <p>
+        Accurate E/M, surgical and modifier usage based on documentation.
+        Specialty-specific CPT pairing for internal medicine, psychiatry, surgery and more.
+      </p>
+    </div>
+
+    <div class="big-card">
+      <img class="float-img" src="https://images.unsplash.com/photo-1624996371967-7a2bb7ae9b4e?q=80&w=1400&auto=format&fit=crop" alt="Dental Coding">
+      <h3>CDT (Dental Coding)</h3>
+      <p>
+        Correct CDT usage, PPO fee schedules and narrative-based submissions
+        to maximize dental reimbursements.
+      </p>
+    </div>
+
+  </div>
+</section>
 <!-- FAQ -->
 <section>
   <h2 style="font-size:32px">Frequently Asked Questions</h2>
@@ -960,41 +1019,6 @@ header.scrolled {
 </div>
   </div>
 </footer><section class="big-section">
-  <h2>ICD-10 / ICD-11 / CPT / CDT Coding Expertise</h2>
-  <p>We support multi-specialty practices with accurate diagnosis–procedure pairing using current ICD-10, ICD-11, CPT and CDT standards.</p>
-
-  <div class="big-grid">
-
-    <div class="big-card">
-      <img class="float-img" src="https://images.unsplash.com/photo-1580281657521-6b09c7d76f7f" alt="ICD Coding">
-      <h3>ICD-10 & ICD-11</h3>
-      <p>
-        We code using both ICD-10-CM and ICD-11 based on payer and regional requirements.
-        Our coders stay updated with WHO releases and CMS mappings to avoid denials.
-      </p>
-    </div>
-
-    <div class="big-card">
-      <img class="float-img" src="https://images.unsplash.com/photo-1581091870627-3b5f1c1f1b2b" alt="CPT Coding">
-      <h3>Real CPT Pairing</h3>
-      <p>
-        Accurate E/M, surgical and modifier usage based on documentation.
-        Specialty-specific CPT pairing for internal medicine, psychiatry, surgery and more.
-      </p>
-    </div>
-
-    <div class="big-card">
-      <img class="float-img" src="https://images.unsplash.com/photo-1600959907703-c5b9d83e9d3d" alt="Dental Coding">
-      <h3>CDT (Dental Coding)</h3>
-      <p>
-        Correct CDT usage, PPO fee schedules and narrative-based submissions
-        to maximize dental reimbursements.
-      </p>
-    </div>
-
-  </div>
-</section>
-
 <!-- WhatsApp floating -->
 <a class="whatsapp" href="https://wa.me/923214618847" target="_blank" title="Message us on WhatsApp">WA</a>
 
