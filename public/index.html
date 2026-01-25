@@ -417,7 +417,61 @@ header.scrolled {
   .cert-grid-large{grid-template-columns:1fr}
   .cert-img-large{height:180px}
 }
-  </style>
+  </style><style>
+
+/* ===== SAFE IMAGE FLOAT + FLIP ===== */
+@keyframes floatSlow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.float-img {
+  animation: floatSlow 6s ease-in-out infinite;
+  transition: transform 0.6s ease;
+}
+
+.float-img:hover {
+  transform: rotateY(180deg);
+}
+
+/* ===== BIG CARD SECTIONS ===== */
+.big-section {
+  padding: 80px 6%;
+  background: #f9fcff;
+}
+
+.big-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.big-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.big-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.big-card h3 {
+  margin: 10px 0;
+}
+
+.big-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+</style>
 </head>
 <body>
 
@@ -905,7 +959,41 @@ header.scrolled {
   <a href="https://wa.me/923214618847" aria-label="whatsapp" style="font-size:22px">💬</a>
 </div>
   </div>
-</footer>
+</footer><section class="big-section">
+  <h2>ICD-10 / ICD-11 / CPT / CDT Coding Expertise</h2>
+  <p>We support multi-specialty practices with accurate diagnosis–procedure pairing using current ICD-10, ICD-11, CPT and CDT standards.</p>
+
+  <div class="big-grid">
+
+    <div class="big-card">
+      <img class="float-img" src="https://images.unsplash.com/photo-1580281657521-6b09c7d76f7f" alt="ICD Coding">
+      <h3>ICD-10 & ICD-11</h3>
+      <p>
+        We code using both ICD-10-CM and ICD-11 based on payer and regional requirements.
+        Our coders stay updated with WHO releases and CMS mappings to avoid denials.
+      </p>
+    </div>
+
+    <div class="big-card">
+      <img class="float-img" src="https://images.unsplash.com/photo-1581091870627-3b5f1c1f1b2b" alt="CPT Coding">
+      <h3>Real CPT Pairing</h3>
+      <p>
+        Accurate E/M, surgical and modifier usage based on documentation.
+        Specialty-specific CPT pairing for internal medicine, psychiatry, surgery and more.
+      </p>
+    </div>
+
+    <div class="big-card">
+      <img class="float-img" src="https://images.unsplash.com/photo-1600959907703-c5b9d83e9d3d" alt="Dental Coding">
+      <h3>CDT (Dental Coding)</h3>
+      <p>
+        Correct CDT usage, PPO fee schedules and narrative-based submissions
+        to maximize dental reimbursements.
+      </p>
+    </div>
+
+  </div>
+</section>
 
 <!-- WhatsApp floating -->
 <a class="whatsapp" href="https://wa.me/923214618847" target="_blank" title="Message us on WhatsApp">WA</a>
@@ -1000,6 +1088,11 @@ document.querySelectorAll("section, h2, h3, p").forEach(el => {
 
   // keep review carousel working if your existing functions exist
   if(typeof showReviews === 'function') showReviews();
+</script><script>
+// keep animations smooth
+document.querySelectorAll('.float-img').forEach(img => {
+  img.style.willChange = 'transform';
+});
 </script>
 </body>
 </html>
