@@ -46,6 +46,50 @@
 
 .float-img:hover{
   transform:rotateY(180deg);
+}/* ===== DARK CONTACT SECTION ===== */
+.dark-contact{
+  background:#0f172a;
+  color:#e5e7eb;
+}
+
+.dark-contact h2{
+  color:#ffffff;
+}
+
+.dark-contact p,
+.dark-contact label{
+  color:#cbd5f5;
+}
+
+.dark-contact input,
+.dark-contact textarea{
+  background:#020617;
+  color:#ffffff;
+  border:1px solid #334155;
+}
+
+.dark-contact input::placeholder,
+.dark-contact textarea::placeholder{
+  color:#94a3b8;
+}/* ===== MARIO WALK ===== */
+.mario-wrap{
+  position:relative;
+  height:80px;
+  overflow:hidden;
+  background:#0f172a;
+}
+
+.mario{
+  position:absolute;
+  bottom:0;
+  left:-80px;
+  width:64px;
+  animation:marioWalk 12s linear infinite;
+}
+
+@keyframes marioWalk{
+  from{left:-80px;}
+  to{left:100%;}
 }
 </style>
   <style>
@@ -992,7 +1036,7 @@ img{
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section class="contact dark-contact">
   <h2>Let's Talk</h2>
   <p style="color:var(--muted)">Send us a brief about your practice and we'll get back to you.</p>
 
@@ -1023,7 +1067,14 @@ img{
       <p style="color:var(--muted);margin-top:10px">Prefer a quick call? WhatsApp us any time at <strong>+92 321 4618847</strong></p>
     </div>
   </div>
-</section>
+</section><!-- Mario Animation -->
+<div class="mario-wrap">
+  <img
+    src="https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif"
+    alt="Mario"
+    class="mario"
+  >
+</div>
 
 <!-- Schedule demo modal (simple) -->
 <div id="scheduleModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center">
