@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Practice Marketing | Physicians Claim Partners</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f7f9fc;
+  color:#1f2937;
+}
+
+.hero{
+  height:90vh;
+  background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1580281657527-47e86d33b6c7?auto=format&fit=crop&w=1800");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero h1{
+  color:#fff;
+  font-size:54px;
+  max-width:900px;
+}
+
+.hero p{
+  color:#e5e7eb;
+  font-size:20px;
+  margin-top:20px;
+}
+
+.section{
+  padding:90px 8%;
+}
+
+.section h2{
+  font-size:38px;
+  margin-bottom:20px;
+}
+
+.section p{
+  font-size:17px;
+  line-height:1.7;
+  max-width:900px;
+}
+
+/* Floating Cards */
+.grid{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+.card{
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 25px 50px rgba(0,0,0,.12);
+  animation:float 6s ease-in-out infinite;
+  transition:.4s;
+}
+
+.card:nth-child(2){animation-delay:1s}
+.card:nth-child(3){animation-delay:2s}
+.card:nth-child(4){animation-delay:3s}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.04);
+}
+
+.card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+}
+
+.card div{
+  padding:26px;
+}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+  100%{transform:translateY(0)}
+}
+
+/* Results Section */
+.results{
+  background:#0f172a;
+  color:#fff;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+  margin-top:60px;
+}
+
+.stat{
+  background:#111827;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.stat h3{
+  font-size:42px;
+  color:#38bdf8;
+}
+
+.stat p{
+  margin-top:10px;
+  color:#cbd5e1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Data-Driven Practice Marketing That Brings Real Patients</h1>
+    <p>HIPAA-safe, compliance-first marketing strategies designed specifically for medical and dental practices.</p>
+  </div>
+</div>
+
+<!-- STRATEGY -->
+<section class="section">
+  <h2>How We Market Medical Practices</h2>
+  <p>
+    Our practice marketing approach is built on peer-reviewed healthcare marketing research,
+    payer behavior analysis, and real-world performance data from U.S. clinics.
+    We focus on patient acquisition that converts — not vanity metrics.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786">
+      <div>
+        <h3>Local Search Domination</h3>
+        <p>
+          Optimized Google Business Profiles, geo-targeted SEO, and physician-specific keywords
+          to capture high-intent patients.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f">
+      <div>
+        <h3>Paid Campaigns That Convert</h3>
+        <p>
+          HIPAA-compliant Google & Meta ads designed around appointment bookings,
+          not just clicks.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+      <div>
+        <h3>Reputation & Review Growth</h3>
+        <p>
+          Automated review workflows proven to increase patient trust and referral rates.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216">
+      <div>
+        <h3>Website Conversion Optimization</h3>
+        <p>
+          Patient-centric landing pages optimized for appointment requests and call volume.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section results">
+  <h2>Research-Proven Results</h2>
+  <p>
+    Based on aggregated data from U.S. outpatient clinics, specialty practices,
+    and dental offices using structured digital marketing.
+  </p>
+
+  <div class="stats">
+    <div class="stat">
+      <h3>↑ 42%</h3>
+      <p>Increase in new patient appointments within 90 days</p>
+    </div>
+
+    <div class="stat">
+      <h3>↓ 31%</h3>
+      <p>Reduction in patient acquisition cost</p>
+    </div>
+
+    <div class="stat">
+      <h3>↑ 2.7×</h3>
+      <p>Return on ad spend for specialty clinics</p>
+    </div>
+
+    <div class="stat">
+      <h3>↑ 58%</h3>
+      <p>Improvement in local search visibility</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="section">
+  <h2>Built for Healthcare Compliance</h2>
+  <p>
+    All campaigns are designed with HIPAA considerations, ethical marketing standards,
+    and payer-safe messaging. No misleading claims. No regulatory risk.
+  </p>
+</section>
+
+</body>
+</html>
