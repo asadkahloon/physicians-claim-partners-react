@@ -16,14 +16,47 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+}/* FULL-WIDTH CONTACT SECTION */
+.contact,
+.contact-section,
+.contact.dark-contact {
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 5%;
+  box-sizing: border-box;
+}
+
+/* GRID LAYOUT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* FORM */
+.contact-grid form {
+  width: 100%;
+}
+
+/* IMAGE SIDE */
+.contact-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
 }
 .left-layout {
-  width: 70%;
-  margin: 60px auto;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 80vh;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+  padding: 60px 40px;
 }
 footer {
   margin-top: auto;
