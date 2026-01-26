@@ -87,79 +87,6 @@
   margin-top: 10px;
   color: #555;
   line-height: 1.6;
-}
-/* ===== DOCTOR REVIEWS HERO ===== */
-
-.reviews-hero{
-  padding:80px 40px;
-  background:linear-gradient(180deg,#e6f4ff,#ffffff);
-  text-align:center;
-}
-
-.reviews-hero h2{
-  font-size:42px;
-  margin-bottom:40px;
-}
-
-/* SLIDER WRAPPER */
-.reviews-slider{
-  overflow:hidden;
-  max-width:1200px;
-  margin:auto;
-}
-
-/* MOVING TRACK */
-.reviews-track{
-  display:flex;
-  gap:40px;
-  animation:slideReviews 25s ease-in-out infinite alternate;
-}
-
-/* REVIEW CARD */
-.review-card{
-  min-width:340px;
-  background:#ffffff;
-  border-radius:22px;
-  padding:30px;
-  box-shadow:0 20px 50px rgba(0,0,0,.12);
-  animation:floatCard 6s ease-in-out infinite;
-  transition:transform .6s;
-  transform-style:preserve-3d;
-}
-
-.review-card:hover{
-  transform:rotateY(12deg) translateY(-12px);
-}
-
-.review-card img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:20px;
-}
-
-.review-card h4{
-  font-size:20px;
-  margin:10px 0;
-}
-
-.review-card p{
-  font-size:16px;
-  color:#555;
-  line-height:1.6;
-}
-
-/* ANIMATIONS */
-@keyframes slideReviews{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-60%)}
-}
-
-@keyframes floatCard{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-  100%{transform:translateY(0)}
 }</style>
   <style>
     :root{
@@ -713,7 +640,78 @@ img{
   100%{transform:translateY(0)}
 }
 </style>
-</head>
+/* ===== DOCTOR REVIEWS HERO ===== */
+
+.reviews-hero{
+  padding:80px 40px;
+  background:linear-gradient(180deg,#e6f4ff,#ffffff);
+  text-align:center;
+}
+
+.reviews-hero h2{
+  font-size:42px;
+  margin-bottom:40px;
+}
+
+/* SLIDER WRAPPER */
+.reviews-slider{
+  overflow:hidden;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* MOVING TRACK */
+.reviews-track{
+  display:flex;
+  gap:40px;
+  animation:slideReviews 25s ease-in-out infinite alternate;
+}
+
+/* REVIEW CARD */
+.review-card{
+  min-width:340px;
+  background:#ffffff;
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 20px 50px rgba(0,0,0,.12);
+  animation:floatCard 6s ease-in-out infinite;
+  transition:transform .6s;
+  transform-style:preserve-3d;
+}
+
+.review-card:hover{
+  transform:rotateY(12deg) translateY(-12px);
+}
+
+.review-card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+}
+
+.review-card h4{
+  font-size:20px;
+  margin:10px 0;
+}
+
+.review-card p{
+  font-size:16px;
+  color:#555;
+  line-height:1.6;
+}
+
+/* ANIMATIONS */
+@keyframes slideReviews{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-60%)}
+}
+
+@keyframes floatCard{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}</head>
 <body>
 
 <header>
@@ -791,8 +789,10 @@ img{
       <p>Specialised dental claim processing, CDT coding, and PPO negotiation to maximize reimbursement.</p>
     </a>
 <a class="service-card" href="/credentialing.html">
-  <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f1df"
-     alt="Provider Credentialing">
+ <img 
+  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1200&q=80" 
+  alt="Provider Credentialing Healthcare"
+>
   <h3>Provider Credentialing</h3>
   <p>
     End-to-end medical and dental provider credentialing with Medicare, Medicaid,
