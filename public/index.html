@@ -94,7 +94,7 @@
       --blue:#1ea7f2;
       --light-blue:#e9f6ff;
       --green:#7ed487;
-      --bg:#ffffff;
+      --bg:#e9f6ff
       --text:#222;
       --muted:#6b6b6b;
       --accent:#0b8fd6;
@@ -705,7 +705,14 @@ img{
       <h3>Dental Billing</h3>
       <p>Specialised dental claim processing, CDT coding, and PPO negotiation to maximize reimbursement.</p>
     </a>
-
+<a class="service-card" href="/credentialing.html">
+  <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f0a8?q=80&w=1200&auto=format&fit=crop" alt="Provider Credentialing">
+  <h3>Provider Credentialing</h3>
+  <p>
+    End-to-end medical and dental provider credentialing with Medicare, Medicaid,
+    and commercial payers to ensure faster onboarding and uninterrupted billing.
+  </p>
+</a>
     <a class="service-card" href="ar-denial.html">
       <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop" alt="AR and Denial">
       <h3>AR & Denial Management</h3>
@@ -722,7 +729,8 @@ img{
       <p>Negotiate fee schedules and claims for out-of-network reimbursement optimization.</p>
     </a>
 
-    <a class="service-card" href="ar-"insurance-eligibility-verification.html">
+   <!-- recommended: absolute root path -->
+<a class="service-card" href="/insurance-eligibility-verification.html">
       <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=823e1febb8b4f90a7a4e3d3f7d5f7c7e" alt="Eligibility">
       <h3>Insurance Eligibility Verification</h3>
       <p>Real-time eligibility checks and prior-authorizations to reduce claim denials and pushbacks.</p>
@@ -885,34 +893,142 @@ img{
 
 </div>
     <!-- REVIEWS column (keeps your reviews) -->
-    <div style="width:460px;min-width:320px;">
-      <h3 style="margin-top:0">What doctors say</h3>
-      <div class="reviews" id="reviews">
-        <div class="review">
-          <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="">
-          <strong>Dr. Sarah M.</strong>
-          <p style="color:var(--muted)">“We saw a clear improvement in collections and fewer denials in the first month.”</p>
-        </div>
+   <section id="doctor-reviews-hero" style="padding:80px 20px;background:#f5f7fa;">
+  <div style="max-width:1300px;margin:auto;">
+    <h2 style="font-size:42px;font-weight:800;color:#0b3a5f;margin-bottom:40px">
+      What Doctors Say About Us
+    </h2>
 
-        <div class="review">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
-          <strong>Dr. James L.</strong>
-          <p style="color:var(--muted)">“Great team — responsive and professional.”</p>
-        </div>
+    <div class="review-hero">
+      <button class="nav prev">‹</button>
 
-        <div class="review">
-          <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="">
-          <strong>Dr. Anita P.</strong>
-          <p style="color:var(--muted)">“Saved us time and recovered a large appeal.”</p>
+      <div class="review-stage">
+        <div class="review-card">
+          <div class="photo"></div>
+          <div class="content">
+            <h3 class="name"></h3>
+            <div class="specialty"></div>
+            <p class="text"></p>
+          </div>
         </div>
       </div>
 
-      <div style="margin-top:10px;display:flex;gap:8px">
-        <button class="btn" onclick="prevReview()">‹</button>
-        <button class="btn" onclick="nextReview()">›</button>
-      </div>
+      <button class="nav next">›</button>
     </div>
   </div>
+</section>
+
+<style>
+.review-hero{display:flex;align-items:center;gap:24px}
+.nav{
+  font-size:40px;
+  background:#00a99d;
+  color:#fff;
+  border:none;
+  border-radius:14px;
+  padding:14px 20px;
+  cursor:pointer;
+  box-shadow:0 15px 40px rgba(0,0,0,.15)
+}
+
+.review-stage{flex:1;display:flex;justify-content:center}
+
+.review-card{
+  display:flex;
+  gap:40px;
+  max-width:1100px;
+  width:100%;
+  background:#fff;
+  padding:40px;
+  border-radius:22px;
+  box-shadow:0 40px 100px rgba(0,0,0,.15);
+  perspective:1200px;
+}
+
+.photo{
+  width:420px;
+  height:420px;
+  border-radius:20px;
+  background-size:cover;
+  background-position:center;
+  animation:float 6s ease-in-out infinite;
+  transition:transform .6s;
+}
+
+.review-card:hover .photo{
+  transform:rotateY(12deg) translateY(-14px);
+}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-18px)}
+  100%{transform:translateY(0)}
+}
+
+.content{flex:1}
+.name{font-size:28px;margin:0;color:#0b3a5f}
+.specialty{font-weight:700;color:#6b7c8f;margin-bottom:16px}
+.text{font-size:20px;line-height:1.6;color:#1f2d3d}
+
+@media(max-width:900px){
+  .review-card{flex-direction:column;align-items:center;text-align:center}
+  .photo{width:300px;height:300px}
+}
+</style>
+
+<script>
+const reviews = [
+  {name:"Dr. Sarah M.", role:"Psychiatrist", img:"https://source.unsplash.com/900x900/?female,doctor&sig=1",
+   text:"Collections improved within the first month. Denials dropped sharply."},
+
+  {name:"Dr. James L.", role:"Internal Medicine", img:"https://source.unsplash.com/900x900/?male,doctor&sig=2",
+   text:"Extremely professional billing team with excellent payer follow-up."},
+
+  {name:"Dr. Anita P.", role:"Dentist", img:"https://source.unsplash.com/900x900/?female,dentist&sig=3",
+   text:"Recovered a huge backlog of unpaid dental claims."},
+
+  {name:"Dr. Michael R.", role:"Cardiology", img:"https://source.unsplash.com/900x900/?male,physician&sig=4",
+   text:"Out-of-network negotiations significantly increased reimbursements."},
+
+  {name:"Dr. Emily T.", role:"Pediatrics", img:"https://source.unsplash.com/900x900/?female,doctor&sig=5",
+   text:"Eligibility verification reduced same-day claim issues."},
+
+  {name:"Dr. Adam K.", role:"General Surgery", img:"https://source.unsplash.com/900x900/?male,surgeon&sig=6",
+   text:"Appeals were handled perfectly. Payments recovered fast."},
+
+  {name:"Dr. Laura G.", role:"Family Medicine", img:"https://source.unsplash.com/900x900/?female,physician&sig=7",
+   text:"Credentialing was smooth and saved us weeks."},
+
+  {name:"Dr. Robert P.", role:"Orthopedics", img:"https://source.unsplash.com/900x900/?male,doctor&sig=8",
+   text:"Best billing analytics we’ve used so far."},
+
+  {name:"Dr. Nina S.", role:"OB/GYN", img:"https://source.unsplash.com/900x900/?female,doctor&sig=9",
+   text:"Clear reports and measurable revenue growth."},
+
+  {name:"Dr. Daniel F.", role:"Urgent Care", img:"https://source.unsplash.com/900x900/?male,doctor&sig=10",
+   text:"First-pass acceptance rate improved drastically."}
+];
+
+let i=0;
+const photo=document.querySelector(".photo");
+const name=document.querySelector(".name");
+const role=document.querySelector(".specialty");
+const text=document.querySelector(".text");
+
+function render(){
+  const r=reviews[i];
+  photo.style.backgroundImage=url('${r.img}');
+  name.textContent=r.name;
+  role.textContent=r.role;
+  text.textContent=r.text;
+}
+render();
+
+document.querySelector(".next").onclick=()=>{i=(i+1)%reviews.length;render();}
+document.querySelector(".prev").onclick=()=>{i=(i-1+reviews.length)%reviews.length;render();}
+
+setInterval(()=>{i=(i+1)%reviews.length;render();},5000);
+</script>
 </section>
 <!-- OUR PROCESS -->
 <section id="process">
@@ -1198,7 +1314,11 @@ img{
   <div class="col">
     <strong>Follow us</strong>
    <div class="socials" style="margin-top:10px;display:flex;gap:14px">
-  <a href="#" aria-label="facebook" style="font-size:22px">📘</a>
+ <a href="https://web.facebook.com/profile.php?id=61586726156956" 
+   target="_blank" 
+   aria-label="Facebook">
+  <i class="fab fa-facebook-f"></i>
+</a>
   <a href="#" aria-label="instagram" style="font-size:22px">📸</a>
   <a href="#" aria-label="linkedin" style="font-size:22px">💼</a>
   <a href="https://wa.me/923214618847" aria-label="whatsapp" style="font-size:22px">💬</a>
