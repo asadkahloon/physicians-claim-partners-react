@@ -638,60 +638,6 @@ img{
   0%{transform:translateY(0)}
   50%{transform:translateY(-12px)}
   100%{transform:translateY(0)}
-}/* ===== DOCTOR REVIEWS ===== */
-.reviews-hero{
-  padding:80px 40px;
-  background:#eaf6ff;
-  text-align:center;
-}
-
-.reviews-hero h2{
-  font-size:42px;
-  margin-bottom:40px;
-}
-
-.reviews-slider{
-  overflow:hidden;
-  max-width:1200px;
-  margin:auto;
-}
-
-.reviews-track{
-  display:flex;
-  gap:40px;
-  animation:slideReviews 25s linear infinite;
-}
-
-.review-card{
-  min-width:340px;
-  background:#fff;
-  border-radius:20px;
-  padding:30px;
-  box-shadow:0 20px 50px rgba(0,0,0,.12);
-  animation:floatCard 6s ease-in-out infinite;
-}
-
-.review-card img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-bottom:20px;
-}
-
-.review-card h4{
-  margin:10px 0;
-}
-
-@keyframes slideReviews{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-60%)}
-}
-
-@keyframes floatCard{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-  100%{transform:translateY(0)}
 }
 </style>
 </head>
@@ -865,7 +811,33 @@ img{
     </article>
   </div>
 </section>
-<!-- STATS & REVIEWS -->
+<!-- STATS & REVIEWS --><section class="reviews-hero" id="doctor-reviews">
+  <h2>What Doctors Say About Us</h2>
+
+  <div class="reviews-slider">
+    <div class="reviews-track">
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <h4>Dr. James L.</h4>
+        <p>“Collections improved within the first month.”</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+        <h4>Dr. Sarah M.</h4>
+        <p>“Clean process and fewer denials.”</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg">
+        <h4>Dr. Andrew H.</h4>
+        <p>“Strong follow-up and compliance.”</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 <section id="stats-reviews" style="padding:54px 6%;">
   <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;">
     <!-- BIG STATS & CERTIFICATIONS column -->
