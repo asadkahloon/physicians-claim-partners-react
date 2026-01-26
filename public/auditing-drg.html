@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Auditing & DRG Review | Physicians Claim Partners</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{
+  --brand:#0b74b9;
+  --accent:#00a99d;
+  --bg:#f6f7f8;
+  --card:#ffffff;
+  --muted:#6c6f76;
+  --shadow:0 12px 30px rgba(0,0,0,.08);
+  --radius:16px;
+}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--bg);
+  color:#222;
+}
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+h1,h2,h3{color:#0b74b9}
+p{line-height:1.7;color:#444}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:30px;
+  align-items:center;
+}
+.hero-card{
+  background:var(--card);
+  padding:14px;
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+.float-img{
+  height:280px;
+  border-radius:14px;
+  background-size:cover;
+  background-position:center;
+  animation:float 6s ease-in-out infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+  100%{transform:translateY(0)}
+}
+
+/* FLIP */
+.flip{perspective:1000px}
+.flip-inner{
+  transition:.6s;
+}
+.flip:hover .flip-inner{
+  transform:rotateY(12deg) translateY(-6px);
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+.stat{
+  background:#fff;
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
+}
+.big{
+  font-size:30px;
+  font-weight:bold;
+  color:var(--brand);
+}
+
+/* CTA */
+.cta{
+  margin-top:40px;
+  background:linear-gradient(90deg,#075985,#0b74b9);
+  color:#fff;
+  padding:30px;
+  border-radius:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.cta a{
+  background:#fff;
+  color:var(--brand);
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Auditing & DRG Review</h1>
+    <p>
+      We perform advanced clinical, coding, and reimbursement audits to identify
+      underpayments, over-denials, and DRG mismatches that directly impact provider revenue.
+    </p>
+    <p>
+      Our audit methodology is evidence-based, payer-specific, and aligned with CMS, AHA,
+      and commercial payer guidelines.
+    </p>
+  </div>
+
+  <div class="hero-card flip">
+    <div class="flip-inner">
+      <div class="float-img"
+      style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop');">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY AUDIT -->
+<section>
+  <h2>Why Auditing & DRG Review Matters</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Incorrect DRG Assignment</h3>
+      <p>
+        Even small documentation gaps can shift DRG weight downward,
+        resulting in thousands of dollars lost per admission.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Coding vs Documentation Gap</h3>
+      <p>
+        Coders can only code what is documented.
+        We identify missing physician language that weakens claim strength.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Payer Underpayments</h3>
+      <p>
+        Commercial payers frequently underpay DRG and CPT-based claims.
+        Our audits identify contract variance and recovery potential.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <h2>Our Audit Process</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>1. Clinical Documentation Review</h3>
+      <p>
+        Physician notes, discharge summaries, operative reports,
+        and progress notes are reviewed for severity, specificity,
+        and medical necessity.
+      </p>
+    </div>
+    <div class="card">
+      <h3>2. ICD-10 & CPT Validation</h3>
+      <p>
+        Diagnosis and procedure codes are validated against
+        official ICD-10-CM, ICD-10-PCS, CPT, and CMS guidelines.
+      </p>
+    </div>
+    <div class="card">
+      <h3>3. DRG & Weight Analysis</h3>
+      <p>
+        DRG assignment is re-evaluated using MCC/CC logic
+        to ensure correct reimbursement classification.
+      </p>
+    </div>
+    <div class="card">
+      <h3>4. Appeal & Correction Strategy</h3>
+      <p>
+        We prepare appeal-ready audit reports with supporting
+        evidence for payer submission.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section>
+  <h2>Evidence-Based Methodology</h2>
+  <p>
+    Our auditing framework follows CMS IPPS guidelines,
+    AHA Coding Clinic references, and payer policy bulletins.
+  </p>
+  <div class="grid">
+    <div class="card">
+      <h3>Clinical Indicators</h3>
+      <p>
+        We correlate lab values, imaging, vitals, and treatment
+        intensity to justify higher-severity DRG levels.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Benchmarking</h3>
+      <p>
+        Claims are benchmarked against historical payer
+        reimbursements and regional averages.
+      </p>
+    </div>
+    <div class="card">
+      <h3>Denial Root-Cause Analysis</h3>
+      <p>
+        We identify systemic denial patterns and fix issues
+        upstream to prevent future losses.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stat">
+    <div class="big">15–40%</div>
+    <p>Typical recovery uplift after DRG correction</p>
+  </div>
+  <div class="stat">
+    <div class="big">30–90 days</div>
+    <p>Average audit-to-recovery timeline</p>
+  </div>
+  <div class="stat">
+    <div class="big">CMS-Aligned</div>
+    <p>Fully compliant audit methodology</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div>
+    <h2>Request an Audit Review</h2>
+    <p>Submit sample claims and receive a recovery potential report.</p>
+  </div>
+  <a href="/contact.html">Request Audit</a>
+</section>
+
+</div>
+
+</body>
+</html>
