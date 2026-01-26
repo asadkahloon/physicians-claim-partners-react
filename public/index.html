@@ -57,6 +57,15 @@ body {
   gap: 60px;
   align-items: center;
   padding: 60px 40px;
+}.right-layout {
+  width: 100%;
+}
+
+.calc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
 }
 footer {
   margin-top: auto;
@@ -318,15 +327,6 @@ img:hover {
     .calc-row{display:flex;gap:10px;align-items:center;margin-top:10px}
     input[type="number"], input[type="text"], input[type="email"], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef6;font-size:15px}
     button.btn{background:var(--blue);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
-    /* Contact form */
-   .contact-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: flex-start;
-}
     /* Footer // Social Icons Styling */
 .social-icon{
   width:44px;
@@ -1389,35 +1389,45 @@ img{
         <input type="number" id="ourRate" value="2.49" min="0" step="0.01">
         <div style="margin-top:12px" class="calc-row">
         <div class="left-layout">
- <div class="calc-contact-wrapper">
- <!-- BILLING COST SAVINGS CALCULATOR -->
-        </div>
-    <!-- contact form -->
-    <form action="https://formspree.io/f/mvzklyjd" method="POST" style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
-      <label>Name *</label>
-      <input type="text" name="name" required placeholder="Your name">
+        </div><form action="https://formspree.io/f/mvzklyjd" method="POST"
+      style="background:#fff;padding:24px;border-radius:14px;max-width:420px">
 
-      <label style="margin-top:10px">Email *</label>
-      <input type="email" name="email" required placeholder="Your email">
+  <h3 style="margin-bottom:16px">Schedule a 15-Minute Free Consultation</h3>
 
-      <label style="margin-top:10px">Practice Name (optional)</label>
-      <input type="text" name="practice">
+  <input type="text" name="name" placeholder="Name" required
+         style="width:100%;padding:12px;margin-bottom:12px">
 
-      <label style="margin-top:10px">Message *</label>
-      <textarea name="message" rows="6" required placeholder="How can we help?" style="resize:vertical"></textarea>
+  <input type="email" name="email" placeholder="Email" required
+         style="width:100%;padding:12px;margin-bottom:12px">
 
-      <div style="margin-top:12px;display:flex;gap:8px">
-        <button type="submit" class="btn">Send Message</button>
-        <button type="button" onclick="openSchedule()" style="padding:10px 14px;border-radius:8px;border:1px solid #cfe9fb;background:transparent">Schedule Demo</button>
-      </div>
-    </form>
-        </div>
-    <!-- side image -->
-    <div style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b8eab2b0b0ed1f0e7e2e5cd2e4f3b1a" style="width:100%;border-radius:12px;object-fit:cover">
-      <p style="color:var(--muted);margin-top:10px">Prefer a quick call? WhatsApp us any time at <strong>+92 321 4618847</strong></p>
-    </div>
-  </div>
+  <input type="tel" name="phone" placeholder="Phone Number"
+         style="width:100%;padding:12px;margin-bottom:16px">
+
+  <button type="submit"
+          style="width:100%;padding:14px;background:#1ea7a1;color:#fff;border:none;border-radius:8px">
+    Request a Call Back
+  </button>
+
+</form><form action="https://formspree.io/f/mvzklyjd" method="POST"
+      style="background:#fff;padding:24px;border-radius:14px;max-width:420px">
+
+  <h3 style="margin-bottom:16px">Schedule a 15-Minute Free Consultation</h3>
+
+  <input type="text" name="name" placeholder="Name" required
+         style="width:100%;padding:12px;margin-bottom:12px">
+
+  <input type="email" name="email" placeholder="Email" required
+         style="width:100%;padding:12px;margin-bottom:12px">
+
+  <input type="tel" name="phone" placeholder="Phone Number"
+         style="width:100%;padding:12px;margin-bottom:16px">
+
+  <button type="submit"
+          style="width:100%;padding:14px;background:#1ea7a1;color:#fff;border:none;border-radius:8px">
+    Request a Call Back
+  </button>
+
+</form>
 </section>
 <!-- Schedule demo modal (simple) -->
 <div id="scheduleModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center">
