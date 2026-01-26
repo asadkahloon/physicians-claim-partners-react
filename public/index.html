@@ -88,18 +88,21 @@
   color: #555;
   line-height: 1.6;
 }</style>
-  <style>
-   :root {
+  <style>:root{
   --blue: #1ea7f2;
   --light-blue: #e9f6ff;
   --green: #7ed487;
-  --bg: #eaf6ff;   /* soft sky blue */
+  --bg: #fbfbf8; /* off-white background — change if you want a different shade */
   --text: #222;
   --muted: #6b6b6b;
   --accent: #0b8fd6;
 }
-    *{box-sizing:border-box}
-  body {
+
+/* global box sizing */
+* { box-sizing: border-box; }
+
+/* page body */
+body{
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   margin: 0;
   color: var(--text);
@@ -932,8 +935,10 @@ img{
       <li>✔ Improved first-pass claim acceptance</li>
       <li>✔ Streamlined denial and rejection handling</li>
     </ul>
-</div>
-</div> <!-- END certifications-big --><!-- OUR PROCESS -->
+  </div>  <!-- closing the last .cert-card -->
+</div> <!-- <-- ADD THIS LINE: END certifications-big -->
+
+<!-- OUR PROCESS -->
 <section id="process">
   <h2 style="font-size:32px">Our Process</h2>
   <p style="color:var(--muted)">Uncover the steps involved in our proven system for maximizing your medical billing efficiency.</p>
