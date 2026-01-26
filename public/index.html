@@ -8,8 +8,18 @@
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  body {
-  overflow-x: hidden;
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
 }
 /* === FIX IMAGE CORRUPTION === */
 .coding-section img{
@@ -1301,38 +1311,7 @@ img{
 <!-- CONTACT -->
 <section class="contact dark-contact" id="contact">
   <h2>Let’s Talk</h2>
-  <p>Send us a brief about your practice and we’ll get back to you.</p>
-
-<div class="contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1100px;margin:auto;">
-    </div>
-
-    <!-- RIGHT: Contact Form -->
-    <div class="lets-talk">
-      <h3>Contact Us</h3>
-
-      <form action="https://formspree.io/f/mvzkljjd" method="POST">
-        <label>Name *</label>
-        <input type="text" name="name" required>
-
-        <label>Email *</label>
-        <input type="email" name="email" required>
-
-        <label>Message *</label>
-        <textarea name="message" rows="5" required></textarea>
-
-        <button class="btn" type="submit">Send Message</button>
-      </form>
-
-      <!-- ✅ CONTACT NUMBER -->
-      <p style="margin-top:16px">
-        📞 <strong>+92 321 4618847</strong><br>
-        ✉️ info@physiciansclaimpartners.com
-      </p>
-    </div>
-
-  </div>
-</section>
-
+  
   <!-- LEFT: Billing Cost Savings Calculator -->
   <div class="billing-calculator">
     <h3>Billing Cost Savings Calculator</h3>
@@ -1350,19 +1329,7 @@ img{
       Estimated Annual Savings: $75,000
     </div>
   </div>
-
-  <!-- RIGHT: Let’s Talk Form -->
-  <div class="lets-talk">
-    <h3>Let’s Talk</h3>
-    <p>Send us a brief about your practice and we’ll get back to you.</p>
-
-    <form action="https://formspree.io/f/mvzkljjd" method="POST">
-      <label>Name *</label>
-      <input type="text" name="name" required placeholder="Your name">
-
-      <label style="margin-top:10px">Email *</label>
-      <input type="email" name="email" required placeholder="Your email">
-
+  
       <label style="margin-top:10px">Practice Name (optional)</label>
       <input type="text" name="practice">
 
@@ -1421,25 +1388,29 @@ img{
 </div>
         </section>
 </section><!-- EHR / EMR COMPATIBILITY -->
-<section id="ehr-logos" style="padding:60px 6%; background:#f9fcff; overflow:hidden;">
-  <h2 style="text-align:center;font-size:32px;margin-bottom:6px;">
-    Your <span style="color:#1ea7f2">EHR / EMR</span> — Our Medical Billing Services
+<section style="padding:60px 6%; background:#f9fcff;">
+  <h2 style="text-align:center; font-size:32px; margin-bottom:6px;">
+    Your <span style="color:#1ea7f2;">EHR / EMR</span> — Our Medical Billing Services
   </h2>
-  <p style="text-align:center;color:#6b6b6b;margin-bottom:30px;">
-    So you do not have to break up 💔 with your existing EHR
+
+  <p style="text-align:center; color:#6b6b6b; margin-bottom:40px;">
+    So you do not have to break up ❤️ with your existing EHR
   </p>
 
-  <div class="ehr-slider">
-    <div class="ehr-track">
-      <img src="https://logos-download.com/wp-content/uploads/2016/10/NextGen_Healthcare_logo.png">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Athenahealth_logo.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Epic_Systems_logo.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/DrChrono_logo.png">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/EClinicalWorks_logo.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/AdvancedMD_logo.png">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/PracticeFusion_logo.png">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/SimplePractice_logo.svg">
-    </div>
+  <div style="
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:28px;
+    align-items:center;
+    max-width:1100px;
+    margin:0 auto;
+  ">
+    <img src="https://logos-download.com/wp-content/uploads/2016/10/NextGen_Healthcare_logo.png" style="max-height:48px; margin:auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Epic_Systems_logo.svg" style="max-height:40px; margin:auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/DrChrono_logo.png" style="max-height:44px; margin:auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/EClinicalWorks_logo.svg" style="max-height:40px; margin:auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/PracticeFusion_logo.png" style="max-height:40px; margin:auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/SimplePractice_logo.svg" style="max-height:36px; margin:auto;">
   </div>
 </section>   <!-- last section -->
 <footer>
