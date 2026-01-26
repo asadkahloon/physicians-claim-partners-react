@@ -708,6 +708,48 @@ img{
   margin-top:20px;
   font-size:20px;
   font-weight:700;
+}/* REVIEWS */
+.reviews-track{
+  display:flex;
+  gap:28px;
+  animation: reviewsScroll 40s linear infinite;
+}
+
+.review-card{
+  min-width:300px;
+  background:#fff;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.08);
+  animation: float 6s ease-in-out infinite;
+}
+
+.review-card img{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:12px;
+}
+
+.review-card p{
+  font-size:15px;
+  color:#334155;
+  margin-bottom:12px;
+}
+
+.review-card strong{
+  display:block;
+}
+
+.review-card span{
+  font-size:13px;
+  color:var(--muted);
+}
+
+@keyframes reviewsScroll{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
 }</style>
 </head>
 <body>
@@ -974,9 +1016,79 @@ img{
       <li>✔ Reduced rejections</li>
     </ul>
   </div>
-</div> <!-- ✅ END certifications-big -->
+</div> <!-- END certifications-big --></div> <!-- CLOSE certifications container -->
+</div> <!-- CLOSE stats column -->
+</div> <!-- CLOSE flex wrapper -->
 </section> <!-- END stats-reviews -->
-  
+  <!-- REVIEWS -->
+<section id="reviews" style="padding:80px 6%; background:#f8fbff; overflow:hidden;">
+  <h2 style="text-align:center;font-size:32px;margin-bottom:10px;">
+    What Doctors Say About Us
+  </h2>
+  <p style="text-align:center;color:var(--muted);margin-bottom:40px;">
+    Trusted by physicians across the USA
+  </p>
+
+  <div class="reviews-track">
+    
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg">
+      <p>Recovered over 85% of our AR within 90 days. Extremely professional team.</p>
+      <strong>Dr. Michael R.</strong>
+      <span>Internal Medicine</span>
+    </div>
+
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/women/45.jpg">
+      <p>Denials dropped drastically. Clean reporting and excellent follow-ups.</p>
+      <strong>Dr. Sarah K.</strong>
+      <span>Family Practice</span>
+    </div>
+
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/men/54.jpg">
+      <p>Billing finally feels stress-free. Their team knows U.S. payers inside out.</p>
+      <strong>Dr. James L.</strong>
+      <span>Cardiology</span>
+    </div>
+
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/women/61.jpg">
+      <p>We switched from in-house billing and immediately saw cost savings.</p>
+      <strong>Dr. Emily T.</strong>
+      <span>Pediatrics</span>
+    </div>
+
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/men/71.jpg">
+      <p>Fast onboarding, zero disruption, and higher collections.</p>
+      <strong>Dr. Robert S.</strong>
+      <span>Orthopedics</span>
+    </div>
+
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/women/22.jpg">
+      <p>The transparency and communication are outstanding.</p>
+      <strong>Dr. Ayesha M.</strong>
+      <span>Psychiatry</span>
+    </div>
+
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/men/19.jpg">
+      <p>Claims move faster and reimbursements are consistent.</p>
+      <strong>Dr. Daniel W.</strong>
+      <span>Urgent Care</span>
+    </div>
+
+    <div class="review-card">
+      <img src="https://randomuser.me/api/portraits/women/30.jpg">
+      <p>Professional, compliant, and results-driven billing partner.</p>
+      <strong>Dr. Linda C.</strong>
+      <span>OB-GYN</span>
+    </div>
+
+  </div>
+</section>
 <!-- OUR PROCESS -->
 <section id="process">
   <h2 style="font-size:32px">Our Process</h2>
