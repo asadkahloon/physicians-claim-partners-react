@@ -1295,45 +1295,56 @@ img{
   <div id="result" style="margin-top:16px;font-weight:bold"></div>
 </section>
 <!-- CONTACT -->
-<section class="contact dark-contact">
-  <h2>Let's Talk</h2>
-  <p style="color:var(--muted)">Send us a brief about your practice and we'll get back to you.</p>
+<section class="contact dark-contact" id="contact">
+  <h2>Let’s Talk</h2>
+  <p>Send us a brief about your practice and we’ll get back to you.</p>
 
-  <div class="contact-grid">[06:44, 26/01/2026] +92 321 4618847: .billing-calculator{
-  background:#f8fbff;
-  border-radius:16px;
-  padding:32px;
-  box-shadow:0 18px 40px rgba(0,0,0,0.06);
-}
+  <div class="contact-grid">
 
-.billing-calculator h3{
-  font-size:22px;
-  margin-bottom:20px;
-}
+    <!-- LEFT: Calculator -->
+    <div class="billing-calculator">
+      <h3>Billing Cost Savings Calculator</h3>
 
-.billing-calculator label{
-  font-weight:600;
-  color:#334155;
-}
+      <label>Annual Collections (USD)</label>
+      <input type="number" placeholder="250000">
 
-.billing-calculator input{
-  width:100%;
-  padding:12px 14px;
-  border-radius:10px;
-  border:1px solid #cbd5e1;
-  margin-top:6px;
-}
+      <label>In-house Salary (annual)</label>
+      <input type="number" placeholder="50000">
 
-.billing-calculator .result{
-  background:#0b8fd6;
-  color:#fff;
-  border-radius:12px;
-  padding:18px;
-  margin-top:20px;
-  font-size:20px;
-  font-weight:700;
-}
-[06:56, 26/01/2026] +92 321 4618847: <div class="contact-grid">
+      <label>Overheads (annual)</label>
+      <input type="number" placeholder="20000">
+
+      <div class="result">
+        Estimated Annual Savings: $75,000
+      </div>
+    </div>
+
+    <!-- RIGHT: Contact Form -->
+    <div class="lets-talk">
+      <h3>Contact Us</h3>
+
+      <form action="https://formspree.io/f/mvzkljjd" method="POST">
+        <label>Name *</label>
+        <input type="text" name="name" required>
+
+        <label>Email *</label>
+        <input type="email" name="email" required>
+
+        <label>Message *</label>
+        <textarea name="message" rows="5" required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+
+      <!-- ✅ CONTACT NUMBER -->
+      <p style="margin-top:16px">
+        📞 <strong>+92 321 4618847</strong><br>
+        ✉️ info@physiciansclaimpartners.com
+      </p>
+    </div>
+
+  </div>
+</section>
 
   <!-- LEFT: Billing Cost Savings Calculator -->
   <div class="billing-calculator">
