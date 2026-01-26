@@ -17,7 +17,14 @@ body {
   display: flex;
   flex-direction: column;
 }
-
+.left-layout {
+  width: 70%;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
 footer {
   margin-top: auto;
 }.calculator-wrapper {
@@ -335,10 +342,15 @@ footer a{color:#fff}
       .stats{flex-direction:column}
     }/* SCROLL TEXT ANIMATION */
 /* text hidden until .visible is added */
-/* section, h2, h3, p {
+/* .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 } */
 .visible {
   opacity: 1 !important;
@@ -1343,26 +1355,8 @@ img{
         <label style="margin-top:8px">Our fee (% of collections)</label>
         <input type="number" id="ourRate" value="2.49" min="0" step="0.01">
         <div style="margin-top:12px" class="calc-row">
-         <!-- BILLING COST SAVINGS CALCULATOR -->
-<section class="calculator-section" style="margin-top:20px">
-  <h3>Billing Cost Savings Calculator</h3>
-
-  <label>Annual Collections (USD)</label>
-  <input type="number" id="collections" value="250000">
-
-  <label>In-house Annual Salary (per biller)</label>
-  <input type="number" id="salary" value="50000">
-
-  <label>Overheads (annual)</label>
-  <input type="number" id="overheads" value="20000">
-
-  <label>Our Fee (% of collections)</label>
-  <input type="number" id="fee" value="2.49" step="0.01">
-
-  <button class="btn" onclick="calculateSavings()">Calculate Savings</button>
-
-  <div id="result" style="margin-top:16px;font-weight:bold"></div>
-</section>
+        <div class="left-layout">
+          <!-- BILLING COST SAVINGS CALCULATOR -->
     <!-- contact form -->
     <form action="https://formspree.io/f/mvzklyjd" method="POST" style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
       <label>Name *</label>
@@ -1382,7 +1376,7 @@ img{
         <button type="button" onclick="openSchedule()" style="padding:10px 14px;border-radius:8px;border:1px solid #cfe9fb;background:transparent">Schedule Demo</button>
       </div>
     </form>
-
+        </div>
     <!-- side image -->
     <div style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
       <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b8eab2b0b0ed1f0e7e2e5cd2e4f3b1a" style="width:100%;border-radius:12px;object-fit:cover">
