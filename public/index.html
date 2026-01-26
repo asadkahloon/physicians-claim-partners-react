@@ -87,6 +87,60 @@
   margin-top: 10px;
   color: #555;
   line-height: 1.6;
+}/* ===== DOCTOR REVIEWS ===== */
+.reviews-hero{
+  padding:80px 40px;
+  background:#eaf6ff;
+  text-align:center;
+}
+
+.reviews-hero h2{
+  font-size:42px;
+  margin-bottom:40px;
+}
+
+.reviews-slider{
+  overflow:hidden;
+  max-width:1200px;
+  margin:auto;
+}
+
+.reviews-track{
+  display:flex;
+  gap:40px;
+  animation:slideReviews 25s linear infinite;
+}
+
+.review-card{
+  min-width:340px;
+  background:#fff;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 20px 50px rgba(0,0,0,.12);
+  animation:floatCard 6s ease-in-out infinite;
+}
+
+.review-card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+}
+
+.review-card h4{
+  margin:10px 0;
+}
+
+@keyframes slideReviews{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-60%)}
+}
+
+@keyframes floatCard{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
 }</style>
   <style>
     :root{
@@ -665,12 +719,50 @@ img{
    class="social fb">
   <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
 </a>
-</header>
+</header><section class="reviews-hero">
+  <h2>What Doctors Say About Us</h2>
+
+  <div class="reviews-slider">
+    <div class="reviews-track">
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <h4>Dr. Michael R.</h4>
+        <p>Collections improved within 30 days.</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+        <h4>Dr. Emily S.</h4>
+        <p>Denials dropped significantly.</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg">
+        <h4>Dr. Andrew H.</h4>
+        <p>Professional and very responsive.</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/52.jpg">
+        <h4>Dr. Sophia W.</h4>
+        <p>Recovered aged AR quickly.</p>
+      </div>
+
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/71.jpg">
+        <h4>Dr. Daniel K.</h4>
+        <p>Clean billing and compliance focus.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-left">
-    <h2>TARGETED BILLING TO TURBOCHARGE REVENUE</h2>
+    <h2>PHYSICIAN LED MEDICAL AND DENTAL BILLING WITH TARGETED APPROACH</h2>
     <p>Streamline billing, boost collections — targeted medical and dental billing solutions designed to maximize revenue, reduce claim denials, and make cash flow predictable.</p>
     <div class="buttons">
       <a class="cta" href="#services">Explore Services</a>
@@ -904,93 +996,7 @@ img{
       <li>✔ Improved first-pass claim acceptance</li>
       <li>✔ Streamlined denial and rejection handling</li>
     </ul>
-  </div>
-
 </div>
-    <!-- REVIEWS column (keeps your reviews) -->
-   <section id="doctor-reviews-hero" style="padding:80px 20px;background:#f5f7fa;">
-  <div style="max-width:1300px;margin:auto;">
-    <h2 style="font-size:42px;font-weight:800;color:#0b3a5f;margin-bottom:40px">
-      What Doctors Say About Us
-   <section class="reviews-hero">
-  <h2>What Doctors Say About Us</h2>
-
-  <div class="reviews-slider">
-    <div class="reviews-track">
-
-      <!-- REVIEW 1 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg">
-        <h4>Dr. Michael R.</h4>
-        <p>“Collections improved within weeks. Very systematic and compliant.”</p>
-      </div>
-
-      <!-- REVIEW 2 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg">
-        <h4>Dr. Emily S.</h4>
-        <p>“Eligibility and follow-ups reduced denials drastically.”</p>
-      </div>
-
-      <!-- REVIEW 3 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/men/51.jpg">
-        <h4>Dr. Daniel K.</h4>
-        <p>“Out-of-network recovery was far better than expected.”</p>
-      </div>
-
-      <!-- REVIEW 4 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg">
-        <h4>Dr. Sarah M.</h4>
-        <p>“Professional team. Clean reporting and clear communication.”</p>
-      </div>
-
-      <!-- REVIEW 5 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/men/12.jpg">
-        <h4>Dr. James L.</h4>
-        <p>“DRG audits recovered revenue we had written off.”</p>
-      </div>
-
-      <!-- REVIEW 6 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/women/23.jpg">
-        <h4>Dr. Anita P.</h4>
-        <p>“Credentialing was smooth and fast across payers.”</p>
-      </div>
-
-      <!-- REVIEW 7 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/men/77.jpg">
-        <h4>Dr. Robert T.</h4>
-        <p>“First-pass acceptance improved noticeably.”</p>
-      </div>
-
-      <!-- REVIEW 8 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/women/35.jpg">
-        <h4>Dr. Olivia C.</h4>
-        <p>“Very organized billing workflow. Highly recommend.”</p>
-      </div>
-
-      <!-- REVIEW 9 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/men/90.jpg">
-        <h4>Dr. Andrew H.</h4>
-        <p>“Reduced AR days significantly.”</p>
-      </div>
-
-      <!-- REVIEW 10 -->
-      <div class="review-card">
-        <img src="https://randomuser.me/api/portraits/women/81.jpg">
-        <h4>Dr. Sophia W.</h4>
-        <p>“Transparent, compliant, and effective.”</p>
-      </div>
-
-    </div>
-  </div>
-</section>
 <!-- OUR PROCESS -->
 <section id="process">
   <h2 style="font-size:32px">Our Process</h2>
