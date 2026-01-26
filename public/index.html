@@ -20,6 +20,53 @@ body {
 
 footer {
   margin-top: auto;
+}.calculator-wrapper {
+  width: 70%;
+  margin: 60px auto;
+}
+
+.billing-calculator {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.billing-calculator h3 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.calculator-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calculator-table td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+}
+
+.calculator-table input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.calculate-btn {
+  margin-top: 24px;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+}
+
+.result-box {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
 }
 /* === FIX IMAGE CORRUPTION === */
 .coding-section img{
@@ -100,7 +147,15 @@ footer {
   margin-top: 10px;
   color: #555;
   line-height: 1.6;
-}</style>
+}<div class="ehr-badges">
+  <span class="ehr-badge">Epic</span>
+  <span class="ehr-badge">Athenahealth</span>
+  <span class="ehr-badge">eClinicalWorks</span>
+  <span class="ehr-badge">NextGen</span>
+  <span class="ehr-badge">DrChrono</span>
+  <span class="ehr-badge">Practice Fusion</span>
+  <span class="ehr-badge">SimplePractice</span>
+</div></style>
   <style>:root{
   --blue: #1ea7f2;
   --light-blue: #e9f6ff;
@@ -1313,36 +1368,36 @@ img{
   <h2>Let’s Talk</h2>
   
   <!-- LEFT: Billing Cost Savings Calculator -->
+ <div class="calculator-wrapper">
   <div class="billing-calculator">
-    <h3>Billing Cost Savings Calculator</h3>
+   <h3>Billing Cost Savings Calculator</h3>
 
-    <label>Annual Collections (USD)</label>
-    <input type="number" placeholder="250000">
+<table class="calculator-table">
+  <tr>
+    <td>Annual Collections (USD)</td>
+    <td><input type="number" placeholder="250000"></td>
+  </tr>
 
-    <label style="margin-top:12px">In-house Annual Salary (per biller)</label>
-    <input type="number" placeholder="50000">
+  <tr>
+    <td>In-house Annual Salary (per biller)</td>
+    <td><input type="number" placeholder="50000"></td>
+  </tr>
 
-    <label style="margin-top:12px">Overheads (annual)</label>
-    <input type="number" placeholder="20000">
+  <tr>
+    <td>Overheads (annual)</td>
+    <td><input type="number" placeholder="20000"></td>
+  </tr>
 
-    <div class="result">
-      Estimated Annual Savings: $75,000
-    </div>
+  <tr>
+    <td>Our Fee (% of collections)</td>
+    <td><input type="number" value="2.49" step="0.01"></td>
+  </tr>
+</table>
+
+<button class="btn calculate-btn" onclick="calculateSavings()">Calculate Savings</button>
+
+<div id="result" class="result-box"></div>
   </div>
-  
-      <label style="margin-top:10px">Practice Name (optional)</label>
-      <input type="text" name="practice">
-
-      <label style="margin-top:10px">Message *</label>
-      <textarea name="message" rows="5" required placeholder="How can we help?"></textarea>
-
-      <button type="submit" class="btn primary" style="margin-top:16px">
-        Send Message
-      </button>
-    </form>
-  </div>
-
-</div>
     <!-- contact form -->
     <form action="https://formspree.io/f/mvzklyjd" method="POST" style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
       <label>Name *</label>
@@ -1396,22 +1451,15 @@ img{
   <p style="text-align:center; color:#6b6b6b; margin-bottom:40px;">
     So you do not have to break up ❤️ with your existing EHR
   </p>
-
-  <div style="
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
-    gap:28px;
-    align-items:center;
-    max-width:1100px;
-    margin:0 auto;
-  ">
-    <img src="https://logos-download.com/wp-content/uploads/2016/10/NextGen_Healthcare_logo.png" style="max-height:48px; margin:auto;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Epic_Systems_logo.svg" style="max-height:40px; margin:auto;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/DrChrono_logo.png" style="max-height:44px; margin:auto;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/EClinicalWorks_logo.svg" style="max-height:40px; margin:auto;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/PracticeFusion_logo.png" style="max-height:40px; margin:auto;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/SimplePractice_logo.svg" style="max-height:36px; margin:auto;">
-  </div>
+  <div class="ehr-badges">
+  <span class="ehr-badge">Epic</span>
+  <span class="ehr-badge">Athenahealth</span>
+  <span class="ehr-badge">eClinicalWorks</span>
+  <span class="ehr-badge">NextGen</span>
+  <span class="ehr-badge">DrChrono</span>
+  <span class="ehr-badge">Practice Fusion</span>
+  <span class="ehr-badge">SimplePractice</span>
+</div>
 </section>   <!-- last section -->
 <footer>
   ...
