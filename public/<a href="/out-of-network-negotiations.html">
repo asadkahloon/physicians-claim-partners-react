@@ -7,7 +7,7 @@
   <style>
     /* ----- Page basics ----- */
     :root{
-      --brand:#0b74b9;
+      --brand:#0b74b9; 
       --muted:#6c6f76;
       --card-bg:#fff;
       --page-bg:#f6f7f8; /* off-white requested */
