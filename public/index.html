@@ -1529,7 +1529,7 @@ img{
       <div>Our fee (${ourRate}% of collections): <strong>$${ourFeeUSD.toLocaleString(undefined,{maximumFractionDigits:2})}</strong></div>
       <div style="margin-top:8px">Estimated annual savings if you switch: <strong style="color:${savings>=0?'var(--green)':'#d9534f'}">$${savings.toLocaleString(undefined,{maximumFractionDigits:2})}</strong></div>
     `;
-    document.getElementById('calcResult').innerHTML = result;
+    document.getElementById('result').innerHTML = result;
   }
   calculate();
 
