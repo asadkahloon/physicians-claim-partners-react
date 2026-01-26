@@ -211,7 +211,12 @@ img:hover {
     input[type="number"], input[type="text"], input[type="email"], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef6;font-size:15px}
     button.btn{background:var(--blue);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
     /* Contact form */
-    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
+    .contact-grid{
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap:32px;
+  align-items:flex-start;
+}
     /* Footer // Social Icons Styling */
 .social-icon{
   width:44px;
@@ -670,7 +675,40 @@ img{
   50%{transform:translateY(-12px)}
   100%{transform:translateY(0)}
 }
-</style>
+.billing-calculator{
+  background:#f8fbff;
+  border-radius:16px;
+  padding:32px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.06);
+}
+
+.billing-calculator h3{
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.billing-calculator label{
+  font-weight:600;
+  color:#334155;
+}
+
+.billing-calculator input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #cbd5e1;
+  margin-top:6px;
+}
+
+.billing-calculator .result{
+  background:#0b8fd6;
+  color:#fff;
+  border-radius:12px;
+  padding:18px;
+  margin-top:20px;
+  font-size:20px;
+  font-weight:700;
+}</style>
 </head>
 <body>
 
@@ -878,9 +916,9 @@ img{
       <h3 style="margin-top:28px;font-size:20px">Certifications & Partnerships</h3>
       <p style="color:var(--muted);margin-bottom:12px">Trusted, audited, and certified — we follow verified standards and work with recognized partners.</p>
 
-    <!-- CERTIFICATIONS - REPLACE EXISTING cert-grid BLOCK WITH THIS -->
+   <!-- CERTIFICATIONS -->
 <div class="certifications-big">
-</div>
+
   <div class="cert-card">
     <h3>SOC 2 Type II Certified</h3>
     <p>
@@ -899,44 +937,44 @@ img{
     <h3>HIPAA Compliant Operations</h3>
     <p>
       We strictly follow HIPAA regulations to protect patient health information
-      across all billing, coding, and revenue cycle workflows.
+      across all billing and revenue cycle workflows.
     </p>
     <ul>
       <li>✔ Administrative, technical, and physical safeguards</li>
-      <li>✔ Encrypted access to patient and claims data</li>
-      <li>✔ Role-based system permissions</li>
-      <li>✔ Staff trained on HIPAA privacy & security rules</li>
+      <li>✔ Encrypted access to PHI</li>
+      <li>✔ Role-based access control</li>
+      <li>✔ Regular HIPAA staff training</li>
     </ul>
   </div>
 
   <div class="cert-card">
     <h3>PCI-DSS Ready Payment Handling</h3>
     <p>
-      Our billing processes follow PCI-DSS aligned practices for handling
-      patient payments, refunds, and financial data securely.
+      Secure handling of patient payments and financial data aligned with
+      PCI-DSS standards.
     </p>
     <ul>
       <li>✔ Secure payment workflows</li>
-      <li>✔ Reduced risk of payment data exposure</li>
+      <li>✔ Reduced risk of financial data exposure</li>
       <li>✔ Compliance-aware billing systems</li>
-      <li>✔ Trusted handling of patient financial information</li>
+      <li>✔ Trusted payment processing</li>
     </ul>
   </div>
 
   <div class="cert-card">
     <h3>Clearinghouse Integrations</h3>
     <p>
-      We work directly with leading medical and dental clearinghouses to ensure
-      faster claim submissions and reduced rejection rates.
+      Direct integrations with leading medical and dental clearinghouses
+      for faster claim submission.
     </p>
     <ul>
       <li>✔ Direct EDI claim submission</li>
       <li>✔ Faster payer acknowledgements</li>
-      <li>✔ Improved first-pass claim acceptance</li>
-      <li>✔ Streamlined denial and rejection handling</li>
+      <li>✔ Higher first-pass acceptance</li>
+      <li>✔ Reduced rejections</li>
     </ul>
-  </div>  <!-- closing the last .cert-card -->
-</div> <!-- END certifications-big -->
+  </div>
+</div> <!-- ✅ END certifications-big -->
 </section> <!-- END stats-reviews -->
   
 <!-- OUR PROCESS -->
@@ -1150,7 +1188,85 @@ img{
   <h2>Let's Talk</h2>
   <p style="color:var(--muted)">Send us a brief about your practice and we'll get back to you.</p>
 
-  <div class="contact-grid">
+  <div class="contact-grid">[06:44, 26/01/2026] +92 321 4618847: .billing-calculator{
+  background:#f8fbff;
+  border-radius:16px;
+  padding:32px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.06);
+}
+
+.billing-calculator h3{
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+.billing-calculator label{
+  font-weight:600;
+  color:#334155;
+}
+
+.billing-calculator input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #cbd5e1;
+  margin-top:6px;
+}
+
+.billing-calculator .result{
+  background:#0b8fd6;
+  color:#fff;
+  border-radius:12px;
+  padding:18px;
+  margin-top:20px;
+  font-size:20px;
+  font-weight:700;
+}
+[06:56, 26/01/2026] +92 321 4618847: <div class="contact-grid">
+
+  <!-- LEFT: Billing Cost Savings Calculator -->
+  <div class="billing-calculator">
+    <h3>Billing Cost Savings Calculator</h3>
+
+    <label>Annual Collections (USD)</label>
+    <input type="number" placeholder="250000">
+
+    <label style="margin-top:12px">In-house Annual Salary (per biller)</label>
+    <input type="number" placeholder="50000">
+
+    <label style="margin-top:12px">Overheads (annual)</label>
+    <input type="number" placeholder="20000">
+
+    <div class="result">
+      Estimated Annual Savings: $75,000
+    </div>
+  </div>
+
+  <!-- RIGHT: Let’s Talk Form -->
+  <div class="lets-talk">
+    <h3>Let’s Talk</h3>
+    <p>Send us a brief about your practice and we’ll get back to you.</p>
+
+    <form action="https://formspree.io/f/mvzkljjd" method="POST">
+      <label>Name *</label>
+      <input type="text" name="name" required placeholder="Your name">
+
+      <label style="margin-top:10px">Email *</label>
+      <input type="email" name="email" required placeholder="Your email">
+
+      <label style="margin-top:10px">Practice Name (optional)</label>
+      <input type="text" name="practice">
+
+      <label style="margin-top:10px">Message *</label>
+      <textarea name="message" rows="5" required placeholder="How can we help?"></textarea>
+
+      <button type="submit" class="btn primary" style="margin-top:16px">
+        Send Message
+      </button>
+    </form>
+  </div>
+
+</div>
     <!-- contact form -->
     <form action="https://formspree.io/f/mvzklyjd" method="POST" style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
       <label>Name *</label>
@@ -1194,7 +1310,7 @@ img{
     </form>
   </div>
 </div>
-
+        </section>
 <!-- Footer -->
 <footer>
   <div class="col">
@@ -1253,7 +1369,12 @@ img{
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/SimplePractice_logo.svg">
     </div>
   </div>
-</section></footer><section class="big-section">
+</section>   <!-- last section -->
+<footer>
+  ...
+</footer>
+
+<section class="big-section">
 <!-- WhatsApp floating -->
 <a class="whatsapp" href="https://wa.me/923214618847" target="_blank" title="Message us on WhatsApp">WA</a>
 
