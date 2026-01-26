@@ -89,23 +89,23 @@
   line-height: 1.6;
 }</style>
   <style>
-    :root{
-  --blue:#1ea7f2;
-  --light-blue:#e9f6ff;
-  --green:#7ed487;
-  --bg:#eaf6ff;
-  --text:#222;
-  --muted:#6b6b6b;
-  --accent:#0b8fd6;
+   :root {
+  --blue: #1ea7f2;
+  --light-blue: #e9f6ff;
+  --green: #7ed487;
+  --bg: #eaf6ff;   /* soft sky blue */
+  --text: #222;
+  --muted: #6b6b6b;
+  --accent: #0b8fd6;
 }
     *{box-sizing:border-box}
-  body{
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  margin:0;
-  color:var(--text);
+  body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  color: var(--text);
   background: var(--bg);
-  line-height:1.45;
-  perspective:1000px;
+  line-height: 1.45;
+  perspective: 1000px;
 }
     a{color:var(--accent); text-decoration:none}
     header{display:flex;align-items:center;justify-content:space-between;padding:20px 36px;border-bottom:1px solid #eef3f7;background:#f7f9fc;position:sticky;top:0;z-index:50}
@@ -261,10 +261,6 @@ section, h2, h3, p {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
-}
-.visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
 }
 .visible {
   opacity: 1 !important;
@@ -882,7 +878,7 @@ img{
 
     <!-- CERTIFICATIONS - REPLACE EXISTING cert-grid BLOCK WITH THIS -->
 <div class="certifications-big">
-
+</div>
   <div class="cert-card">
     <h3>SOC 2 Type II Certified</h3>
     <p>
