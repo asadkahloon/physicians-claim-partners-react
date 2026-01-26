@@ -88,19 +88,92 @@
   color: #555;
   line-height: 1.6;
 }
-</style>
+/* ===== DOCTOR REVIEWS HERO ===== */
+
+.reviews-hero{
+  padding:80px 40px;
+  background:linear-gradient(180deg,#e6f4ff,#ffffff);
+  text-align:center;
+}
+
+.reviews-hero h2{
+  font-size:42px;
+  margin-bottom:40px;
+}
+
+/* SLIDER WRAPPER */
+.reviews-slider{
+  overflow:hidden;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* MOVING TRACK */
+.reviews-track{
+  display:flex;
+  gap:40px;
+  animation:slideReviews 25s ease-in-out infinite alternate;
+}
+
+/* REVIEW CARD */
+.review-card{
+  min-width:340px;
+  background:#ffffff;
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 20px 50px rgba(0,0,0,.12);
+  animation:floatCard 6s ease-in-out infinite;
+  transition:transform .6s;
+  transform-style:preserve-3d;
+}
+
+.review-card:hover{
+  transform:rotateY(12deg) translateY(-12px);
+}
+
+.review-card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+}
+
+.review-card h4{
+  font-size:20px;
+  margin:10px 0;
+}
+
+.review-card p{
+  font-size:16px;
+  color:#555;
+  line-height:1.6;
+}
+
+/* ANIMATIONS */
+@keyframes slideReviews{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-60%)}
+}
+
+@keyframes floatCard{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}</style>
   <style>
     :root{
       --blue:#1ea7f2;
       --light-blue:#e9f6ff;
       --green:#7ed487;
-      --bg:#e9f6ff
-      --text:#222;
+       --bg:#eaf6ff;   /* soft sky blue */
+} --text:#222;
       --muted:#6b6b6b;
       --accent:#0b8fd6;
     }
     *{box-sizing:border-box}
-  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; color:var(--text); background:var(--bg); line-height:1.45}perspective:1000px;
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; color:var(--text);  background: var(--bg);
+} line-height:1.45}perspective:1000px;
     a{color:var(--accent); text-decoration:none}
     header{display:flex;align-items:center;justify-content:space-between;padding:20px 36px;border-bottom:1px solid #eef3f7;background:#f7f9fc;position:sticky;top:0;z-index:50}
     /* Monogram */
@@ -497,6 +570,14 @@ header.scrolled {
 @media(max-width:600px){
   .cert-grid-large{grid-template-columns:1fr}
   .cert-img-large{height:180px}
+}.social img{
+  width:32px;
+  height:32px;
+  transition: transform .3s ease;
+}
+
+.social img:hover{
+  transform: scale(1.15) rotate(5deg);
 }
   </style><style>
 
@@ -652,7 +733,11 @@ img{
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
     <a class="cta" href="#schedule" onclick="openSchedule()">Schedule Demo</a>
-  </nav>
+  </nav><a href="https://web.facebook.com/profile.php?id=61586726156956" 
+   target="_blank" 
+   class="social fb">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+</a>
 </header>
 
 <!-- HERO -->
@@ -706,7 +791,8 @@ img{
       <p>Specialised dental claim processing, CDT coding, and PPO negotiation to maximize reimbursement.</p>
     </a>
 <a class="service-card" href="/credentialing.html">
-  <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f0a8?q=80&w=1200&auto=format&fit=crop" alt="Provider Credentialing">
+  <img src="https://images.unsplash.com/photo-1580281657527-47f249e8f1df"
+     alt="Provider Credentialing">
   <h3>Provider Credentialing</h3>
   <p>
     End-to-end medical and dental provider credentialing with Medicare, Medicaid,
@@ -897,138 +983,85 @@ img{
   <div style="max-width:1300px;margin:auto;">
     <h2 style="font-size:42px;font-weight:800;color:#0b3a5f;margin-bottom:40px">
       What Doctors Say About Us
-    </h2>
+   <section class="reviews-hero">
+  <h2>What Doctors Say About Us</h2>
 
-    <div class="review-hero">
-      <button class="nav prev">‹</button>
+  <div class="reviews-slider">
+    <div class="reviews-track">
 
-      <div class="review-stage">
-        <div class="review-card">
-          <div class="photo"></div>
-          <div class="content">
-            <h3 class="name"></h3>
-            <div class="specialty"></div>
-            <p class="text"></p>
-          </div>
-        </div>
+      <!-- REVIEW 1 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <h4>Dr. Michael R.</h4>
+        <p>“Collections improved within weeks. Very systematic and compliant.”</p>
       </div>
 
-      <button class="nav next">›</button>
+      <!-- REVIEW 2 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+        <h4>Dr. Emily S.</h4>
+        <p>“Eligibility and follow-ups reduced denials drastically.”</p>
+      </div>
+
+      <!-- REVIEW 3 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/51.jpg">
+        <h4>Dr. Daniel K.</h4>
+        <p>“Out-of-network recovery was far better than expected.”</p>
+      </div>
+
+      <!-- REVIEW 4 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg">
+        <h4>Dr. Sarah M.</h4>
+        <p>“Professional team. Clean reporting and clear communication.”</p>
+      </div>
+
+      <!-- REVIEW 5 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg">
+        <h4>Dr. James L.</h4>
+        <p>“DRG audits recovered revenue we had written off.”</p>
+      </div>
+
+      <!-- REVIEW 6 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/23.jpg">
+        <h4>Dr. Anita P.</h4>
+        <p>“Credentialing was smooth and fast across payers.”</p>
+      </div>
+
+      <!-- REVIEW 7 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/77.jpg">
+        <h4>Dr. Robert T.</h4>
+        <p>“First-pass acceptance improved noticeably.”</p>
+      </div>
+
+      <!-- REVIEW 8 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/35.jpg">
+        <h4>Dr. Olivia C.</h4>
+        <p>“Very organized billing workflow. Highly recommend.”</p>
+      </div>
+
+      <!-- REVIEW 9 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/90.jpg">
+        <h4>Dr. Andrew H.</h4>
+        <p>“Reduced AR days significantly.”</p>
+      </div>
+
+      <!-- REVIEW 10 -->
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/81.jpg">
+        <h4>Dr. Sophia W.</h4>
+        <p>“Transparent, compliant, and effective.”</p>
+      </div>
+
     </div>
   </div>
 </section>
-
-<style>
-.review-hero{display:flex;align-items:center;gap:24px}
-.nav{
-  font-size:40px;
-  background:#00a99d;
-  color:#fff;
-  border:none;
-  border-radius:14px;
-  padding:14px 20px;
-  cursor:pointer;
-  box-shadow:0 15px 40px rgba(0,0,0,.15)
-}
-
-.review-stage{flex:1;display:flex;justify-content:center}
-
-.review-card{
-  display:flex;
-  gap:40px;
-  max-width:1100px;
-  width:100%;
-  background:#fff;
-  padding:40px;
-  border-radius:22px;
-  box-shadow:0 40px 100px rgba(0,0,0,.15);
-  perspective:1200px;
-}
-
-.photo{
-  width:420px;
-  height:420px;
-  border-radius:20px;
-  background-size:cover;
-  background-position:center;
-  animation:float 6s ease-in-out infinite;
-  transition:transform .6s;
-}
-
-.review-card:hover .photo{
-  transform:rotateY(12deg) translateY(-14px);
-}
-
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-18px)}
-  100%{transform:translateY(0)}
-}
-
-.content{flex:1}
-.name{font-size:28px;margin:0;color:#0b3a5f}
-.specialty{font-weight:700;color:#6b7c8f;margin-bottom:16px}
-.text{font-size:20px;line-height:1.6;color:#1f2d3d}
-
-@media(max-width:900px){
-  .review-card{flex-direction:column;align-items:center;text-align:center}
-  .photo{width:300px;height:300px}
-}
-</style>
-
-<script>
-const reviews = [
-  {name:"Dr. Sarah M.", role:"Psychiatrist", img:"https://source.unsplash.com/900x900/?female,doctor&sig=1",
-   text:"Collections improved within the first month. Denials dropped sharply."},
-
-  {name:"Dr. James L.", role:"Internal Medicine", img:"https://source.unsplash.com/900x900/?male,doctor&sig=2",
-   text:"Extremely professional billing team with excellent payer follow-up."},
-
-  {name:"Dr. Anita P.", role:"Dentist", img:"https://source.unsplash.com/900x900/?female,dentist&sig=3",
-   text:"Recovered a huge backlog of unpaid dental claims."},
-
-  {name:"Dr. Michael R.", role:"Cardiology", img:"https://source.unsplash.com/900x900/?male,physician&sig=4",
-   text:"Out-of-network negotiations significantly increased reimbursements."},
-
-  {name:"Dr. Emily T.", role:"Pediatrics", img:"https://source.unsplash.com/900x900/?female,doctor&sig=5",
-   text:"Eligibility verification reduced same-day claim issues."},
-
-  {name:"Dr. Adam K.", role:"General Surgery", img:"https://source.unsplash.com/900x900/?male,surgeon&sig=6",
-   text:"Appeals were handled perfectly. Payments recovered fast."},
-
-  {name:"Dr. Laura G.", role:"Family Medicine", img:"https://source.unsplash.com/900x900/?female,physician&sig=7",
-   text:"Credentialing was smooth and saved us weeks."},
-
-  {name:"Dr. Robert P.", role:"Orthopedics", img:"https://source.unsplash.com/900x900/?male,doctor&sig=8",
-   text:"Best billing analytics we’ve used so far."},
-
-  {name:"Dr. Nina S.", role:"OB/GYN", img:"https://source.unsplash.com/900x900/?female,doctor&sig=9",
-   text:"Clear reports and measurable revenue growth."},
-
-  {name:"Dr. Daniel F.", role:"Urgent Care", img:"https://source.unsplash.com/900x900/?male,doctor&sig=10",
-   text:"First-pass acceptance rate improved drastically."}
-];
-
-let i=0;
-const photo=document.querySelector(".photo");
-const name=document.querySelector(".name");
-const role=document.querySelector(".specialty");
-const text=document.querySelector(".text");
-
-function render(){
-  const r=reviews[i];
-  photo.style.backgroundImage=url('${r.img}');
-  name.textContent=r.name;
-  role.textContent=r.role;
-  text.textContent=r.text;
-}
-render();
-
-document.querySelector(".next").onclick=()=>{i=(i+1)%reviews.length;render();}
-document.querySelector(".prev").onclick=()=>{i=(i-1+reviews.length)%reviews.length;render();}
-
-setInterval(()=>{i=(i+1)%reviews.length;render();},5000);
-</script>
 </section>
 <!-- OUR PROCESS -->
 <section id="process">
