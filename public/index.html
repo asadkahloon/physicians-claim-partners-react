@@ -8,13 +8,16 @@
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
+  body {
+  overflow-x: hidden;
+}
 /* === FIX IMAGE CORRUPTION === */
 .coding-section img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  border-radius:14px;
-  display:block;
+.coding-section img {
+  width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
 }
 
 /* Bigger cards */
@@ -211,11 +214,13 @@ img:hover {
     input[type="number"], input[type="text"], input[type="email"], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef6;font-size:15px}
     button.btn{background:var(--blue);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
     /* Contact form */
-    .contact-grid{
-  display:grid;
-  grid-template-columns: 420px 1fr;
-  gap:32px;
-  align-items:flex-start;
+   .contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
 }
     /* Footer // Social Icons Styling */
 .social-icon{
@@ -1298,24 +1303,7 @@ img{
   <h2>Let’s Talk</h2>
   <p>Send us a brief about your practice and we’ll get back to you.</p>
 
-  <div class="contact-grid">
-
-    <!-- LEFT: Calculator -->
-    <div class="billing-calculator">
-      <h3>Billing Cost Savings Calculator</h3>
-
-      <label>Annual Collections (USD)</label>
-      <input type="number" placeholder="250000">
-
-      <label>In-house Salary (annual)</label>
-      <input type="number" placeholder="50000">
-
-      <label>Overheads (annual)</label>
-      <input type="number" placeholder="20000">
-
-      <div class="result">
-        Estimated Annual Savings: $75,000
-      </div>
+<div class="contact-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1100px;margin:auto;">
     </div>
 
     <!-- RIGHT: Contact Form -->
@@ -1432,43 +1420,6 @@ img{
   </div>
 </div>
         </section>
-<!-- Footer -->
-<footer>
-  <div class="col">
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="monogram">PCP</div>
-      <div>
-        <strong>Physicians Claim Partners</strong><br>
-        <small style="color:var(--muted)">123 Revenue St • Suite 300<br>Anywhere, USA</small>
-      </div>
-    </div>
-
-    <div style="margin-top:12px;color:var(--muted)">Phone: +92 321 4618847 • Email: info@physiciansclaimpartners.com</div>
-  </div>
-
-  <div class="col">
-    <strong>Services</strong>
-    <ul style="list-style:none;padding:0;margin-top:8px;color:var(--muted)">
-      <li><a href="medical-billing.html">Medical Billing</a></li>
-      <li><a href="dental-billing.html">Dental Billing</a></li>
-      <li><a href="ar-denial.html">AR & Denials</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-    </ul>
-  </div>
-
-  <div class="col">
-    <strong>Follow us</strong>
-   <div class="socials" style="margin-top:10px;display:flex;gap:14px">
- <a href="https://web.facebook.com/profile.php?id=61586726156956" 
-   target="_blank" 
-   aria-label="Facebook">
-  <i class="fab fa-facebook-f"></i>
-</a>
-  <a href="#" aria-label="instagram" style="font-size:22px">📸</a>
-  <a href="#" aria-label="linkedin" style="font-size:22px">💼</a>
-  <a href="https://wa.me/923214618847" aria-label="whatsapp" style="font-size:22px">💬</a>
-</div>
-  </div>
 </section><!-- EHR / EMR COMPATIBILITY -->
 <section id="ehr-logos" style="padding:60px 6%; background:#f9fcff; overflow:hidden;">
   <h2 style="text-align:center;font-size:32px;margin-bottom:6px;">
@@ -1647,5 +1598,41 @@ function calculateSavings() {
      Outsourced Cost: $${outsourcedCost.toLocaleString()}<br><br>
      <span style="color:green">Estimated Savings: $${savings.toLocaleString()}</span>`;
 }
-</script></body>
+</script><!-- Footer -->
+<footer>
+  <div class="col">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="monogram">PCP</div>
+      <div>
+        <strong>Physicians Claim Partners</strong><br>
+        <small style="color:var(--muted)">123 Revenue St • Suite 300<br>Anywhere, USA</small>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;color:var(--muted)">Phone: +92 321 4618847 • Email: info@physiciansclaimpartners.com</div>
+  </div>
+
+  <div class="col">
+    <strong>Services</strong>
+    <ul style="list-style:none;padding:0;margin-top:8px;color:var(--muted)">
+      <li><a href="medical-billing.html">Medical Billing</a></li>
+      <li><a href="dental-billing.html">Dental Billing</a></li>
+      <li><a href="ar-denial.html">AR & Denials</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <strong>Follow us</strong>
+   <div class="socials" style="margin-top:10px;display:flex;gap:14px">
+ <a href="https://web.facebook.com/profile.php?id=61586726156956" 
+   target="_blank" 
+   aria-label="Facebook">
+  <i class="fab fa-facebook-f"></i>
+</a>
+  <a href="#" aria-label="instagram" style="font-size:22px">📸</a>
+  <a href="#" aria-label="linkedin" style="font-size:22px">💼</a>
+  <a href="https://wa.me/923214618847" aria-label="whatsapp" style="font-size:22px">💬</a>
+</div>
+  </div></body>
 </html>
