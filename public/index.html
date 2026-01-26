@@ -311,6 +311,36 @@ header.scrolled {
   gap:28px;
   margin-top:28px;
   align-items:start;
+}/* EHR LOGO SLIDER */
+.ehr-slider {
+  width:100%;
+  overflow:hidden;
+}
+
+.ehr-track {
+  display:flex;
+  gap:50px;
+  align-items:center;
+  animation: slideEHR 30s linear infinite;
+}
+
+.ehr-track img {
+  height:50px;
+  object-fit:contain;
+  filter:grayscale(100%);
+  opacity:0.85;
+  transition:all .3s ease;
+}
+
+.ehr-track img:hover {
+  filter:none;
+  opacity:1;
+  transform:scale(1.1);
+}
+
+@keyframes slideEHR {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 .benefit{
   background:#fff;
@@ -1091,11 +1121,12 @@ img{
         <label style="margin-top:8px">Our fee (% of collections)</label>
         <input type="number" id="ourRate" value="2.49" min="0" step="0.01">
         <div style="margin-top:12px" class="calc-row">
-          <button class="btn" onclick="calculate()"><section class="calculator-section">
-  <h2>Billing Cost Savings Calculator</h2>
+         <!-- BILLING COST SAVINGS CALCULATOR -->
+<section class="calculator-section" style="margin-top:20px">
+  <h3>Billing Cost Savings Calculator</h3>
 
   <label>Annual Collections (USD)</label>
-  <input type="number" id="collections" value="2500000">
+  <input type="number" id="collections" value="250000">
 
   <label>In-house Annual Salary (per biller)</label>
   <input type="number" id="salary" value="50000">
@@ -1104,12 +1135,11 @@ img{
   <input type="number" id="overheads" value="20000">
 
   <label>Our Fee (% of collections)</label>
-  <input type="number" step="0.01" id="fee" value="2.49">
+  <input type="number" id="fee" value="2.49" step="0.01">
 
-  <button onclick="calculateSavings()">Calculate Savings</button>
+  <button class="btn" onclick="calculateSavings()">Calculate Savings</button>
 
-  <div id="result" style="margin-top:20px;font-weight:bold;"></div>
-</section>
+  <div id="result" style="margin-top:16px;font-weight:bold"></div>
 </section>
 <!-- CONTACT -->
 <section class="contact dark-contact">
@@ -1198,7 +1228,28 @@ img{
   <a href="https://wa.me/923214618847" aria-label="whatsapp" style="font-size:22px">💬</a>
 </div>
   </div>
-</footer><section class="big-section">
+</section><!-- EHR / EMR COMPATIBILITY -->
+<section id="ehr-logos" style="padding:60px 6%; background:#f9fcff; overflow:hidden;">
+  <h2 style="text-align:center;font-size:32px;margin-bottom:6px;">
+    Your <span style="color:#1ea7f2">EHR / EMR</span> — Our Medical Billing Services
+  </h2>
+  <p style="text-align:center;color:#6b6b6b;margin-bottom:30px;">
+    So you do not have to break up 💔 with your existing EHR
+  </p>
+
+  <div class="ehr-slider">
+    <div class="ehr-track">
+      <img src="https://logos-download.com/wp-content/uploads/2016/10/NextGen_Healthcare_logo.png">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Athenahealth_logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Epic_Systems_logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/DrChrono_logo.png">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/EClinicalWorks_logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/AdvancedMD_logo.png">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/PracticeFusion_logo.png">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/SimplePractice_logo.svg">
+    </div>
+  </div>
+</section></footer><section class="big-section">
 <!-- WhatsApp floating -->
 <a class="whatsapp" href="https://wa.me/923214618847" target="_blank" title="Message us on WhatsApp">WA</a>
 
@@ -1237,7 +1288,11 @@ img{
 
   // schedule modal
   function openSchedule(){document.getElementById('scheduleModal').style.display='flex'}
-  function closeSchedule(){document.getElementById('scheduleModal').style.display='none'}<script>
+  function closeSchedule(){
+  document.getElementById('scheduleModal').style.display='none';
+}
+</script>
+<script>
 document.querySelectorAll("img").forEach(img => {
   img.onerror = () => {
     img.src = "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200";
@@ -1330,5 +1385,21 @@ function calculateSavings() {
     });
   });
 </script>
-</body>
+<script>
+function calculateSavings() {
+  const collections = Number(document.getElementById("collections").value);
+  const salary = Number(document.getElementById("salary").value);
+  const overheads = Number(document.getElementById("overheads").value);
+  const fee = Number(document.getElementById("fee").value);
+
+  const inHouseCost = salary + overheads;
+  const outsourcedCost = (collections * fee) / 100;
+  const savings = inHouseCost - outsourcedCost;
+
+  document.getElementById("result").innerHTML =
+    `In-House Cost: $${inHouseCost.toLocaleString()}<br>
+     Outsourced Cost: $${outsourcedCost.toLocaleString()}<br><br>
+     <span style="color:green">Estimated Savings: $${savings.toLocaleString()}</span>`;
+}
+</script></body>
 </html>
