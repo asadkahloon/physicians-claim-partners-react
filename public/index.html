@@ -1200,7 +1200,7 @@ img{
     </div>
 
     <div style="width:480px;">
-      <!-- Map image (public image). If you'd prefer a labeled svg, I can swap with a custom SVG with all state names embedded) -->
+      <!-- Map image -->
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Map_of_USA_with_state_names.svg" alt="USA map" style="width:100%;border-radius:12px;box-shadow:0 12px 30px rgba(10,20,50,0.05)">
     </div>
   </div>
@@ -1208,45 +1208,82 @@ img{
   <div style="margin-top:18px;display:flex;gap:18px;align-items:flex-start">
     <div class="cost-left">
       <h3>In-House Billing Costs</h3>
-     <section class="billing-comparison">
-  <h2>In-House vs Outsourced Medical Billing</h2>
+      <section class="billing-comparison">
+        <h2>In-House vs Outsourced Medical Billing</h2>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Cost Component</th>
-        <th>In-House Billing</th>
-        <th>Outsourced Billing</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Annual Cost</td>
-        <td>$70,000 – $100,000+</td>
-        <td>$18,000 – $35,000</td>
-      </tr>
-      <tr>
-        <td>Certified Coders</td>
-        <td>Limited</td>
-        <td>Included</td>
-      </tr>
-      <tr>
-        <td>Denial Management</td>
-        <td>Manual</td>
-        <td>Included</td>
-      </tr>
-      <tr>
-        <td>Software & Clearinghouse</td>
-        <td>Extra Cost</td>
-        <td>Included</td>
-      </tr>
-      <tr>
-        <td>Compliance Risk</td>
-        <td>High</td>
-        <td>Low</td>
-      </tr>
-    </tbody>
-  </table>
+        <table>
+          <thead>
+            <tr>
+              <th>Cost Component</th>
+              <th>In-House Billing</th>
+              <th>Outsourced Billing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Annual Cost</td>
+              <td>$70,000 – $100,000+</td>
+              <td>$18,000 – $35,000</td>
+            </tr>
+            <tr>
+              <td>Certified Coders</td>
+              <td>Limited</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td>Denial Management</td>
+              <td>Manual</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td>Software & Clearinghouse</td>
+              <td>Extra Cost</td>
+              <td>Included</td>
+            </tr>
+            <tr>
+              <td>Compliance Risk</td>
+              <td>High</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table style="margin-top:16px">
+          <tr><td>Annual Salary (per biller)</td><td>$30,000</td></tr>
+          <tr><td>Overheads</td><td>$20,000</td></tr>
+          <tr><th>Total</th><th>$50,000</th></tr>
+        </table>
+      </section>
+    </div>
+
+    <div class="cost-right">
+      <h3>PhysiciansClaimPartners Cost</h3>
+
+      <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?q=80&w=900&auto=format&fit=crop" alt="Billing savings calculator" style="width:100%;margin:12px 0;border-radius:12px;">
+      <p style="color:var(--muted)">We typically charge a percentage of collections — enter your numbers below to estimate savings.</p>
+
+      <!-- single calculator (no contact/sidebar) -->
+      <section class="calculator-section" style="margin-top:20px">
+        <h3>Billing Cost Savings Calculator</h3>
+
+        <label>Annual Collections (USD)</label>
+        <input type="number" id="collections" value="250000" min="0">
+
+        <label>In-house Annual Salary (per biller)</label>
+        <input type="number" id="salary" value="50000" min="0">
+
+        <label>Overheads (annual)</label>
+        <input type="number" id="overheads" value="20000" min="0">
+
+        <label>Our Fee (% of collections)</label>
+        <input type="number" id="fee" value="2.49" step="0.01" min="0">
+
+        <button class="btn" onclick="calculateSavings()">Calculate Savings</button>
+
+        <div id="result" style="margin-top:16px;font-weight:bold"></div>
+      </section>
+    </div>
+  </div>
 </section> <table>
         <tr><td>Annual Salary (per biller)</td><td>$30,000</td></tr>
         <tr><td>Overheads</td><td>$20,000</td></tr>
