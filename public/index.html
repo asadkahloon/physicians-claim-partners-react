@@ -87,6 +87,45 @@
   margin-top: 10px;
   color: #555;
   line-height: 1.6;
+}/* Calculator + floating image layout and animation */
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px; /* image | calculator */
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .calc-grid { grid-template-columns: 1fr; }
+}
+
+/* floating image */
+.float-ehr {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(10,20,50,0.06);
+  will-change: transform;
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Calculator card */
+.calc-card {
+  background: linear-gradient(180deg,#f8fbff,#ffffff);
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(10,20,50,0.06);
+}
+
+/* button style (uses existing .btn but ensure padding) */
+.calc-card .btn { padding: 10px 14px; }
+
+/* float animation */
+@keyframes floatSlow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }</style>
   <style>:root{
   --blue: #1ea7f2;
@@ -1262,27 +1301,40 @@ img{
         <tr><th>Total</th><th>$50,000</th></tr>
       </table>
     </div>
-    <div class="cost-right">
-      <h3>PhysiciansClaimPartners Cost</h3>
-      <img src="https://images.unsplash.com/photo-1556155092-8707de31f9c4?q=80&w=900&auto=format&fit=crop"
-     alt="Billing savings calculator"
-     style="width:100%;margin:12px 0;border-radius:12px;animation:floatImg 6s ease-in-out infinite;">
-      <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=900&auto=format&fit=crop"
-     alt="In-house billing cost analysis"
-     style="width:100%;margin:12px 0;border-radius:12px;animation:floatImg 6s ease-in-out infinite;"> 
-      <p style="color:var(--muted)">We typically charge a percentage of collections — enter your numbers below to estimate savings.</p>
+  <!-- Replace the old calculator block with this clean one -->
+<section id="savings-calculator" style="margin-top:20px">
+  <div class="calc-grid">
+    <!-- Left: Floating EHR image -->
+    <div>
+      <!-- Replace PATH_TO_EHR_IMAGE.jpg with your actual image path or URL -->
+      <img src="PATH_TO_EHR_IMAGE.jpg" alt="Top EHR Certified Systems" class="float-ehr">
+    </div>
 
-      <div style="margin-top:10px">
-        <label>Annual Collections (USD)</label>
-        <input type="number" id="collections" value="100000" min="0">
-        <label style="margin-top:8px">In-house Annual Salary (per biller)</label>
-        <input type="number" id="inhouseSalary" value="30000" min="0">
-        <label style="margin-top:8px">Overheads (annual)</label>
-        <input type="number" id="overheads" value="20000" min="0">
-        <label style="margin-top:8px">Our fee (% of collections)</label>
-        <input type="number" id="ourRate" value="2.49" min="0" step="0.01">
-        <div style="margin-top:12px" class="calc-row">
-         <!-- BILLING COST SAVINGS CALCULATOR -->
+    <!-- Right: Clean calculator -->
+    <div class="calc-card">
+      <h3>Billing Cost Savings Calculator</h3>
+
+      <label>Annual Collections (USD)</label>
+      <input type="number" id="calc_collections" value="250000" min="0">
+
+      <label style="margin-top:10px">In-house Annual Salary (per biller)</label>
+      <input type="number" id="calc_salary" value="50000" min="0">
+
+      <label style="margin-top:10px">Overheads (annual)</label>
+      <input type="number" id="calc_overheads" value="20000" min="0">
+
+      <label style="margin-top:10px">Our Fee (% of collections)</label>
+      <input type="number" id="calc_fee" value="2.49" step="0.01" min="0">
+
+      <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
+        <button class="btn" type="button" onclick="calculateSavings()">Calculate Savings</button>
+        <button class="btn" type="button" onclick="resetCalc()" style="background:#eee;color:#333">Reset</button>
+      </div>
+
+      <div id="calc_result" style="margin-top:16px;font-weight:700"></div>
+    </div>
+  </div>
+</section>
 <section class="calculator-section" style="margin-top:20px">
   <h3>Billing Cost Savings Calculator</h3>
 
@@ -1540,5 +1592,39 @@ function calculateSavings() {
      Outsourced Cost: $${outsourcedCost.toLocaleString()}<br><br>
      <span style="color:green">Estimated Savings: $${savings.toLocaleString()}</span>`;
 }
+</script><script>
+  function calculateSavings() {
+    // values (0 fallback)
+    const collections = Number(document.getElementById('calc_collections').value) || 0;
+    const salary     = Number(document.getElementById('calc_salary').value) || 0;
+    const overheads  = Number(document.getElementById('calc_overheads').value) || 0;
+    const fee        = Number(document.getElementById('calc_fee').value) || 0;
+
+    // basic validation
+    if (collections <= 0 || salary < 0 || overheads < 0 || fee < 0) {
+      document.getElementById('calc_result').innerText = "Please enter valid positive numbers.";
+      return;
+    }
+
+    const inHouseCost    = salary + overheads;
+    const outsourcedCost = (collections * fee) / 100;
+    const savings        = inHouseCost - outsourcedCost;
+
+    document.getElementById('calc_result').innerHTML =
+      In-House Cost: $${inHouseCost.toLocaleString()}<br> +
+      Outsourced Cost: $${outsourcedCost.toLocaleString(undefined,{maximumFractionDigits:2})}<br><br> +
+      <span style="color:${savings>=0 ? 'green' : '#d9534f'};font-weight:800">Estimated Annual Savings: $${savings.toLocaleString(undefined,{maximumFractionDigits:2})}</span>;
+  }
+
+  function resetCalc() {
+    document.getElementById('calc_collections').value = 250000;
+    document.getElementById('calc_salary').value = 50000;
+    document.getElementById('calc_overheads').value = 20000;
+    document.getElementById('calc_fee').value = 2.49;
+    document.getElementById('calc_result').innerHTML = '';
+  }
+
+  // optional: initial run to show nothing (or comment out)
+  // resetCalc();
 </script></body>
 </html>
