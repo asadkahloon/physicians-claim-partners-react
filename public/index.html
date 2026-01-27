@@ -8,122 +8,15 @@
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}/* FULL-WIDTH CONTACT SECTION */
-.contact,
-.contact-section,
-.contact.dark-contact {
-  width: 100%;
-  min-height: 100vh;
-  padding: 60px 5%;
-  box-sizing: border-box;
-}
-
-/* GRID LAYOUT */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* FORM */
-.contact-grid form {
-  width: 100%;
-}
-
-/* IMAGE SIDE */
-.contact-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-}
-.left-layout {
-  width: 100%;
-  max-width: 1400px;
-  min-height: 80vh;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 60px;
-  align-items: center;
-  padding: 60px 40px;
-}.right-layout {
-  width: 100%;
-}
-
-.calc-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-footer {
-  margin-top: auto;
-}.calculator-wrapper {
-  width: 70%;
-  margin: 60px auto;
-}
-
-.billing-calculator {
-  background: #ffffff;
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.billing-calculator h3 {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.calculator-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.calculator-table td {
-  padding: 14px 10px;
-  border-bottom: 1px solid #eee;
-  font-weight: 500;
-}
-
-.calculator-table input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.calculate-btn {
-  margin-top: 24px;
-  width: 100%;
-  padding: 14px;
-  font-size: 16px;
-}
-
-.result-box {
-  margin-top: 20px;
-  font-weight: bold;
-  text-align: center;
-  font-size: 18px;
-}
 /* === FIX IMAGE CORRUPTION === */
 .coding-section img{
-  width: 100%;
-  height: auto;
-  max-height: 260px;
-  object-fit: contain;
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:14px;
+  display:block;
 }
+
 /* Bigger cards */
 .coding-card{
   background:#ffffff;
@@ -145,248 +38,55 @@ footer {
   50%{transform:translateY(-10px)}
   100%{transform:translateY(0)}
 }
-.float-img {
-  animation: floatSlow 6s ease-in-out infinite;
-  transition: transform 0.6s ease;
-  will-change: transform;
-}
-.float-img:hover { transform: rotateY(180deg); }
-.pcp-form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px 18px;
+
+.float-img{
+  animation:floatSlow 6s ease-in-out infinite;
+  transition:transform .6s ease;
 }
 
-.pcp-form-grid .pcp-full { grid-column: 1 / -1; }
-
-.pcp-input, .pcp-textarea {
-  width:100%;
-  padding:12px 14px;
-  border-radius:6px;
-  border:1px solid #d9e2e6;
-  font-size:15px;
-  color:#21323a;
-  background:#fff;
-  box-sizing:border-box;
-  outline: none;
+.float-img:hover{
+  transform:rotateY(180deg);
+}/* ===== DARK CONTACT SECTION ===== */
+.dark-contact{
+  background:#0f172a;
+  color:#e5e7eb;
 }
 
-.pcp-input::placeholder, .pcp-textarea::placeholder { color:#9aaab0; }
-
-.pcp-textarea {
-  min-height:160px;
-  resize:vertical;
-  line-height:1.4;
+.dark-contact h2{
+  color:#ffffff;
 }
 
-/* submission area */
-.pcp-actions {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-top:18px;
+.dark-contact p,
+.dark-contact label{
+  color:#cbd5f5;
 }
 
-.btn-pcp-primary {
-  background:#102a43; /* deep navy button like Jotform sample */
-  color:#fff;
-  padding:12px 34px;
-  border-radius:6px;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
+.dark-contact input,
+.dark-contact textarea{
+  background:#020617;
+  color:#ffffff;
+  border:1px solid #334155;
 }
 
-.btn-pcp-ghost {
-  background:transparent;
-  color:#21323a;
-  border:1px solid #d1dbe0;
-  padding:10px 18px;
-  border-radius:6px;
-  cursor:pointer;
+.dark-contact input::placeholder,
+.dark-contact textarea::placeholder{
+  color:#94a3b8;
+}.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  cursor: pointer;
 }
 
-.pcp-whats {
-  margin-left:auto;
-  color:#5c7880;
-  font-size:14px;
+.faq-item h4 {
+  margin: 0;
+  font-size: 18px;
 }
 
-/* responsive */
-@media (max-width:900px){
-  .pcp-form-grid { grid-template-columns: 1fr; }
-  .pcp-contact-card { padding:120px; }
-  .pcp-logo { width:100px; }
-}/* ===== PCP CONTACT — FULL-WIDTH LAYOUT =====
-   Paste this inside the existing <style> (before the closing </style>) 
-*/
-#contact, .pcp-contact-wrapper, .pcp-contact-card { display:block !important; visibility:visible !important; }
-
-/* wrapper — make it span full page width and remove left whitespace */
-.pcp-contact-wrapper {
-  width: 100%;
-  padding: 48px 4%;
-  box-sizing: border-box;
-  background: #f7fbfc; /* soft background — change if needed */
-}
-
-/* center the content and make it large (fills most of the screen) */
-.pcp-contact-card {
-  max-width: 120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 420px 1fr; /* left: image/logo, right: form+calendar */
-  gap: 48px;
-  align-items: start;
-  justify-content: center;
-}
-
-/* left column (logo + intro + manager image) */
-.pcp-left {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
-}
-.pcp-left .logo { width: 220px; height: auto; }
-.pcp-left .manager { width: 100%; max-width: 420px; border-radius: 10px; object-fit:cover; }
-
-/* right column (form + calendar) */
-.pcp-right {
-  background: #ffffff;
-  padding: 28px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(10,30,40,0.06);
-  min-height: 420px;
-  box-sizing: border-box;
-}
-
-/* form grid */
-.pcp-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.pcp-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #e4eef0;
-  border-radius: 6px;
-  box-sizing: border-box;
-  background: #fff;
-}
-.pcp-textarea {
-  grid-column: 1 / -1;
-  min-height: 160px;
-  padding: 12px;
-  border: 1px solid #e4eef0;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-/* actions row */
-.pcp-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 14px;
-}
-.btn-pcp-primary {
-  background: #0ea7b1;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 6px;
-  border: none;
-}
-.btn-pcp-ghost {
-  background: transparent;
-  border: 1px solid #d1e9ec;
-  padding: 10px 14px;
-  border-radius: 6px;
-}
-
-/* calendar iframe */
-.pcp-calendar iframe {
-  width: 100%;
-  height: 420px;
-  border: 0;
-  border-radius: 8px;
-}
-
-/* responsive: stack on narrow screens */
-@media (max-width: 980px) {
-  .pcp-contact-card { grid-template-columns: 1fr; gap: 22px; }
-  .pcp-left { order: 2; align-items:center; text-align:center; }
-  .pcp-right { order: 1; }
-  .pcp-form-grid { grid-template-columns: 1fr; }
-  .pcp-left .manager { max-width: 320px; }
-}/* ===== PCP CONTACT (JOTFORM STYLE) ===== */
-#contact, .pcp-contact-wrapper {
-  width: 100%;
-  min-height: 72vh;
-  padding: 56px 5%;
-  box-sizing: border-box;
-  background: #f7fbfc; /* soft background */
-}
-
-/* card that centers content and makes two columns */
-.pcp-contact-card {
-  max-width: 120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 45% 55%;
-  gap: 36px;
-  align-items: start;
-  box-sizing: border-box;
-}
-
-/* left column (logo / intro / image) */
-.pcp-left {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.pcp-left .logo { width: 220px; height: auto; object-fit:contain; }
-.pcp-left .manager { width: 100%; max-width: 420px; border-radius: 8px; object-fit:cover; }
-
-/* right column (form + calendar) */
-.pcp-right {
-  background: #ffffff;
-  padding: 28px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(10,30,40,0.06);
-  box-sizing: border-box;
-  min-height: 420px;
-}
-
-/* form grid */
-.pcp-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-.pcp-form-grid .pcp-input { width:100%; padding:12px; border:1px solid #e4eef0; border-radius:6px; box-sizing:border-box; }
-.pcp-form-grid .pcp-textarea { grid-column: 1 / -1; min-height:140px; padding:12px; border:1px solid #e4eef0; border-radius:6px; box-sizing:border-box; }
-
-/* action row */
-.pcp-actions { display:flex; align-items:center; gap:12px; margin-top:12px; }
-.btn-pcp-primary { background:#0ea7b1; color:#fff; padding:12px 18px; border-radius:8px; border:none; cursor:pointer; }
-.btn-pcp-ghost { background:transparent; border:1px solid #d1e9ec; color:#344; padding:10px 14px; border-radius:6px; cursor:pointer; }
-
-/* Calendly / iframe */
-.pcp-calendar iframe { width:100%; height:420px; border:0; border-radius:8px; }
-
-/* small helper text */
-.jot-style-title { font-weight:700; font-size:18px; margin-bottom:6px; }
-.jot-style-sub { color:#617b80; font-size:13px; margin-bottom:12px; }
-
-/* responsive: stack on narrow screens */
-@media (max-width: 980px) {
-  .pcp-contact-card { grid-template-columns: 1fr; gap:24px; }
-  .pcp-left { order:2; }
-  .pcp-right { order:1; }
-  .pcp-form-grid { grid-template-columns: 1fr; }
+.faq-item p {
+  display: none;
+  margin-top: 10px;
+  color: #555;
+  line-height: 1.6;
 }</style>
   <style>:root{
   --blue: #1ea7f2;
@@ -420,12 +120,13 @@ body{
     nav a{padding:10px 6px;font-weight:600}
     .cta{background:var(--blue); color:#fff; padding:10px 14px;border-radius:8px}/* GLOBAL IMAGE ANIMATIONS */
 img {
-.float-img {
-  animation: floatSlow 6s ease-in-out infinite;
-  transition: transform 0.6s ease;
-  will-change: transform;
+  animation: floatImage 6s ease-in-out infinite;
+  transition: transform 0.8s ease, box-shadow 0.8s ease;
 }
-.float-img:hover { transform: rotateY(180deg); }
+
+img:hover {
+  transform: rotateY(180deg) scale(1.05);
+}
 
 /* Floating effect */
 @keyframes floatImage {
@@ -469,10 +170,9 @@ img {
   50%  { transform: translateY(-12px); }
   100% { transform: translateY(0); }
 }
-.float-img {
+
+.float-img{
   animation: floatSlow 6s ease-in-out infinite;
-  transition: transform 0.6s ease;
-  will-change: transform;
 }
     /* Benefits row */
     .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
@@ -510,6 +210,13 @@ img {
     .calc-row{display:flex;gap:10px;align-items:center;margin-top:10px}
     input[type="number"], input[type="text"], input[type="email"], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef6;font-size:15px}
     button.btn{background:var(--blue);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+    /* Contact form */
+    .contact-grid{
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap:32px;
+  align-items:flex-start;
+}
     /* Footer // Social Icons Styling */
 .social-icon{
   width:44px;
@@ -558,16 +265,11 @@ footer a{color:#fff}
       .stats{flex-direction:column}
     }/* SCROLL TEXT ANIMATION */
 /* text hidden until .visible is added */
-/* .reveal {
+section, h2, h3, p {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
 }
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-} */
 .visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -577,12 +279,15 @@ footer a{color:#fff}
   50%  { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
+
 .float-img {
   animation: floatSlow 6s ease-in-out infinite;
-  transition: transform 0.6s ease;
   will-change: transform;
 }
-.float-img:hover { transform: rotateY(180deg); }
+
+.float-img:hover {
+  transform: rotateY(180deg);
+  transition: transform 0.6s ease;
 }/* NAVBAR — very light background + link colors (override) */
 header{
   background: #f5fbff !important;        /* very light pale-blue — change hex below if you want */
@@ -760,11 +465,11 @@ header.scrolled {
   50%{transform:translateY(-10px)}
   100%{transform:translateY(0)}
 }
-.float-img {
-  animation: floatSlow 6s ease-in-out infinite;
-  transition: transform 0.6s ease;
-  will-change: transform;
-}
+.float-img{animation:floatSlow 6s ease-in-out infinite}
+
+/* flip on hover (safe approach) */
+.cert-img:hover{transform:translateY(-6px) rotateY(180deg)}
+
 /* certification caption */
 .cert figcaption strong{display:block;font-weight:800;margin-bottom:6px}
 .cert .cert-text{color:var(--muted);font-size:13px}
@@ -817,11 +522,8 @@ header.scrolled {
   50%{transform:translateY(-8px)}
   100%{transform:translateY(0)}
 }
-.float-img {
-  animation: floatSlow 6s ease-in-out infinite;
-  transition: transform 0.6s ease;
-  will-change: transform;
-}
+.float-img{animation:floatSlow 6s ease-in-out infinite}
+
 /* safe flip effect on hover */
 .cert-img-large:hover{ transform:translateY(-6px) rotateY(180deg) }
 
@@ -852,9 +554,12 @@ header.scrolled {
 .float-img {
   animation: floatSlow 6s ease-in-out infinite;
   transition: transform 0.6s ease;
-  will-change: transform;
 }
-.float-img:hover { transform: rotateY(180deg); }
+
+.float-img:hover {
+  transform: rotateY(180deg);
+}
+
 /* ===== BIG CARD SECTIONS ===== */
 .big-section {
   padding: 80px 6%;
@@ -936,12 +641,15 @@ header.scrolled {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
 }
-.float-img {
+.float-img{
   animation: floatSlow 6s ease-in-out infinite;
   transition: transform 0.6s ease;
-  will-change: transform;
+  backface-visibility: hidden;
 }
-.float-img:hover { transform: rotateY(180deg); }
+.float-img:hover{
+  transform: rotateY(180deg);
+}
+
 /* card layout (keeps things tidy and bigger) */
 .big-section{padding:60px 6%; background:#fbfcff;}
 .big-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
@@ -1083,57 +791,7 @@ img{
 
   <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=2c8f1e8b37f5e7c2b9a34b0d6c0369ef" alt="Doctors hero image">
 </section>
-<!-- ===== PCP CONTACT (JOTFORM STYLE) ===== -->
-<section id="contact" class="pcp-contact-wrapper">
-  <div class="pcp-contact-card" role="region" aria-labelledby="pcp-contact-h">
-    <!-- LEFT: logo + intro + manager image -->
-    <div class="pcp-left">
-      <img src="https://via.placeholder.com/220x56?text=PCP+Logo" alt="Physicians Claim Partners logo" class="logo">
-      <h3 id="pcp-contact-h">Inquiry Form</h3>
-      <div class="subtitle">We will get in touch with you shortly. Fill the form to request a free consultation.</div>
 
-      <!-- manager picture (English manager style) -->
-      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Account manager" class="manager">
-      <div style="font-size:13px;color:#5a757f;margin-top:6px;">Prefer a quick call? WhatsApp us at <strong>+92 321 4618847</strong></div>
-    </div>
-
-    <!-- RIGHT: form + calendar -->
-    <div class="pcp-right">
-      <div>
-        <div class="jot-style-title">Schedule a Free Consultation</div>
-        <div class="jot-style-sub">Schedule a 15-minute free consultation with our team.</div>
-      </div>
-
-      <!-- Formspree form — YOUR formspree action is used here -->
-      <form id="pcpJotForm" action="https://formspree.io/f/mvzklyjd" method="POST">
-        <div class="pcp-form-grid">
-          <input class="pcp-input" type="text" name="first_name" placeholder="First name" required>
-          <input class="pcp-input" type="text" name="last_name"  placeholder="Last name" required>
-
-          <input class="pcp-input" type="tel" name="phone" placeholder="Phone number" required>
-          <input class="pcp-input" type="email" name="email" placeholder="Your e-mail address" required>
-
-          <textarea class="pcp-textarea" name="message" placeholder="Leave your message" required></textarea>
-        </div>
-
-        <div class="pcp-actions">
-          <button class="btn-pcp-primary" type="submit">Submit</button>
-          <button type="button" class="btn-pcp-ghost" onclick="window.open('https://wa.me/923214618847','_blank')">WhatsApp</button>
-          <div style="margin-left:auto;color:#56707b;font-size:13px;">Or call: <strong>+92 321 4618847</strong></div>
-        </div>
-      </form>
-
-      <!-- Calendar embed - IMPORTANT: replace the src with your real Calendly URL to avoid a 404 -->
-      <div class="pcp-calendar" style="margin-top:16px;">
-        <!-- Replace 'your-calendly-username' with your actual Calendly path (e.g. calendly.com/yourname) -->
-        <!-- If you don't have Calendly, remove this iframe to avoid the 404 -->
-        <iframe src="https://calendly.com/your-calendly-username?embed_domain=physicians-claim-partners-react.vercel.app&embed_type=Inline" 
-                style="width:100%;height:420px;border:0;" scrolling="no" title="Calendly calendar"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ===== end contact ===== -->
 <!-- WHY CHOOSE US -->
 <section id="why">
   <div class="two-col">
@@ -1220,6 +878,7 @@ img{
 
   </div>
 </section>
+
 <!-- BENEFITS -->
 <section id="benefits">
   <h2 style="font-size:36px;margin-bottom:8px">Benefits</h2>
@@ -1503,8 +1162,8 @@ img{
     <h4>10. How do we start?</h4>
     <p>Contact us or schedule a free demo via the CTA — we’ll onboard your practice in a phased approach.</p>
   </div>
-</div>   <!-- closes .process -->
 </section>
+<!-- COAST TO COAST + MAP -->
 <section id="pricing">
   <div style="display:flex;gap:24px;align-items:flex-start">
     <div style="flex:1">
@@ -1615,36 +1274,223 @@ img{
         <label style="margin-top:8px">Our fee (% of collections)</label>
         <input type="number" id="ourRate" value="2.49" min="0" step="0.01">
         <div style="margin-top:12px" class="calc-row">
-        <div class="left-layout">
+         <!-- BILLING COST SAVINGS CALCULATOR -->
+<section class="calculator-section" style="margin-top:20px">
+  <h3>Billing Cost Savings Calculator</h3>
+
+  <label>Annual Collections (USD)</label>
+  <input type="number" id="collections" value="250000">
+
+  <label>In-house Annual Salary (per biller)</label>
+  <input type="number" id="salary" value="50000">
+
+  <label>Overheads (annual)</label>
+  <input type="number" id="overheads" value="20000">
+
+  <label>Our Fee (% of collections)</label>
+  <input type="number" id="fee" value="2.49" step="0.01">
+
+  <button class="btn" onclick="calculateSavings()">Calculate Savings</button>
+
+  <div id="result" style="margin-top:16px;font-weight:bold"></div>
+</section>
+<!-- CONTACT -->
+<section class="contact dark-contact" id="contact">
+  <h2>Let’s Talk</h2>
+  <p>Send us a brief about your practice and we’ll get back to you.</p>
+
+  <div class="contact-grid">
+
+    <!-- LEFT: Calculator -->
+    <div class="billing-calculator">
+      <h3>Billing Cost Savings Calculator</h3>
+
+      <label>Annual Collections (USD)</label>
+      <input type="number" placeholder="250000">
+
+      <label>In-house Salary (annual)</label>
+      <input type="number" placeholder="50000">
+
+      <label>Overheads (annual)</label>
+      <input type="number" placeholder="20000">
+
+      <div class="result">
+        Estimated Annual Savings: $75,000
+      </div>
+    </div>
+
+    <!-- RIGHT: Contact Form -->
+    <div class="lets-talk">
+      <h3>Contact Us</h3>
+
+      <form action="https://formspree.io/f/mvzkljjd" method="POST">
+        <label>Name *</label>
+        <input type="text" name="name" required>
+
+        <label>Email *</label>
+        <input type="email" name="email" required>
+
+        <label>Message *</label>
+        <textarea name="message" rows="5" required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+
+      <!-- ✅ CONTACT NUMBER -->
+      <p style="margin-top:16px">
+        📞 <strong>+92 321 4618847</strong><br>
+        ✉️ info@physiciansclaimpartners.com
+      </p>
+    </div>
+
   </div>
-</div><!-- optional: Calendly iframe (replace 'your-calendly-username') -->
-    <div style="margin-top:22px;">
-     <!-- Calendly inline (replace YOUR_CALENDLY_LINK_HERE) -->
-<!-- placeholder calendar image (replace with a real image if you want) -->
-<div class="pcp-calendar" style="margin-top:16px;">
-  <img src="https://via.placeholder.com/900x420?text=Calendar+Here" alt="Calendar placeholder" style="width:100%;height:auto;border-radius:8px;">
+</section>
+
+  <!-- LEFT: Billing Cost Savings Calculator -->
+  <div class="billing-calculator">
+    <h3>Billing Cost Savings Calculator</h3>
+
+    <label>Annual Collections (USD)</label>
+    <input type="number" placeholder="250000">
+
+    <label style="margin-top:12px">In-house Annual Salary (per biller)</label>
+    <input type="number" placeholder="50000">
+
+    <label style="margin-top:12px">Overheads (annual)</label>
+    <input type="number" placeholder="20000">
+
+    <div class="result">
+      Estimated Annual Savings: $75,000
+    </div>
+  </div>
+
+  <!-- RIGHT: Let’s Talk Form -->
+  <div class="lets-talk">
+    <h3>Let’s Talk</h3>
+    <p>Send us a brief about your practice and we’ll get back to you.</p>
+
+    <form action="https://formspree.io/f/mvzkljjd" method="POST">
+      <label>Name *</label>
+      <input type="text" name="name" required placeholder="Your name">
+
+      <label style="margin-top:10px">Email *</label>
+      <input type="email" name="email" required placeholder="Your email">
+
+      <label style="margin-top:10px">Practice Name (optional)</label>
+      <input type="text" name="practice">
+
+      <label style="margin-top:10px">Message *</label>
+      <textarea name="message" rows="5" required placeholder="How can we help?"></textarea>
+
+      <button type="submit" class="btn primary" style="margin-top:16px">
+        Send Message
+      </button>
+    </form>
+  </div>
+
+</div>
+    <!-- contact form -->
+    <form action="https://formspree.io/f/mvzklyjd" method="POST" style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
+      <label>Name *</label>
+      <input type="text" name="name" required placeholder="Your name">
+
+      <label style="margin-top:10px">Email *</label>
+      <input type="email" name="email" required placeholder="Your email">
+
+      <label style="margin-top:10px">Practice Name (optional)</label>
+      <input type="text" name="practice">
+
+      <label style="margin-top:10px">Message *</label>
+      <textarea name="message" rows="6" required placeholder="How can we help?" style="resize:vertical"></textarea>
+
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button type="submit" class="btn">Send Message</button>
+        <button type="button" onclick="openSchedule()" style="padding:10px 14px;border-radius:8px;border:1px solid #cfe9fb;background:transparent">Schedule Demo</button>
+      </div>
+    </form>
+
+    <!-- side image -->
+    <div style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b8eab2b0b0ed1f0e7e2e5cd2e4f3b1a" style="width:100%;border-radius:12px;object-fit:cover">
+      <p style="color:var(--muted);margin-top:10px">Prefer a quick call? WhatsApp us any time at <strong>+92 321 4618847</strong></p>
     </div>
   </div>
 </section>
-        </section>
-</section><!-- EHR / EMR COMPATIBILITY -->
-<section style="padding:60px 6%; background:#f9fcff;">
-  <h2 style="text-align:center; font-size:32px; margin-bottom:6px;">
-    Your <span style="color:#1ea7f2;">EHR / EMR</span> — Our Medical Billing Services
-  </h2>
-
-  <p style="text-align:center; color:#6b6b6b; margin-bottom:40px;">
-    So you do not have to break up ❤️ with your existing EHR
-  </p>
-  <div class="ehr-badges">
-  <span class="ehr-badge">Epic</span>
-  <span class="ehr-badge">Athenahealth</span>
-  <span class="ehr-badge">eClinicalWorks</span>
-  <span class="ehr-badge">NextGen</span>
-  <span class="ehr-badge">DrChrono</span>
-  <span class="ehr-badge">Practice Fusion</span>
-  <span class="ehr-badge">SimplePractice</span>
+<!-- Schedule demo modal (simple) -->
+<div id="scheduleModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center">
+  <div style="background:#fff;padding:20px;border-radius:12px;max-width:520px;width:95%">
+    <h3>Schedule a Free Demo</h3>
+    <p style="color:var(--muted)">Pick a date/time and we'll confirm.</p>
+    <form onsubmit="event.preventDefault(); alert('Demo request sent — we will reach out.'); closeSchedule();">
+      <label>Your name</label><input required type="text" style="margin-top:6px" placeholder="Your name">
+      <label style="margin-top:10px">Email</label><input required type="email" style="margin-top:6px" placeholder="email@example.com">
+      <label style="margin-top:10px">Preferred date/time</label><input required type="text" style="margin-top:6px" placeholder="e.g. 2026-02-10 10:00 AM">
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="btn" type="submit">Request Demo</button>
+        <button type="button" onclick="closeSchedule()" style="border-radius:8px;border:1px solid #ddd;padding:10px 14px;background:#fff">Cancel</button>
+      </div>
+    </form>
+  </div>
 </div>
+        </section>
+<!-- Footer -->
+<footer>
+  <div class="col">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="monogram">PCP</div>
+      <div>
+        <strong>Physicians Claim Partners</strong><br>
+        <small style="color:var(--muted)">123 Revenue St • Suite 300<br>Anywhere, USA</small>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;color:var(--muted)">Phone: +92 321 4618847 • Email: info@physiciansclaimpartners.com</div>
+  </div>
+
+  <div class="col">
+    <strong>Services</strong>
+    <ul style="list-style:none;padding:0;margin-top:8px;color:var(--muted)">
+      <li><a href="medical-billing.html">Medical Billing</a></li>
+      <li><a href="dental-billing.html">Dental Billing</a></li>
+      <li><a href="ar-denial.html">AR & Denials</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+  </div>
+
+  <div class="col">
+    <strong>Follow us</strong>
+   <div class="socials" style="margin-top:10px;display:flex;gap:14px">
+ <a href="https://web.facebook.com/profile.php?id=61586726156956" 
+   target="_blank" 
+   aria-label="Facebook">
+  <i class="fab fa-facebook-f"></i>
+</a>
+  <a href="#" aria-label="instagram" style="font-size:22px">📸</a>
+  <a href="#" aria-label="linkedin" style="font-size:22px">💼</a>
+  <a href="https://wa.me/923214618847" aria-label="whatsapp" style="font-size:22px">💬</a>
+</div>
+  </div>
+</section><!-- EHR / EMR COMPATIBILITY -->
+<section id="ehr-logos" style="padding:60px 6%; background:#f9fcff; overflow:hidden;">
+  <h2 style="text-align:center;font-size:32px;margin-bottom:6px;">
+    Your <span style="color:#1ea7f2">EHR / EMR</span> — Our Medical Billing Services
+  </h2>
+  <p style="text-align:center;color:#6b6b6b;margin-bottom:30px;">
+    So you do not have to break up 💔 with your existing EHR
+  </p>
+
+  <div class="ehr-slider">
+    <div class="ehr-track">
+      <img src="https://logos-download.com/wp-content/uploads/2016/10/NextGen_Healthcare_logo.png">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Athenahealth_logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Epic_Systems_logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/DrChrono_logo.png">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/EClinicalWorks_logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/AdvancedMD_logo.png">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/PracticeFusion_logo.png">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/SimplePractice_logo.svg">
+    </div>
+  </div>
 </section>   <!-- last section -->
 <footer>
   ...
@@ -1658,7 +1504,7 @@ img{
 <script>
   // Reviews simple carousel
   let reviewIndex = 0;
-  const reviews = document.querySelectorAll('.review-card');
+  const reviews = document.querySelectorAll('.review');
   function showReviews(){
     reviews.forEach((r,i)=> r.style.display = (i===reviewIndex ? 'block' : 'none'));
   }
@@ -1683,7 +1529,7 @@ img{
       <div>Our fee (${ourRate}% of collections): <strong>$${ourFeeUSD.toLocaleString(undefined,{maximumFractionDigits:2})}</strong></div>
       <div style="margin-top:8px">Estimated annual savings if you switch: <strong style="color:${savings>=0?'var(--green)':'#d9534f'}">$${savings.toLocaleString(undefined,{maximumFractionDigits:2})}</strong></div>
     `;
-    document.getElementById('result').innerHTML = result;
+    document.getElementById('calcResult').innerHTML = result;
   }
   calculate();
 
@@ -1754,7 +1600,7 @@ document.querySelectorAll('.float-img').forEach(img => {
   img.style.willChange = 'transform';
 });
 </script><script>
-function calculateSavings() { return;
+function calculateSavings() {
   const collections = Number(document.getElementById('collections').value);
   const salary = Number(document.getElementById('salary').value);
   const overheads = Number(document.getElementById('overheads').value);
@@ -1802,41 +1648,5 @@ function calculateSavings() {
      Outsourced Cost: $${outsourcedCost.toLocaleString()}<br><br>
      <span style="color:green">Estimated Savings: $${savings.toLocaleString()}</span>`;
 }
-</script><!-- Footer -->
-<footer>
-  <div class="col">
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="monogram">PCP</div>
-      <div>
-        <strong>Physicians Claim Partners</strong><br>
-        <small style="color:var(--muted)">123 Revenue St • Suite 300<br>Anywhere, USA</small>
-      </div>
-    </div>
-
-    <div style="margin-top:12px;color:var(--muted)">Phone: +92 321 4618847 • Email: info@physiciansclaimpartners.com</div>
-  </div>
-
-  <div class="col">
-    <strong>Services</strong>
-    <ul style="list-style:none;padding:0;margin-top:8px;color:var(--muted)">
-      <li><a href="medical-billing.html">Medical Billing</a></li>
-      <li><a href="dental-billing.html">Dental Billing</a></li>
-      <li><a href="ar-denial.html">AR & Denials</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-    </ul>
-  </div>
-
-  <div class="col">
-    <strong>Follow us</strong>
-   <div class="socials" style="margin-top:10px;display:flex;gap:14px">
- <a href="https://web.facebook.com/profile.php?id=61586726156956" 
-   target="_blank" 
-   aria-label="Facebook">
-  <i class="fab fa-facebook-f"></i>
-</a>
-  <a href="#" aria-label="instagram" style="font-size:22px">📸</a>
-  <a href="#" aria-label="linkedin" style="font-size:22px">💼</a>
-  <a href="https://wa.me/923214618847" aria-label="whatsapp" style="font-size:22px">💬</a>
-</div>
-  </div></body>
+</script></body>
 </html>
