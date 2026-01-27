@@ -325,6 +325,73 @@ footer {
   .pcp-right { order: 1; }
   .pcp-form-grid { grid-template-columns: 1fr; }
   .pcp-left .manager { max-width: 320px; }
+}/* ===== PCP CONTACT (JOTFORM STYLE) ===== */
+#contact, .pcp-contact-wrapper {
+  width: 100%;
+  min-height: 72vh;
+  padding: 56px 5%;
+  box-sizing: border-box;
+  background: #f7fbfc; /* soft background */
+}
+
+/* card that centers content and makes two columns */
+.pcp-contact-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 36px;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+/* left column (logo / intro / image) */
+.pcp-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.pcp-left .logo { width: 220px; height: auto; object-fit:contain; }
+.pcp-left .manager { width: 100%; max-width: 420px; border-radius: 8px; object-fit:cover; }
+
+/* right column (form + calendar) */
+.pcp-right {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(10,30,40,0.06);
+  box-sizing: border-box;
+  min-height: 420px;
+}
+
+/* form grid */
+.pcp-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.pcp-form-grid .pcp-input { width:100%; padding:12px; border:1px solid #e4eef0; border-radius:6px; box-sizing:border-box; }
+.pcp-form-grid .pcp-textarea { grid-column: 1 / -1; min-height:140px; padding:12px; border:1px solid #e4eef0; border-radius:6px; box-sizing:border-box; }
+
+/* action row */
+.pcp-actions { display:flex; align-items:center; gap:12px; margin-top:12px; }
+.btn-pcp-primary { background:#0ea7b1; color:#fff; padding:12px 18px; border-radius:8px; border:none; cursor:pointer; }
+.btn-pcp-ghost { background:transparent; border:1px solid #d1e9ec; color:#344; padding:10px 14px; border-radius:6px; cursor:pointer; }
+
+/* Calendly / iframe */
+.pcp-calendar iframe { width:100%; height:420px; border:0; border-radius:8px; }
+
+/* small helper text */
+.jot-style-title { font-weight:700; font-size:18px; margin-bottom:6px; }
+.jot-style-sub { color:#617b80; font-size:13px; margin-bottom:12px; }
+
+/* responsive: stack on narrow screens */
+@media (max-width: 980px) {
+  .pcp-contact-card { grid-template-columns: 1fr; gap:24px; }
+  .pcp-left { order:2; }
+  .pcp-right { order:1; }
+  .pcp-form-grid { grid-template-columns: 1fr; }
 }</style>
   <style>:root{
   --blue: #1ea7f2;
@@ -1027,7 +1094,57 @@ img{
 
   <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=2c8f1e8b37f5e7c2b9a34b0d6c0369ef" alt="Doctors hero image">
 </section>
+<!-- ===== PCP CONTACT (JOTFORM STYLE) ===== -->
+<section id="contact" class="pcp-contact-wrapper">
+  <div class="pcp-contact-card" role="region" aria-labelledby="pcp-contact-h">
+    <!-- LEFT: logo + intro + manager image -->
+    <div class="pcp-left">
+      <img src="https://via.placeholder.com/220x56?text=PCP+Logo" alt="Physicians Claim Partners logo" class="logo">
+      <h3 id="pcp-contact-h">Inquiry Form</h3>
+      <div class="subtitle">We will get in touch with you shortly. Fill the form to request a free consultation.</div>
 
+      <!-- manager picture (English manager style) -->
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Account manager" class="manager">
+      <div style="font-size:13px;color:#5a757f;margin-top:6px;">Prefer a quick call? WhatsApp us at <strong>+92 321 4618847</strong></div>
+    </div>
+
+    <!-- RIGHT: form + calendar -->
+    <div class="pcp-right">
+      <div>
+        <div class="jot-style-title">Schedule a Free Consultation</div>
+        <div class="jot-style-sub">Schedule a 15-minute free consultation with our team.</div>
+      </div>
+
+      <!-- Formspree form — YOUR formspree action is used here -->
+      <form id="pcpJotForm" action="https://formspree.io/f/mvzklyjd" method="POST">
+        <div class="pcp-form-grid">
+          <input class="pcp-input" type="text" name="first_name" placeholder="First name" required>
+          <input class="pcp-input" type="text" name="last_name"  placeholder="Last name" required>
+
+          <input class="pcp-input" type="tel" name="phone" placeholder="Phone number" required>
+          <input class="pcp-input" type="email" name="email" placeholder="Your e-mail address" required>
+
+          <textarea class="pcp-textarea" name="message" placeholder="Leave your message" required></textarea>
+        </div>
+
+        <div class="pcp-actions">
+          <button class="btn-pcp-primary" type="submit">Submit</button>
+          <button type="button" class="btn-pcp-ghost" onclick="window.open('https://wa.me/923214618847','_blank')">WhatsApp</button>
+          <div style="margin-left:auto;color:#56707b;font-size:13px;">Or call: <strong>+92 321 4618847</strong></div>
+        </div>
+      </form>
+
+      <!-- Calendar embed - IMPORTANT: replace the src with your real Calendly URL to avoid a 404 -->
+      <div class="pcp-calendar" style="margin-top:16px;">
+        <!-- Replace 'your-calendly-username' with your actual Calendly path (e.g. calendly.com/yourname) -->
+        <!-- If you don't have Calendly, remove this iframe to avoid the 404 -->
+        <iframe src="https://calendly.com/your-calendly-username?embed_domain=physicians-claim-partners-react.vercel.app&embed_type=Inline" 
+                style="width:100%;height:420px;border:0;" scrolling="no" title="Calendly calendar"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== end contact ===== -->
 <!-- WHY CHOOSE US -->
 <section id="why">
   <div class="two-col">
@@ -1511,40 +1628,7 @@ img{
         <div style="margin-top:12px" class="calc-row">
         <div class="left-layout">
   </div>
-</div><!-- ===== PCP CONTACT (JOTFORM STYLE) ===== -->
-<section id="contact" class="pcp-contact-wrapper">
-  <div class="pcp-contact-card" role="region" aria-labelledby="pcp-contact-h">
-
-    <!-- Top logo + address -->
-    <img src="https://via.placeholder.com/220x56?text=PCP+Logo" alt="Physicians Claim Partners logo" class="pcp-logo">
-    <div class="pcp-topmeta">Physicians Claim Partners — Medical & Dental Revenue Recovery</div>
-
-    <!-- Heading -->
-    <h2 class="pcp-heading" id="pcp-contact-h">Inquiry Form</h2>
-    <div class="pcp-sub">We will get in touch with you shortly. Fill the form to request a free consultation.</div>
-
-    <!-- Form -->
-    <form class="pcp-form" id="pcpJotForm"
-          action="https://formspree.io/f/mvzklyjd"
-          method="POST">
-      <div class="pcp-form-grid">
-        <input class="pcp-input" type="text" name="first_name" placeholder="First name" required>
-        <input class="pcp-input" type="text" name="last_name" placeholder="Last name" required>
-
-        <input class="pcp-input" type="tel" name="phone" placeholder="Phone number" required>
-        <input class="pcp-input" type="email" name="email" placeholder="Your e-mail address" required>
-
-        <textarea class="pcp-textarea pcp-full" name="message" placeholder="Leave your message" required></textarea>
-      </div>
-
-      <div class="pcp-actions">
-        <button class="btn-pcp-primary" type="submit">Submit</button>
-        <button type="button" class="btn-pcp-ghost" onclick="window.open('https://wa.me/923214618847','_blank')">WhatsApp</button>
-        <div class="pcp-whats">Or call: <strong>+92 321 4618847</strong></div>
-      </div>
-    </form>
-
-    <!-- optional: Calendly iframe (replace 'your-calendly-username') -->
+</div><!-- optional: Calendly iframe (replace 'your-calendly-username') -->
     <div style="margin-top:22px;">
      <!-- Calendly inline (replace YOUR_CALENDLY_LINK_HERE) -->
 <!-- placeholder calendar image (replace with a real image if you want) -->
