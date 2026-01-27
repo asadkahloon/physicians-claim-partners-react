@@ -155,56 +155,113 @@ footer {
 
 .float-img:hover{
   transform:rotateY(180deg);
-}/* ===== DARK CONTACT SECTION ===== */
-.dark-contact{
-  background:#0f172a;
-  color:#e5e7eb;
+}<!-- ===== PCP CONTACT (JOTFORM STYLE) ===== -->
+<section id="contact" class="pcp-contact-wrapper">
+  <div class="pcp-contact-card" role="region" aria-labelledby="pcp-contact-h">
+
+    <!-- Top logo + address -->
+    <img src="https://via.placeholder.com/220x56?text=PCP+Logo" alt="Physicians Claim Partners logo" class="pcp-logo">
+    <div class="pcp-topmeta">Physicians Claim Partners — Medical & Dental Revenue Recovery</div>
+
+    <!-- Heading -->
+    <h2 class="pcp-heading" id="pcp-contact-h">Inquiry Form</h2>
+    <div class="pcp-sub">We will get in touch with you shortly. Fill the form to request a free consultation.</div>
+
+    <!-- Form -->
+    <form class="pcp-form" id="pcpJotForm"
+          action="https://formspree.io/f/mvzklyjd"
+          method="POST">
+      <div class="pcp-form-grid">
+        <input class="pcp-input" type="text" name="first_name" placeholder="First name" required>
+        <input class="pcp-input" type="text" name="last_name" placeholder="Last name" required>
+
+        <input class="pcp-input" type="tel" name="phone" placeholder="Phone number" required>
+        <input class="pcp-input" type="email" name="email" placeholder="Your e-mail address" required>
+
+        <textarea class="pcp-textarea pcp-full" name="message" placeholder="Leave your message" required></textarea>
+      </div>
+
+      <div class="pcp-actions">
+        <button class="btn-pcp-primary" type="submit">Submit</button>
+        <button type="button" class="btn-pcp-ghost" onclick="window.open('https://wa.me/923214618847','_blank')">WhatsApp</button>
+        <div class="pcp-whats">Or call: <strong>+92 321 4618847</strong></div>
+      </div>
+    </form>
+
+    <!-- optional: Calendly iframe (replace 'your-calendly-username') -->
+    <div style="margin-top:22px;">
+      <iframe src="https://calendly.com/embed/your-calendly-username?embed_domain=yourdomain.com&embed_type=Inline"
+              style="width:100%;height:420px;border:0;border-radius:8px;" scrolling="no" title="Calendly calendar"></iframe>
+    </div>
+  </div>
+</section>
+.pcp-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 18px;
 }
 
-.dark-contact h2{
-  color:#ffffff;
+.pcp-form-grid .pcp-full { grid-column: 1 / -1; }
+
+.pcp-input, .pcp-textarea {
+  width:100%;
+  padding:12px 14px;
+  border-radius:6px;
+  border:1px solid #d9e2e6;
+  font-size:15px;
+  color:#21323a;
+  background:#fff;
+  box-sizing:border-box;
+  outline: none;
 }
 
-.dark-contact p,
-.dark-contact label{
-  color:#cbd5f5;
+.pcp-input::placeholder, .pcp-textarea::placeholder { color:#9aaab0; }
+
+.pcp-textarea {
+  min-height:160px;
+  resize:vertical;
+  line-height:1.4;
 }
 
-.dark-contact input,
-.dark-contact textarea{
-  background:#020617;
-  color:#ffffff;
-  border:1px solid #334155;
+/* submission area */
+.pcp-actions {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:18px;
 }
 
-.dark-contact input::placeholder,
-.dark-contact textarea::placeholder{
-  color:#94a3b8;
-}.faq-item {
-  border-bottom: 1px solid #ddd;
-  padding: 15px 0;
-  cursor: pointer;
+.btn-pcp-primary {
+  background:#102a43; /* deep navy button like Jotform sample */
+  color:#fff;
+  padding:12px 34px;
+  border-radius:6px;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
 }
 
-.faq-item h4 {
-  margin: 0;
-  font-size: 18px;
+.btn-pcp-ghost {
+  background:transparent;
+  color:#21323a;
+  border:1px solid #d1dbe0;
+  padding:10px 18px;
+  border-radius:6px;
+  cursor:pointer;
 }
 
-.faq-item p {
-  display: none;
-  margin-top: 10px;
-  color: #555;
-  line-height: 1.6;
-}<div class="ehr-badges">
-  <span class="ehr-badge">Epic</span>
-  <span class="ehr-badge">Athenahealth</span>
-  <span class="ehr-badge">eClinicalWorks</span>
-  <span class="ehr-badge">NextGen</span>
-  <span class="ehr-badge">DrChrono</span>
-  <span class="ehr-badge">Practice Fusion</span>
-  <span class="ehr-badge">SimplePractice</span>
-</div></style>
+.pcp-whats {
+  margin-left:auto;
+  color:#5c7880;
+  font-size:14px;
+}
+
+/* responsive */
+@media (max-width:900px){
+  .pcp-form-grid { grid-template-columns: 1fr; }
+  .pcp-contact-card { padding:20px; }
+  .pcp-logo { width:140px; }
+}</style>
   <style>:root{
   --blue: #1ea7f2;
   --light-blue: #e9f6ff;
