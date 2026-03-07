@@ -699,7 +699,91 @@ header.scrolled {
 </style><script>
 // speed up transform rendering
 document.querySelectorAll('.float-img').forEach(img => img.style.willChange = 'transform');
-</script><style>
+.container{
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+}
+
+.header{
+background:#ffffff;
+border-bottom:1px solid #eee;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+margin-left:20px;
+font-weight:600;
+}
+
+.hero{
+padding:80px 0;
+background:#f8fbff;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.hero h1{
+font-size:44px;
+margin-bottom:10px;
+}
+
+.section{
+padding:70px 0;
+}
+
+.section.light{
+background:#f7f9fc;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.service{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+}
+
+.benefits{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.process{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.contact form{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.btn{
+background:#1ea7f2;
+color:white;
+padding:12px 18px;
+border-radius:6px;
+display:inline-block;
+}</script><style>
 /* FORCE IMAGE FIX */
 img{
   max-width:100%;
@@ -792,839 +876,199 @@ img{
 }</style>
 </head>
 <body>
-
-<header>
-  <div class="brand">
-    <div class="monogram" title="PCP monogram">PCP</div>
-    <div>
-      <h1>Physicians Claim Partners</h1>
-      <div style="font-size:13px;color:var(--muted)">Medical & Dental Revenue Recovery</div>
+<header class="header">
+  <div class="container nav">
+    <div class="logo">
+      <strong>Physicians Claim Partners</strong>
+      <span>Medical & Dental Revenue Recovery</span>
     </div>
-  </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="#services">Services</a>
-    <a href="#benefits">Benefits</a>
-    <a href="#process">Our Process</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact">Contact</a>
-    <a class="cta" href="#schedule" onclick="openSchedule()">Schedule Demo</a>
-  </nav><a href="https://web.facebook.com/profile.php?id=61586726156956" 
-   target="_blank" 
-   class="social fb">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-</a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#process">Our Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="#contact">Schedule Demo</a>
+    </nav>
+  </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-left">
-    <h2>PHYSICIAN LED MEDICAL AND DENTAL BILLING WITH TARGETED APPROACH</h2>
-    <p>Streamline billing, boost collections — targeted medical and dental billing solutions designed to maximize revenue, reduce claim denials, and make cash flow predictable.</p>
-    <div class="buttons">
-      <a class="cta" href="#services">Explore Services</a>
-      <a href="#benefits" style="padding:10px 14px;background:transparent;border-radius:8px;border:1px solid #cfe9fb">Explore Benefits</a>
-    </div>
-  </div>
 
-  <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=2c8f1e8b37f5e7c2b9a34b0d6c0369ef" alt="Doctors hero image">
-</section>
+<section class="hero">
+<div class="container hero-grid">
 
-<!-- WHY CHOOSE US -->
-<section id="why">
-  <div class="two-col">
-    <div class="left">
-      <img class="img-float"
-     src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop"
-     alt="stethoscope">
-      <h2 style="font-size:34px;font-weight:800;margin-bottom:14px">Why choose us for your Medical / Dental Billing?</h2>
-      <p style="color:var(--muted)">Let us handle the complexities of billing so you can focus on patient care. Our team of experts ensures accurate claims, faster submissions, and robust follow-up. We provide regular reporting, appeals management, and a personalized account manager so that revenue becomes predictable.</p>
-    </div>
-    <div class="right">
-      <!-- image already in left float -->
-    </div>
-  </div>
-</section>
+<div>
+<h1>Smart Medical & Dental Billing Services</h1>
 
-<!-- SERVICES -->
-<section id="services">
-  <h2 style="font-size:32px;margin-bottom:6px">Our Services</h2>
-  <p style="color:var(--muted);max-width:900px">Discover how our targeted medical & dental billing solutions streamline practices with a comprehensive suite of services.</p>
+<p>
+Increase collections, reduce denials and eliminate billing headaches.
+Our physician-led revenue cycle team handles everything so you can focus on patient care.
+</p>
 
-  <div class="services-grid">
-    <a class="service-card" href="medical-billing.html">
-      <img class="float-img flip-hover" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=1400&auto=format&fit=crop" alt="Medical Billing">
-      <h3>Medical Billing & Coding</h3>
-      <p>From charge entry to claim submission and appeals—accurate coding and optimized collections.</p>
-    </a>
-
-    <a class="service-card" href="dental-billing.html">
-      <img 
-  src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop" 
-  class="float-img"
->
-      <h3>Dental Billing</h3>
-      <p>Specialised dental claim processing, CDT coding, and PPO negotiation to maximize reimbursement.</p>
-    </a>
-<a class="service-card" href="/credentialing.html">
- <img 
-  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1200&q=80" 
-  alt="Provider Credentialing Healthcare"
->
-  <h3>Provider Credentialing</h3>
-  <p>
-    End-to-end medical and dental provider credentialing with Medicare, Medicaid,
-    and commercial payers to ensure faster onboarding and uninterrupted billing.
-  </p>
-</a>
-    <a class="service-card" href="ar-denial.html">
-      <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=1200&auto=format&fit=crop" alt="AR and Denial">
-      <h3>AR & Denial Management</h3>
-      <p>Claim appeals, payer follow up, and denial root-cause analysis to recover lost revenue.</p>
-    </a>
-
-    <a class="service-card" href="out-of-network-negotiations.html">
-      <img 
-  src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=1200&auto=format&fit=crop" 
-  class="float-img"
-  alt="Out of Network Negotiations"
->
-      <h3>Out-of-Network Negotiations</h3>
-      <p>Negotiate fee schedules and claims for out-of-network reimbursement optimization.</p>
-    </a>
-
-   <!-- recommended: absolute root path -->
-<a class="service-card" href="/insurance-eligibility-verification.html">
-      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=823e1febb8b4f90a7a4e3d3f7d5f7c7e" alt="Eligibility">
-      <h3>Insurance Eligibility Verification</h3>
-      <p>Real-time eligibility checks and prior-authorizations to reduce claim denials and pushbacks.</p>
-    </a>
-
-    <a class="service-card" href="auditing-drg.html">
-     <img class="float-img flip-hover"
-     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop"
-     alt="DRG Audit & Compliance">
-      <h3>Comprehensive Auditing / DRG Review</h3>
-      <p>Chart audits and DRG reviews to ensure compliance and correct reimbursements.</p>
-    </a>
-
-    <a class="service-card" href="practice-marketing.html">
-      <img src="https://images.unsplash.com/photo-1515376721779-7db6951da88d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=04f3b6f2d1b0f5f8b4b5c6d7e8f9a0a1" alt="Marketing">
-      <h3>Practice Marketing</h3>
-      <p>Patient acquisition, online presence and retention strategies to grow revenue from the top.</p>
-    </a>
-
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section id="benefits">
-  <h2 style="font-size:36px;margin-bottom:8px">Benefits</h2>
-  <p style="color:var(--muted);max-width:1100px;margin-bottom:18px">Everything you need to run a more profitable practice—without headaches. Each service below is delivered with clear SLAs, KPI tracking, and dedicated account support.</p>
-
-  <div class="benefits">
-    <article class="benefit">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop" alt="Boost bottom line" class="float-img">
-      <div class="content">
-        <h4 class="title">Boost your bottom line</h4>
-        <p class="desc">Increase collections with optimized claim submission, automated scrubbing, and proactive follow-up to reduce days-in-AR. We focus on maximizing net collections while reducing denials.</p>
-        <div class="extra" aria-hidden="true">
-          <p style="margin:8px 0 0;color:var(--muted)">What’s included: charge-entry QC, payer-specific edits, appeals management, KPI dashboarding, and monthly recovery reports. Typical clients see a measurable lift in collections within 90 days.</p>
-        </div>
-        <button class="more-btn">Read more</button>
-      </div>
-    </article>
-
-    <article class="benefit">
-      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop" alt="Focus on what matters" class="float-img">
-      <div class="content">
-        <h4 class="title">Focus on what matters</h4>
-        <p class="desc">Free up your staff to focus on patient care while we handle billing complexities, prior-authorizations and patient statements. Reduce admin overhead and burn-out.</p>
-        <div class="extra" aria-hidden="true">
-          <p style="margin:8px 0 0;color:var(--muted)">What’s included: eligibility checks, prior auth support, patient statement generation, payment posting and secure patient communications.</p>
-        </div>
-        <button class="more-btn">Read more</button>
-      </div>
-    </article>
-
-    <article class="benefit">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop" alt="Enhanced efficiency" class="float-img">
-      <div class="content">
-        <h4 class="title">Enhanced efficiency</h4>
-        <p class="desc">Automated workflows, accurate coding and faster payer responses. We reduce rework and use data to continuously improve billing accuracy.</p>
-        <div class="extra" aria-hidden="true">
-          <p style="margin:8px 0 0;color:var(--muted)">What’s included: coding QA, clearinghouse optimizations, payer appeals, denial root-cause analysis and process improvement plans tailored to your practice.</p>
-        </div>
-        <button class="more-btn">Read more</button>
-      </div>
-    </article>
-  </div>
-</section>
-<!-- STATS & REVIEWS -->
-<section id="stats-reviews" style="padding:54px 6%;">
-  <div style="display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;">
-    <!-- BIG STATS & CERTIFICATIONS column -->
-    <div style="flex:1;min-width:320px;">
-      <!-- Big stats -->
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-num">100<span class="stat-suffix">%</span></div>
-          <div class="stat-label">HIPAA Compliance</div>
-          <div class="stat-desc">All processes follow strict HIPAA security standards, encrypted data storage and access logging.</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-num">98<span class="stat-suffix">%</span></div>
-          <div class="stat-label">Clean Claims</div>
-          <div class="stat-desc">High accuracy and proactive edits lead to an industry-leading clean-claim percentage.</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-num">24<span class="stat-suffix">/7</span></div>
-          <div class="stat-label">Support</div>
-          <div class="stat-desc">Around-the-clock support for practices and patients (tiered SLA options available).</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-num">40–50<span class="stat-suffix">%</span></div>
-          <div class="stat-label">Increase in collections</div>
-          <div class="stat-desc">Typical lift in net collections within the first 6 months of engagement for many clients.</div>
-        </div>
-      </div>
-
-      <!-- Certifications row (new) -->
-      <h3 style="margin-top:28px;font-size:20px">Certifications & Partnerships</h3>
-      <p style="color:var(--muted);margin-bottom:12px">Trusted, audited, and certified — we follow verified standards and work with recognized partners.</p>
-
-   <!-- CERTIFICATIONS -->
-<div class="certifications-big">
-
-  <div class="cert-card">
-    <h3>SOC 2 Type II Certified</h3>
-    <p>
-      Our operations undergo an independent SOC 2 Type II audit to validate
-      security, availability, and data handling controls over an extended period.
-    </p>
-    <ul>
-      <li>✔ Continuous monitoring of systems and access controls</li>
-      <li>✔ Verified safeguards for billing data and PHI</li>
-      <li>✔ Proven operational reliability for medical practices</li>
-      <li>✔ Annual third-party audit compliance</li>
-    </ul>
-  </div>
-
-  <div class="cert-card">
-    <h3>HIPAA Compliant Operations</h3>
-    <p>
-      We strictly follow HIPAA regulations to protect patient health information
-      across all billing and revenue cycle workflows.
-    </p>
-    <ul>
-      <li>✔ Administrative, technical, and physical safeguards</li>
-      <li>✔ Encrypted access to PHI</li>
-      <li>✔ Role-based access control</li>
-      <li>✔ Regular HIPAA staff training</li>
-    </ul>
-  </div>
-
-  <div class="cert-card">
-    <h3>PCI-DSS Ready Payment Handling</h3>
-    <p>
-      Secure handling of patient payments and financial data aligned with
-      PCI-DSS standards.
-    </p>
-    <ul>
-      <li>✔ Secure payment workflows</li>
-      <li>✔ Reduced risk of financial data exposure</li>
-      <li>✔ Compliance-aware billing systems</li>
-      <li>✔ Trusted payment processing</li>
-    </ul>
-  </div>
-
-  <div class="cert-card">
-    <h3>Clearinghouse Integrations</h3>
-    <p>
-      Direct integrations with leading medical and dental clearinghouses
-      for faster claim submission.
-    </p>
-    <ul>
-      <li>✔ Direct EDI claim submission</li>
-      <li>✔ Faster payer acknowledgements</li>
-      <li>✔ Higher first-pass acceptance</li>
-      <li>✔ Reduced rejections</li>
-    </ul>
-  </div>
-</div> <!-- END certifications-big -->
-</div> <!-- CLOSE stats column -->
-</div> <!-- CLOSE flex wrapper --></section>
-<section id="reviews" style="padding:80px 6%; background:#f8fbff; overflow:hidden;">
-  <h2 style="text-align:center;font-size:32px;margin-bottom:10px;">
-    What Doctors Say About Us
-  </h2>
-  <p style="text-align:center;color:var(--muted);margin-bottom:40px;">
-    Trusted by physicians across the USA
-  </p>
-
-  <div class="reviews-track">
-    
-    <div class="review-card">
-      <img src="https://randomuser.me/api/portraits/men/32.jpg">
-      <p>Recovered over 85% of our AR within 90 days. Extremely professional team.</p>
-      <strong>Dr. Michael R.</strong>
-      <span>Internal Medicine</span>
-    </div>
-
-    <div class="review-card">
-      <img src="https://randomuser.me/api/portraits/women/45.jpg">
-      <p>Denials dropped drastically. Clean reporting and excellent follow-ups.</p>
-      <strong>Dr. Sarah K.</strong>
-      <span>Family Practice</span>
-    </div>
-
-    <div class="review-card">
-      <img src="https://randomuser.me/api/portraits/men/54.jpg">
-      <p>Billing finally feels stress-free. Their team knows U.S. payers inside out.</p>
-      <strong>Dr. James L.</strong>
-      <span>Cardiology</span>
-    </div>
-
-    <div class="review-card">
-      <img src="https://randomuser.me/api/portraits/women/61.jpg">
-      <p>We switched from in-house billing and immediately saw cost savings.</p>
-      <strong>Dr. Emily T.</strong>
-      <span>Pediatrics</span>
-    </div>
-
-    <div class="review-card">
-      <img src="https://randomuser.me/api/portraits/men/71.jpg">
-      <p>Fast onboarding, zero disruption, and higher collections.</p>
-      <strong>Dr. Robert S.</strong>
-      <span>Orthopedics</span>
-    </div>
-
-    <div class="review-card">
-      <img src="https://randomuser.me/api/portraits/women/22.jpg">
-      <p>The transparency and communication are outstanding.</p>
-      <strong>Dr. Ayesha M.</strong>
-      <span>Psychiatry</span>
-    </div>
-
-    <div class="review-card">
-      <img src="https://randomuser.me/api/portraits/men/19.jpg">
-      <p>Claims move faster and reimbursements are consistent.</p>
-      <strong>Dr. Daniel W.</strong>
-      <span>Urgent Care</span>
-    </div>
-
-    <div class="review-card">
-      <img src="https://randomuser.me/api/portraits/women/30.jpg">
-      <p>Professional, compliant, and results-driven billing partner.</p>
-      <strong>Dr. Linda C.</strong>
-      <span>OB-GYN</span>
-    </div>
-  </div> <!-- END stats-reviews --></div> <!-- CLOSE certifications container -->
-</div> <!-- CLOSE stats column -->
-</div> <!-- CLOSE flex wrapper -->
-</section>
-<!-- OUR PROCESS -->
-<section id="process">
-  <h2 style="font-size:32px">Our Process</h2>
-  <p style="color:var(--muted)">Uncover the steps involved in our proven system for maximizing your medical billing efficiency.</p>
-
-  <div class="process">
-    <div class="proc-box">
-      <h3>01.</h3>
-      <h4 style="color:white">Data Verification</h4>
-      <p>Daily schedule analysis, eligibility checks and data cleanup before claims are created.</p>
-    </div>
-    <div class="proc-box">
-      <h3>02.</h3>
-      <h4 style="color:white">Billing Process</h4>
-      <p>Complete charge entry, CPT/ICD coding review, claim submission and payer follow-up.</p>
-    </div>
-    <div class="proc-box">
-      <h3>03.</h3>
-      <h4 style="color:white">Account Management</h4>
-      <p>AR management, denial appeals and monthly reporting with dedicated account manager.</p>
-    </div>
-  </div>
-</section><section id="faq" style="padding:80px 6%; max-width:900px; margin:auto;">
-  <h2 style="font-size:32px; margin-bottom:30px;">Frequently Asked Questions</h2>
-
-  <div class="faq-item">
-    <h4>1. How quickly do you start?</h4>
-    <p>We can start within 7–14 business days depending on onboarding complexity and access to systems.</p>
-  </div>
-
-  <div class="faq-item">
-    <h4>2. What are your fees?</h4>
-    <p>We use a percentage-based pricing model — contact us for a personalized quote.</p>
-  </div>
-
-  <div class="faq-item">
-    <h4>3. Are you HIPAA compliant?</h4>
-    <p>Yes — all processes and data storage are HIPAA-compliant.</p>
-  </div>
-
-  <div class="faq-item">
-    <h4>4. Do you handle denials?</h4>
-    <p>Yes — appeals, denials management, and payer follow-up are part of our AR services.</p>
-  </div>
-
-  <div class="faq-item">
-    <h4>5. Can you work with our EHR?</h4>
-    <p>We integrate with most popular EHRs and clearinghouses; provide us system details and we’ll confirm compatibility.</p>
-  </div>
-
-  <div class="faq-item">
-    <h4>6. Are there long contracts?</h4>
-    <p>We offer flexible contracts — discuss terms during the demo.</p>
-  </div>
-
-  <div class="faq-item">
-    <h4>7. How do I get reporting?</h4>
-    <p>Monthly reports and live dashboards are provided as part of the service.</p>
-  </div>
-
-  <div class="faq-item">
-    <h4>8. Can you handle multi-state practices?</h4>
-    <p>Yes — coast-to-coast coverage with payer expertise across all US states.</p>
-  </div>
-
-  <div class="faq-item">
-    <h4>9. What about patient statements?</h4>
-    <p>We produce electronic statements and support payment posting and patient follow-up.</p>
-  </div>
-
-  <div class="faq-item">
-    <h4>10. How do we start?</h4>
-    <p>Contact us or schedule a free demo via the CTA — we’ll onboard your practice in a phased approach.</p>
-  </div>
-</section> <!-- END faq -->
-<!-- COAST TO COAST + MAP -->
-<section id="pricing">
-  <div style="display:flex;gap:24px;align-items:flex-start">
-    <div style="flex:1">
-      <h2>Coast-to-Coast Coverage</h2>
-      <p style="color:var(--muted)">Our team handles payer regulations across the country — we support practices in every state:</p>
-
-      <!-- List of states (short column layout so names are visible) -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px;color:var(--muted);">
-        <div>
-          <ul style="margin:0;padding-left:18px">
-            <li>Alabama</li><li>Alaska</li><li>Arizona</li><li>Arkansas</li><li>California</li><li>Colorado</li><li>Connecticut</li><li>Delaware</li>
-          </ul>
-        </div>
-        <div>
-          <ul style="margin:0;padding-left:18px">
-            <li>Florida</li><li>Georgia</li><li>Hawaii</li><li>Idaho</li><li>Illinois</li><li>Indiana</li><li>Iowa</li><li>Kansas</li>
-          </ul>
-        </div>
-        <div>
-          <ul style="margin:0;padding-left:18px">
-            <li>Kentucky</li><li>Louisiana</li><li>Maine</li><li>Maryland</li><li>Massachusetts</li><li>Michigan</li><li>Minnesota</li><li>Mississippi</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- second row -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px;color:var(--muted);">
-        <div><ul style="margin:0;padding-left:18px"><li>Missouri</li><li>Montana</li><li>Nebraska</li><li>Nevada</li><li>New Hampshire</li><li>New Jersey</li><li>New Mexico</li><li>New York</li></ul></div>
-        <div><ul style="margin:0;padding-left:18px"><li>North Carolina</li><li>North Dakota</li><li>Ohio</li><li>Oklahoma</li><li>Oregon</li><li>Pennsylvania</li><li>Rhode Island</li><li>South Carolina</li></ul></div>
-        <div><ul style="margin:0;padding-left:18px"><li>South Dakota</li><li>Tennessee</li><li>Texas</li><li>Utah</li><li>Vermont</li><li>Virginia</li><li>Washington</li><li>West Virginia</li></ul></div>
-      </div>
-
-      <p style="margin-top:12px;color:var(--muted)">And more — our billing experts are trained on regional payer rules and best practices.</p>
-    </div>
-
-    <div style="width:480px;">
-      <!-- Map image -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Map_of_USA_with_state_names.svg" alt="USA map" style="width:100%;border-radius:12px;box-shadow:0 12px 30px rgba(10,20,50,0.05)">
-    </div>
-  </div>
-
-  <div style="margin-top:18px;display:flex;gap:18px;align-items:flex-start">
-    <div class="cost-left">
-      <h3>In-House Billing Costs</h3>
-      <section class="billing-comparison">
-        <h2>In-House vs Outsourced Medical Billing</h2>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Cost Component</th>
-              <th>In-House Billing</th>
-              <th>Outsourced Billing</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Annual Cost</td>
-              <td>$70,000 – $100,000+</td>
-              <td>$18,000 – $35,000</td>
-            </tr>
-            <tr>
-              <td>Certified Coders</td>
-              <td>Limited</td>
-              <td>Included</td>
-            </tr>
-            <tr>
-              <td>Denial Management</td>
-              <td>Manual</td>
-              <td>Included</td>
-            </tr>
-            <tr>
-              <td>Software & Clearinghouse</td>
-              <td>Extra Cost</td>
-              <td>Included</td>
-            </tr>
-            <tr>
-              <td>Compliance Risk</td>
-              <td>High</td>
-              <td>Low</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table style="margin-top:16px">
-          <tr><td>Annual Salary (per biller)</td><td>$30,000</td></tr>
-          <tr><td>Overheads</td><td>$20,000</td></tr>
-          <tr><th>Total</th><th>$50,000</th></tr>
-        </table>
-      </section>
-    </div>
-  </div>
-</section> <table>
-        <tr><td>Annual Salary (per biller)</td><td>$30,000</td></tr>
-        <tr><td>Overheads</td><td>$20,000</td></tr>
-        <tr><th>Total</th><th>$50,000</th></tr>
-      </table>
-    </div>
-  <!-- Replace the old calculator block with this clean one -->
-<section id="savings-calculator" style="margin-top:20px">
-  <div class="calc-grid">
-    <!-- Left: Floating EHR image -->
-    <div>
-      <!-- Replace PATH_TO_EHR_IMAGE.jpg with your actual image path or URL -->
-      <img src="PATH_TO_EHR_IMAGE.jpg" alt="Top EHR Certified Systems" class="float-ehr">
-    </div>
-
-    <!-- Right: Clean calculator -->
-    <div class="calc-card">
-      <h3>Billing Cost Savings Calculator</h3>
-
-      <label>Annual Collections (USD)</label>
-      <input type="number" id="calc_collections" value="250000" min="0">
-
-      <label style="margin-top:10px">In-house Annual Salary (per biller)</label>
-      <input type="number" id="calc_salary" value="50000" min="0">
-
-      <label style="margin-top:10px">Overheads (annual)</label>
-      <input type="number" id="calc_overheads" value="20000" min="0">
-
-      <label style="margin-top:10px">Our Fee (% of collections)</label>
-      <input type="number" id="calc_fee" value="2.49" step="0.01" min="0">
-
-      <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
-        <button class="btn" type="button" onclick="calculateSavings()">Calculate Savings</button>
-        <button class="btn" type="button" onclick="resetCalc()" style="background:#eee;color:#333">Reset</button>
-      </div>
-
-      <div id="calc_result" style="margin-top:16px;font-weight:700"></div>
-    </div>
-  </div>
-</section>
-<section class="calculator-section" style="margin-top:20px">
-  <h3>Billing Cost Savings Calculator</h3>
-
-  <label>Annual Collections (USD)</label>
-  <input type="number" id="collections" value="250000">
-
-  <label>In-house Annual Salary (per biller)</label>
-  <input type="number" id="salary" value="50000">
-
-  <label>Overheads (annual)</label>
-  <input type="number" id="overheads" value="20000">
-
-  <label>Our Fee (% of collections)</label>
-  <input type="number" id="fee" value="2.49" step="0.01">
-
-  <button class="btn" onclick="calculateSavings()">Calculate Savings</button>
-
-  <div id="result" style="margin-top:16px;font-weight:bold"></div>
-</section>
-          <!-- LEFT: Billing Cost Savings Calculator -->
-    </div>
-  </div>
-  <!-- RIGHT: Let’s Talk Form -->
-  </div>
+<div class="hero-buttons">
+<a class="btn" href="#contact">Get Free Quote</a>
+<a class="btn-outline" href="#services">Our Services</a>
 </div>
-    <!-- contact form -->
-    <form action="https://formspree.io/f/mvzklyjd" method="POST" style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
-      <label>Name *</label>
-      <input type="text" name="name" required placeholder="Your name">
+</div>
 
-      <label style="margin-top:10px">Email *</label>
-      <input type="email" name="email" required placeholder="Your email">
-
-      <label style="margin-top:10px">Practice Name (optional)</label>
-      <input type="text" name="practice">
-
-      <label style="margin-top:10px">Message *</label>
-      <textarea name="message" rows="6" required placeholder="How can we help?" style="resize:vertical"></textarea>
-
-      <div style="margin-top:12px;display:flex;gap:8px">
-        <button type="submit" class="btn">Send Message</button>
-        <button type="button" onclick="openSchedule()" style="padding:10px 14px;border-radius:8px;border:1px solid #cfe9fb;background:transparent">Schedule Demo</button>
-      </div>
-    </form>
-
-    <!-- side image -->
-    <div style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b8eab2b0b0ed1f0e7e2e5cd2e4f3b1a" style="width:100%;border-radius:12px;object-fit:cover">
-      <p style="color:var(--muted);margin-top:10px">Prefer a quick call? WhatsApp us any time at <strong>+92 321 4618847</strong></p>
-    </div>
-  </div>
+<img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=900">
+</div>
 </section>
-<!-- Schedule demo modal (simple) -->
-<div id="scheduleModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center">
-  <div style="background:#fff;padding:20px;border-radius:12px;max-width:520px;width:95%">
-    <h3>Schedule a Free Demo</h3>
-    <p style="color:var(--muted)">Pick a date/time and we'll confirm.</p>
-    <form onsubmit="event.preventDefault(); alert('Demo request sent — we will reach out.'); closeSchedule();">
-      <label>Your name</label><input required type="text" style="margin-top:6px" placeholder="Your name">
-      <label style="margin-top:10px">Email</label><input required type="email" style="margin-top:6px" placeholder="email@example.com">
-      <label style="margin-top:10px">Preferred date/time</label><input required type="text" style="margin-top:6px" placeholder="e.g. 2026-02-10 10:00 AM">
-      <div style="margin-top:12px;display:flex;gap:8px">
-        <button class="btn" type="submit">Request Demo</button>
-        <button type="button" onclick="closeSchedule()" style="border-radius:8px;border:1px solid #ddd;padding:10px 14px;background:#fff">Cancel</button>
-      </div>
-    </form>
-  </div>
+
+
+<section id="services" class="section">
+<div class="container">
+
+<h2>Our Billing Services</h2>
+
+<div class="services">
+
+<div class="service">
+<h3>Medical Billing</h3>
+<p>End-to-end medical billing including charge entry, coding, submission and AR follow-up.</p>
 </div>
-        </section>
-<!-- Footer -->
-<footer>
-  <div class="col">
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="monogram">PCP</div>
-      <div>
-        <strong>Physicians Claim Partners</strong><br>
-        <small style="color:var(--muted)">123 Revenue St • Suite 300<br>Anywhere, USA</small>
-      </div>
-    </div>
-    <div style="margin-top:12px;color:var(--muted)">Phone: +92 321 4618847 • Email: info@physiciansclaimpartners.com</div>
-  </div>
-  <div class="col">
-    <strong>Services</strong>
-    <ul style="list-style:none;padding:0;margin-top:8px;color:var(--muted)">
-      <li><a href="medical-billing.html">Medical Billing</a></li>
-      <li><a href="dental-billing.html">Dental Billing</a></li>
-      <li><a href="ar-denial.html">AR & Denials</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    <strong>Follow us</strong>
-   <div class="socials" style="margin-top:10px;display:flex;gap:14px">
- <a href="https://web.facebook.com/profile.php?id=61586726156956" 
-   target="_blank" 
-   aria-label="Facebook">
-  <i class="fab fa-facebook-f"></i>
-</a>
-  <a href="#" aria-label="instagram" style="font-size:22px">📸</a>
-  <a href="#" aria-label="linkedin" style="font-size:22px">💼</a>
-  <a href="https://wa.me/923214618847" aria-label="whatsapp" style="font-size:22px">💬</a>
+
+<div class="service">
+<h3>Dental Billing</h3>
+<p>Specialized dental billing, CDT coding and PPO optimization.</p>
 </div>
-  </div>
+
+<div class="service">
+<h3>Insurance Verification</h3>
+<p>Real-time insurance verification and eligibility checks.</p>
+</div>
+
+<div class="service">
+<h3>Denial Management</h3>
+<p>Recover lost revenue through denial analysis and appeals.</p>
+</div>
+
+<div class="service">
+<h3>Credentialing</h3>
+<p>Provider enrollment with Medicare, Medicaid and commercial payers.</p>
+</div>
+
+<div class="service">
+<h3>Revenue Optimization</h3>
+<p>Analytics and reporting to increase net collections.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="benefits" class="section light">
+<div class="container">
+
+<h2>Why Practices Choose Us</h2>
+
+<div class="benefits">
+
+<div class="benefit">
+<h3>Higher Collections</h3>
+<p>Our billing experts maximize reimbursements and reduce write-offs.</p>
+</div>
+
+<div class="benefit">
+<h3>Reduced Administrative Burden</h3>
+<p>Your staff focuses on patients while we manage billing.</p>
+</div>
+
+<div class="benefit">
+<h3>HIPAA Secure</h3>
+<p>Strict security and compliance standards protect patient data.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="process" class="section">
+<div class="container">
+
+<h2>Our Process</h2>
+
+<div class="process">
+
+<div>
+<h3>1. Onboarding</h3>
+<p>We integrate with your EHR and review your billing workflow.</p>
+</div>
+
+<div>
+<h3>2. Billing & Claims</h3>
+<p>Claims are submitted quickly with payer-specific edits.</p>
+</div>
+
+<div>
+<h3>3. Revenue Optimization</h3>
+<p>Continuous monitoring improves reimbursements and reporting.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="pricing" class="section light">
+<div class="container">
+
+<h2>Pricing</h2>
+
+<p>Flexible pricing depending on practice size and collections.</p>
+
+<ul class="pricing">
+<li>Medical Billing: Starting 3-5% of collections</li>
+<li>Dental Billing: Starting $1500/month</li>
+<li>Insurance Verification: Starting $250/month</li>
+</ul>
+
+</div>
+</section>
+
+
+<section id="contact" class="section">
+<div class="container contact">
+
+<div>
+<h2>Contact Us</h2>
+<p>Send us a message and our team will respond within 24 hours.</p>
+
+<form action="https://formspree.io/f/mvzklyjd" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<input type="text" name="practice" placeholder="Practice Name">
+
+<textarea name="message" placeholder="How can we help?" required></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+</div>
+
+</div>
+</section>
+
+
+<footer class="footer">
+<div class="container">
+
+<p>
+© 2026 Physicians Claim Partners
+</p>
+
+<p>
+Phone: +92 321 4618847
+</p>
+
+</div>
 </footer>
 
-<section class="big-section">
-<!-- WhatsApp floating -->
-<a class="whatsapp" href="https://wa.me/923214618847" target="_blank" title="Message us on WhatsApp">WA</a>
-
-
-<script>
-  // Reviews simple carousel
-  let reviewIndex = 0;
-  const reviews = document.querySelectorAll('.review');
-  function showReviews(){
-    reviews.forEach((r,i)=> r.style.display = (i===reviewIndex ? 'block' : 'none'));
-  }
-  function nextReview(){ reviewIndex = (reviewIndex+1)%reviews.length; showReviews();}
-  function prevReview(){ reviewIndex = (reviewIndex-1+reviews.length)%reviews.length; showReviews();}
-  showReviews();
-
-  // Floating image subtle animation (css transform could be added; kept minimal)
-
-  // Calculator
-  function calculate(){
-    const collections = Number(document.getElementById('collections').value) || 0;
-    const inhouseSalary = Number(document.getElementById('inhouseSalary').value) || 0;
-    const overheads = Number(document.getElementById('overheads').value) || 0;
-    const ourRate = Number(document.getElementById('ourRate').value) || 0;
-    const inHouseTotal = inhouseSalary + overheads;
-    const ourFeeUSD = collections * (ourRate / 100);
-    const savings = inHouseTotal - ourFeeUSD;
-    const result = `
-      <strong>Estimates</strong>
-      <div style="margin-top:8px">In-house annual cost (salary + overheads): <strong>$${inHouseTotal.toLocaleString()}</strong></div>
-      <div>Our fee (${ourRate}% of collections): <strong>$${ourFeeUSD.toLocaleString(undefined,{maximumFractionDigits:2})}</strong></div>
-      <div style="margin-top:8px">Estimated annual savings if you switch: <strong style="color:${savings>=0?'var(--green)':'#d9534f'}">$${savings.toLocaleString(undefined,{maximumFractionDigits:2})}</strong></div>
-    `;
-    document.getElementById('calcResult').innerHTML = result;
-  }
-  calculate();
-
-  // schedule modal
-  function openSchedule(){document.getElementById('scheduleModal').style.display='flex'}
-  function closeSchedule(){
-  document.getElementById('scheduleModal').style.display='none';
-}
-</script>
-<script>
-document.querySelectorAll("img").forEach(img => {
-  img.onerror = () => {
-    img.src = "https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200";
-  };
-});// SCROLL ANIMATION OBSERVER
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll("section, h2, h3, p").forEach(el => {
-  observer.observe(el);
-});
-</script>
-<script>
-  // add .visible to elements when they enter viewport
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.12 });
-
-  // watch major content blocks (sections, h2, paragraphs)
-  document.querySelectorAll('section, h2, h3, p').forEach(el => io.observe(el));
-</script><script>
-  const headerEl = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 8) headerEl.classList.add('scrolled');
-    else headerEl.classList.remove('scrolled');
-  });
-</script><script>
-  // BENEFITS "Read more" toggle
-  document.querySelectorAll('.more-btn').forEach(btn=>{
-    btn.addEventListener('click', () => {
-      const extra = btn.closest('.benefit').querySelector('.extra');
-      if(!extra) return;
-      const isOpen = extra.style.display === 'block';
-      extra.style.display = isOpen ? 'none' : 'block';
-      btn.textContent = isOpen ? 'Read more' : 'Show less';
-    });
-  });
-</script><script>
-  // ensure float animations reflow nicely (no-op but safe)
-  document.querySelectorAll('.float-img').forEach(img=>{
-    img.style.willChange = 'transform';
-  });
-
-  // keep review carousel working if your existing functions exist
-  if(typeof showReviews === 'function') showReviews();
-</script><script>
-// keep animations smooth
-document.querySelectorAll('.float-img').forEach(img => {
-  img.style.willChange = 'transform';
-});
-</script><script>
-function calculateSavings() {
-  const collections = Number(document.getElementById('collections').value);
-  const salary = Number(document.getElementById('salary').value);
-  const overheads = Number(document.getElementById('overheads').value);
-  const fee = Number(document.getElementById('fee').value);
-
-  if (!collections || !salary || !overheads || !fee) {
-    document.getElementById('result').innerText =
-      "Please fill in all fields correctly.";
-    return;
-  }
-
-  const inHouseCost = salary + overheads;
-  const outsourcedCost = (collections * fee) / 100;
-  const savings = inHouseCost - outsourcedCost;
-
-  document.getElementById('result').innerHTML = `
-    In-House Cost: $${inHouseCost.toLocaleString()} <br>
-    Outsourced Cost: $${outsourcedCost.toLocaleString()} <br><br>
-    <span style="color:green;">
-      Estimated Annual Savings: $${savings.toLocaleString()}
-    </span>
-  `;
-}
-</script><script>
-  document.querySelectorAll('.faq-item h4').forEach(q => {
-    q.addEventListener('click', () => {
-      const p = q.nextElementSibling;
-      p.style.display = p.style.display === 'block' ? 'none' : 'block';
-    });
-  });
-</script>
-<script>
-function calculateSavings() {
-  const collections = Number(document.getElementById("collections").value);
-  const salary = Number(document.getElementById("salary").value);
-  const overheads = Number(document.getElementById("overheads").value);
-  const fee = Number(document.getElementById("fee").value);
-
-  const inHouseCost = salary + overheads;
-  const outsourcedCost = (collections * fee) / 100;
-  const savings = inHouseCost - outsourcedCost;
-
-  document.getElementById("result").innerHTML =
-    `In-House Cost: $${inHouseCost.toLocaleString()}<br>
-     Outsourced Cost: $${outsourcedCost.toLocaleString()}<br><br>
-     <span style="color:green">Estimated Savings: $${savings.toLocaleString()}</span>`;
-}
-</script><script>
-  function calculateSavings() {
-    // values (0 fallback)
-    const collections = Number(document.getElementById('calc_collections').value) || 0;
-    const salary     = Number(document.getElementById('calc_salary').value) || 0;
-    const overheads  = Number(document.getElementById('calc_overheads').value) || 0;
-    const fee        = Number(document.getElementById('calc_fee').value) || 0;
-
-    // basic validation
-    if (collections <= 0 || salary < 0 || overheads < 0 || fee < 0) {
-      document.getElementById('calc_result').innerText = "Please enter valid positive numbers.";
-      return;
-    }
-
-    const inHouseCost    = salary + overheads;
-    const outsourcedCost = (collections * fee) / 100;
-    const savings        = inHouseCost - outsourcedCost;
-
-    document.getElementById('calc_result').innerHTML =
-      In-House Cost: $${inHouseCost.toLocaleString()}<br> +
-      Outsourced Cost: $${outsourcedCost.toLocaleString(undefined,{maximumFractionDigits:2})}<br><br> +
-      <span style="color:${savings>=0 ? 'green' : '#d9534f'};font-weight:800">Estimated Annual Savings: $${savings.toLocaleString(undefined,{maximumFractionDigits:2})}</span>;
-  }
-
-  function resetCalc() {
-    document.getElementById('calc_collections').value = 250000;
-    document.getElementById('calc_salary').value = 50000;
-    document.getElementById('calc_overheads').value = 20000;
-    document.getElementById('calc_fee').value = 2.49;
-    document.getElementById('calc_result').innerHTML = '';
-  }
-
-  // optional: initial run to show nothing (or comment out)
-  // resetCalc();
-</script></body>
-</html>
+</body>
