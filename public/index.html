@@ -1,388 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Physicians Claim Partners — Hero (SmartDental-style)</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Optional Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-<title>Physicians Claim Partners</title>
+  <style>
+    :root{
+      --nav-bg: #071026;
+      --accent: #e8b8a0;
+      --white-90: rgba(255,255,255,0.92);
+      --muted-white: rgba(255,255,255,0.85);
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:0; color:#111; background:#fff}
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    /* ---------- Header ---------- */
+    header.hero-header{
+      background:var(--nav-bg);
+      color:#fff;
+      padding:18px 6%;
+      position:sticky;
+      top:0;
+      z-index:50;
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+    .nav-row{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{
+      display:flex;align-items:center;gap:14px;
+    }
+    .monogram{
+      width:56px;height:56px;border-radius:12px;
+      background:linear-gradient(135deg,#1ea7f2,#7ed487);
+      display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;
+      box-shadow:0 10px 28px rgba(0,0,0,0.28)
+    }
+    .brand-text{line-height:1}
+    .brand-text .title{font-weight:800;font-size:16px;color:#fff}
+    .brand-text .sub{font-size:12px;color:rgba(255,255,255,0.8)}
 
-<style>
+    .nav-links{display:flex;align-items:center;gap:16px}
+    .nav-links a{color:rgba(255,255,255,0.9);text-decoration:none;font-weight:700;padding:8px 10px}
+    .book-btn{background:#c7967f;color:#08121a;padding:10px 16px;border-radius:10px;font-weight:800;text-decoration:none}
 
-body{
-font-family:Inter;
-margin:0;
-background:#f8fbff;
-color:#222;
-}
+    /* ---------- HERO ---------- */
+    .hero{
+      position:relative;
+      min-height:520px;
+      display:flex;
+      align-items:center;
+      padding:72px 6% 80px;
+      overflow:hidden;
+      color:#fff;
+      background-color:#0b1220;
+    }
 
-.container{
-max-width:1150px;
-margin:auto;
-padding:0 20px;
-}
+    /* moving background (parallax-like subtle motion) */
+    .hero-bg{
+      position:absolute; inset:0; z-index:0; overflow:hidden;
+    }
+    .hero-bg img{
+      width:120%;
+      height:120%;
+      object-fit:cover;
+      position:absolute;
+      left:-10%;
+      top:-10%;
+      filter:brightness(0.38) contrast(0.9);
+      transform-origin:center;
+      animation: bgSlow 18s ease-in-out infinite;
+    }
+    @keyframes bgSlow{
+      0%{ transform: scale(1) translateY(0) translateX(0) }
+      50%{ transform: scale(1.03) translateY(-6px) translateX(6px) }
+      100%{ transform: scale(1) translateY(0) translateX(0) }
+    }
 
-header{
-background:white;
-border-bottom:1px solid #eee;
-}
+    .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;display:flex;gap:36px;align-items:flex-start}
+    .hero-left{flex:1;max-width:760px}
+    .hero-left .kicker{font-size:13px;color:var(--muted-white);font-weight:700;letter-spacing:1px;margin-bottom:6px}
+    .hero-left h1{font-size:62px;line-height:0.9;margin:0 0 8px;font-weight:900;font-family: 'Georgia', serif}
+    .hero-left h2{font-size:34px;margin:0 0 18px;font-weight:800;color:var(--muted-white)}
+    .hero-left p.lead{color:rgba(255,255,255,0.9);max-width:700px;font-size:16px;margin-bottom:18px}
 
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 0;
-}
+    .hero-ctas{display:flex;gap:12px}
+    .cta-primary{background:var(--accent);color:#08121a;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:800}
+    .cta-ghost{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:12px 18px;color:#fff;border-radius:10px;text-decoration:none;font-weight:700}
 
-.logo{
-font-weight:700;
-font-size:20px;
-}
+    /* ---------- floating right card ---------- */
+    .hero-card{
+      width:320px;
+      background:rgba(255,255,255,0.08);
+      border-radius:12px;
+      padding:18px;
+      backdrop-filter: blur(6px);
+      box-shadow:0 18px 40px rgba(0,0,0,0.5);
+      color:#fff;
+      align-self:flex-start;
+      animation: floatCard 6s ease-in-out infinite;
+    }
+    @keyframes floatCard{
+      0%{ transform: translateY(0) }
+      50%{ transform: translateY(-10px) }
+      100%{ transform: translateY(0) }
+    }
+    .hero-card p{color:rgba(255,255,255,0.95);line-height:1.45}
+    .stars{margin-top:12px;color:#f5c36b;font-weight:800}
+    .card-cta{display:inline-block;margin-top:12px;background:transparent;border:1px solid rgba(255,255,255,0.14);padding:10px 12px;color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
 
-nav a{
-margin-left:22px;
-text-decoration:none;
-font-weight:600;
-color:#333;
-}
+    /* Small decorative floating EHR image (optional) */
+    .hero-floating-img{
+      position:absolute;
+      right:6%;
+      bottom:10%;
+      width:220px;
+      max-width:30%;
+      border-radius:12px;
+      box-shadow:0 18px 36px rgba(0,0,0,0.5);
+      z-index:1;
+      transform-origin:center;
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+    @keyframes floatSlow{
+      0%{ transform: translateY(0) }
+      50%{ transform: translateY(-12px) }
+      100%{ transform: translateY(0) }
+    }
 
-.btn{
-background:#1ea7f2;
-color:white;
-padding:10px 16px;
-border-radius:6px;
-text-decoration:none;
-}
+    /* responsive */
+    @media(max-width:1000px){
+      .nav-links{display:none}
+      .hero-left h1{font-size:36px}
+      .hero-left h2{font-size:20px}
+      .hero{padding:36px 6% 40px}
+      .hero-content{flex-direction:column}
+      .hero-card{width:100%}
+      .hero-floating-img{display:none}
+    }
 
-.hero{
-padding:80px 0;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.hero p{
-color:#666;
-margin-bottom:20px;
-}
-
-.section{
-padding:70px 0;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.06);
-}
-
-.benefits{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-}
-
-.process{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-}
-
-.pricing{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.06);
-}
-
-.contact form{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-input,textarea{
-padding:12px;
-border-radius:6px;
-border:1px solid #ddd;
-}
-
-footer{
-background:#0f2a44;
-color:white;
-padding:40px 0;
-text-align:center;
-}
-
-</style>
-
+    /* small accessibility tweaks */
+    a:focus{outline:3px solid rgba(230,184,160,0.28);outline-offset:3px}
+  </style>
 </head>
-
 <body>
 
-<header>
-
-<div class="container nav">
-
-<div class="logo">
-Physicians Claim Partners
-</div>
-
-<nav>
-
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#benefits">Benefits</a>
-<a href="#process">Our Process</a>
-<a href="#pricing">Pricing</a>
-<a href="#contact">Contact</a>
-
-<a class="btn" href="#contact">
-Schedule Demo
-</a>
-
-</nav>
-
-</div>
-
-</header>
-
-
-<section class="hero">
-
-<div class="container hero-grid">
-
-<div>
-
-<h1>
-Smart Medical & Dental Billing Services
-</h1>
-
-<p>
-Increase collections, reduce denials and simplify your billing workflow.
-Our physician-led revenue cycle experts handle everything.
-</p>
-
-<a class="btn" href="#contact">
-Get Free Consultation
-</a>
-
-</div>
-
-<img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=900">
-
-</div>
-
-</section>
-
-
-<section id="services" class="section">
-
-<div class="container">
-
-<h2>Our Billing Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Dental Billing</h3>
-<p>Specialized dental insurance billing and CDT coding.</p>
-</div>
-
-<div class="card">
-<h3>Medical Billing</h3>
-<p>Complete medical billing from coding to claim submission.</p>
-</div>
-
-<div class="card">
-<h3>Insurance Verification</h3>
-<p>Eligibility verification before patient visits.</p>
-</div>
-
-<div class="card">
-<h3>Denial Management</h3>
-<p>Appeals and payer follow-ups to recover revenue.</p>
-</div>
-
-<div class="card">
-<h3>Credentialing</h3>
-<p>Provider enrollment with commercial and government payers.</p>
-</div>
-
-<div class="card">
-<h3>Revenue Optimization</h3>
-<p>Data analytics and reporting to increase collections.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="benefits" class="section">
-
-<div class="container">
-
-<h2>Why Choose Us</h2>
-
-<div class="benefits">
-
-<div class="card">
-<h3>Higher Collections</h3>
-<p>We increase reimbursement and reduce claim denials.</p>
-</div>
-
-<div class="card">
-<h3>Less Admin Work</h3>
-<p>Your staff focuses on patients while we handle billing.</p>
-</div>
-
-<div class="card">
-<h3>HIPAA Secure</h3>
-<p>Strict compliance and secure data handling.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="process" class="section">
-
-<div class="container">
-
-<h2>Our Process</h2>
-
-<div class="process">
-
-<div class="card">
-
-<h3>1. Onboarding</h3>
-
-<p>
-Integration with your EHR system.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>2. Billing</h3>
-
-<p>
-Claims submission and payer follow-ups.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>3. Revenue Growth</h3>
-
-<p>
-Analytics and reporting to maximize collections.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="pricing" class="section">
-
-<div class="container">
-
-<h2>Pricing</h2>
-
-<div class="pricing">
-
-<ul>
-
-<li>Dental Billing – Starting $1500/month</li>
-
-<li>Insurance Verification – Starting $250/month</li>
-
-<li>Medical Billing – 3-5% of collections</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section id="contact" class="section">
-
-<div class="container contact">
-
-<h2>Contact Us</h2>
-
-<form action="https://formspree.io/f/mvzklyjd" method="POST">
-
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="email" name="email" placeholder="Email" required>
-
-<input type="text" name="practice" placeholder="Practice Name">
-
-<textarea name="message" rows="5" placeholder="How can we help?"></textarea>
-
-<button class="btn">
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<div class="container">
-
-<p>
-© 2026 Physicians Claim Partners
-</p>
-
-<p>
-Phone: +92 321 4618847
-</p>
-
-</div>
-
-</footer>
-
-
+  <!-- ===== Header ===== -->
+  <header class="hero-header" role="banner">
+    <div class="nav-row">
+      <div class="brand">
+        <div class="monogram">PCP</div>
+        <div class="brand-text">
+          <div class="title">Physicians Claim Partners</div>
+          <div class="sub">Medical &amp; Dental Revenue Recovery</div>
+        </div>
+      </div>
+
+      <nav class="nav-links" role="navigation" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a class="book-btn" href="#schedule">BOOK A MEETING</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" role="region" aria-label="Hero: Outsourced Medical and Dental Billing">
+    <!-- moving background image -->
+    <div class="hero-bg" aria-hidden="true">
+      <!-- Replace URL with your preferred background image -->
+      <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1800&auto=format&fit=crop&s=2c8f1e8b37f5e7c2b9a34b0d6c0369ef" alt="">
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="kicker">OUTSOURCED</div>
+        <h1>DENTAL &amp; MEDICAL BILLING</h1>
+        <h2>THAT GETS YOUR COLLECTIONS TO 100% AND ABOVE</h2>
+
+        <p class="lead">
+          Most practices are leaving money on the table — not because they're doing bad
+          medicine, but because claims slip, denials pile up, and the front desk is already
+          handling three other things. We fix that.
+        </p>
+
+        <div class="hero-ctas">
+          <a class="cta-primary" href="#contact">Get a Free Review</a>
+          <a class="cta-ghost" href="#how-it-works">See How It Works</a>
+        </div>
+      </div>
+
+      <!-- floating card on right -->
+      <aside class="hero-card" aria-label="Testimonial & action">
+        <p>
+          Physicians Claim Partners handles insurance claims, follow-up, and patient billing
+          for medical and dental practices across the US — so your team stops chasing money
+          and starts focusing on patients.
+        </p>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <a class="card-cta" href="#how-it-works">See How It Works</a>
+      </aside>
+    </div>
+
+    <!-- Optional decorative floating image (example EHR graphic) -->
+    <!-- Replace 'PATH_TO_EHR_IMAGE.jpg' with your image path if you want a smaller floating picture -->
+    <img class="hero-floating-img" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Medical_prescription.jpg" alt="EHR example (decorative)">
+
+  </section>
+
+  <!-- small placeholder content so the page can scroll for testing -->
+  <main style="padding:40px 6%;">
+    <h3 style="margin-top:0">Quick demo content</h3>
+    <p style="color:#444;max-width:980px">
+      This page shows the SmartDental-style hero adapted for Physicians Claim Partners.
+      Replace the background image URL and the small floating image with your own assets to match your brand.
+    </p>
+  </main>
+
+  <script>
+    // Optional: make background image react slightly to mouse movement (parallax-y feel)
+    (function(){
+      const bg = document.querySelector('.hero-bg img');
+      if(!bg) return;
+      let rect = null;
+      window.addEventListener('mousemove', (e) => {
+        if(window.innerWidth < 900) return;
+        if(!rect) rect = document.querySelector('.hero').getBoundingClientRect();
+        const cx = (e.clientX - rect.left) / rect.width - 0.5;
+        const cy = (e.clientY - rect.top) / rect.height - 0.5;
+        // translate a few pixels for subtle effect
+        bg.style.transform = scale(1.02) translate(${cx * 8}px, ${cy * 6}px);
+      });
+      // reset on mouse leave
+      document.querySelector('.hero').addEventListener('mouseleave', () => {
+        bg.style.transform = '';
+      });
+    })();
+  </script>
 </body>
-
 </html>
