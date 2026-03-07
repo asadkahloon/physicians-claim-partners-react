@@ -829,24 +829,318 @@ img{
   </div>
 
   <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=2c8f1e8b37f5e7c2b9a34b0d6c0369ef" alt="Doctors hero image">
-</section>
+</section><!-- ================= ABOUT US (SmartDental style) ================= -->
+<section id="about-us" style="padding:72px 6%; background:#fbfbfb;">
+  <style>
+    /* ABOUT US - two-column image + text with scroll pop animation */
+    #about-us { background:#fafbfd; color:#223; }
+    .about-grid {
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:36px;
+      align-items:center;
+      max-width:1200px;
+      margin:0 auto;
+    }
 
-<!-- WHY CHOOSE US -->
-<section id="why">
-  <div class="two-col">
-    <div class="left">
-      <img class="img-float"
-     src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1200&auto=format&fit=crop"
-     alt="stethoscope">
-      <h2 style="font-size:34px;font-weight:800;margin-bottom:14px">Why choose us for your Medical / Dental Billing?</h2>
-      <p style="color:var(--muted)">Let us handle the complexities of billing so you can focus on patient care. Our team of experts ensures accurate claims, faster submissions, and robust follow-up. We provide regular reporting, appeals management, and a personalized account manager so that revenue becomes predictable.</p>
+    /* left images are stacked vertically */
+    .about-images {
+      display:flex;
+      gap:24px;
+      align-items:flex-start;
+    }
+    .about-images .img-wrap {
+      flex:1;
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow: 0 12px 30px rgba(10,20,50,0.06);
+      background:#fff;
+      transform-origin:center;
+      opacity:0;
+      transform:translateY(18px) scale(.98);
+      transition: transform 600ms cubic-bezier(.2,.9,.25,1), opacity 480ms ease;
+    }
+    .about-images .img-wrap img {
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      aspect-ratio: 4 / 5;
+    }
+
+    /* right text column */
+    .about-copy {
+      padding:8px 12px;
+    }
+    .about-copy h2 {
+      margin:0 0 14px;
+      font-size:22px;
+      letter-spacing:1px;
+      color:#203247;
+    }
+    .about-copy p {
+      color:#6b6f77;
+      line-height:1.7;
+      margin-bottom:14px;
+    }
+
+    /* popped state (added by JS on intersect) */
+    .img-wrap.pop {
+      opacity:1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* subtle hover lift */
+    .img-wrap:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 20px 48px rgba(10,20,50,0.12);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .about-grid { grid-template-columns: 1fr; gap:18px; }
+      .about-images { flex-direction:row; overflow:auto; padding-bottom:6px; }
+      .about-images .img-wrap { min-width:240px; aspect-ratio: 3 / 4; }
+    }
+  </style>
+
+  <div class="about-grid">
+    <div class="about-images" aria-hidden="false">
+      <figure class="img-wrap" data-animate>
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop" alt="Billing team reviewing claims">
+      </figure>
+
+      <figure class="img-wrap" data-animate>
+        <img src="https://images.unsplash.com/photo-1556761175-129418cb2dfe?q=80&w=900&auto=format&fit=crop" alt="Practice manager and billing specialist">
+      </figure>
     </div>
-    <div class="right">
-      <!-- image already in left float -->
+
+    <div class="about-copy" role="region" aria-labelledby="about-title">
+      <h2 id="about-title">ABOUT US</h2>
+
+      <p>
+        Physicians Claim Partners is a specialized medical & dental revenue recovery
+        team helping practices reclaim lost revenue. We handle insurance claim
+        submission, denials follow-up, patient billing, and payer verification —
+        so your practice’s financial side runs without you having to manage it.
+      </p>
+
+      <p>
+        We work directly inside your existing practice-management software (Dentrix,
+        Eaglesoft, OpenDental and others) and act as an extension of your team —
+        no replacing staff, no disruption to workflow, and no learning curve for your front desk.
+      </p>
+
+      <p>
+        Our clients range from solo physicians to multi-site groups. The common
+        thread is the same — money sitting in unpaid claims starts moving, collections
+        stabilize, and your staff gets their time back.
+      </p>
     </div>
   </div>
-</section>
 
+  <script>
+    // reveal/pop animation for images when section scrolls into view
+    (function () {
+      const items = document.querySelectorAll('#about-us [data-animate]');
+      if (!items || !('IntersectionObserver' in window)) {
+        // fallback: immediately show
+        items.forEach(i => i.classList.add('pop'));
+        return;
+      }
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('pop');
+            // optionally unobserve so it only pops once
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.22 });
+
+      items.forEach(it => io.observe(it));
+    })();
+  </script>
+<!-- ============ WHO WE WORK WITH (SmartDental-style) ============ -->
+<section id="who-we-work-with" style="padding:70px 6%; background:#ffffff;">
+  <style>
+    /* WHO WE WORK WITH styles */
+    #who-we-work-with { color:#223; background:#fafbfd; }
+    .who-grid {
+      max-width:1200px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:36px;
+      align-items:start;
+    }
+
+    .who-text {
+      color:#495057;
+      line-height:1.8;
+      font-size:16px;
+    }
+    .who-text p { margin:0 0 18px; }
+
+    .cards {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+    }
+
+    .card {
+      background:#fff;
+      border-radius:12px;
+      padding:18px;
+      min-height:120px;
+      box-shadow:0 12px 30px rgba(10,20,50,0.06);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      transform: translateY(16px) scale(.98);
+      opacity:0;
+      transition: transform 520ms cubic-bezier(.2,.9,.25,1), opacity 420ms ease;
+    }
+
+    .card.pop {
+      transform: translateY(0) scale(1);
+      opacity:1;
+    }
+
+    .card .icon {
+      width:56px;
+      height:56px;
+      border-radius:10px;
+      background:#f3f5f7;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#8a6f61;
+      flex-shrink:0;
+    }
+
+    .card h4 { margin:0 0 6px; font-size:16px; color:#203247 }
+    .card p { margin:0; color:#6b6f77; font-size:14px }
+
+    /* helper for big heading */
+    .who-title { font-weight:900; font-size:36px; color:#0f2233; margin:0 0 18px; letter-spacing:0.6px; }
+
+    @media (max-width:980px) {
+      .who-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(2, minmax(140px,1fr)); }
+    }
+    @media (max-width:640px){
+      .cards { grid-template-columns: 1fr; }
+      .who-title{ font-size:28px; }
+    }
+  </style>
+
+  <div class="who-grid">
+    <!-- LEFT: explanatory text -->
+    <div>
+      <h2 class="who-title">WHO WE WORK WITH</h2>
+
+      <div class="who-text">
+        <p>
+          Dental billing problems don’t look the same in every practice, but they usually
+          come from the same place – too much work, not enough time, and insurance rules
+          that change faster than anyone can keep up with.
+        </p>
+
+        <p>
+          We work with solo dentists and small private practices where the front desk is
+          doing everything at once and billing keeps getting pushed to the end of the day.
+          We work with specialty offices — periodontists, oral surgeons, orthodontists,
+          endodontists, pediatric dentists — where coding is more complex and a single
+          missed detail on a claim means a significant payment delayed or denied.
+        </p>
+
+        <p>
+          We work with practices that are growing — adding chairs, opening a second
+          location, taking on more patients — and need billing to scale without hiring
+          more staff. We work with start-ups that want clean operations from day one and
+          don’t want to figure out insurance credentialing and claims submission on their own.
+        </p>
+
+        <p>
+          And we work with practices that are already behind. Aging AR, a backlog of
+          denied claims, a biller who just quit, collections stuck at 60–70% for months —
+          if that’s where you are right now, that’s exactly the situation we’re used to
+          walking into.
+        </p>
+
+        <p style="margin-top:12px;font-weight:700;color:#1f4258">
+          If insurance billing is slowing your practice down, we can help — regardless of
+          your size, software, or how complicated things have gotten.
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT: cards (2x2) -->
+    <aside aria-label="Who we work with examples">
+      <div class="cards">
+        <article class="card" data-pop>
+          <div class="icon">📈</div>
+          <div>
+            <h4>Growing Dental Practices</h4>
+            <p>adding chairs, opening a second location, taking on more patients</p>
+          </div>
+        </article>
+
+        <article class="card" data-pop>
+          <div class="icon">🧑‍⚕️</div>
+          <div>
+            <h4>Solo dentists</h4>
+            <p>adding chairs, opening a second location, taking on more patients</p>
+          </div>
+        </article>
+
+        <article class="card" data-pop>
+          <div class="icon">🏥</div>
+          <div>
+            <h4>Small private practices</h4>
+            <p>adding chairs, opening a second location, taking on more patients</p>
+          </div>
+        </article>
+
+        <article class="card" data-pop>
+          <div class="icon">🩺</div>
+          <div>
+            <h4>Specialty offices</h4>
+            <p>periodontists, oral surgeons, orthodontists, endodontists, pediatric dentists</p>
+          </div>
+        </article>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    // Reveal/pop cards on scroll
+    (function () {
+      const targets = document.querySelectorAll('#who-we-work-with [data-pop]');
+      if (!targets.length) return;
+      if (!('IntersectionObserver' in window)) {
+        targets.forEach(t => t.classList.add('pop'));
+        return;
+      }
+
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('pop');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
+
+      targets.forEach(t => io.observe(t));
+    })();
+  </script>
+</section>
+<!-- ========== END WHO WE WORK WITH ========== --></section>
+<!-- =============== END ABOUT US =============== -->
 <!-- SERVICES -->
 <section id="services">
   <h2 style="font-size:32px;margin-bottom:6px">Our Services</h2>
@@ -1301,64 +1595,7 @@ img{
         <tr><th>Total</th><th>$50,000</th></tr>
       </table>
     </div>
-  <!-- Replace the old calculator block with this clean one -->
-<section id="savings-calculator" style="margin-top:20px">
-  <div class="calc-grid">
-    <!-- Left: Floating EHR image -->
-    <div>
-      <!-- Replace PATH_TO_EHR_IMAGE.jpg with your actual image path or URL -->
-      <img src="PATH_TO_EHR_IMAGE.jpg" alt="Top EHR Certified Systems" class="float-ehr">
-    </div>
 
-    <!-- Right: Clean calculator -->
-    <div class="calc-card">
-      <h3>Billing Cost Savings Calculator</h3>
-
-      <label>Annual Collections (USD)</label>
-      <input type="number" id="calc_collections" value="250000" min="0">
-
-      <label style="margin-top:10px">In-house Annual Salary (per biller)</label>
-      <input type="number" id="calc_salary" value="50000" min="0">
-
-      <label style="margin-top:10px">Overheads (annual)</label>
-      <input type="number" id="calc_overheads" value="20000" min="0">
-
-      <label style="margin-top:10px">Our Fee (% of collections)</label>
-      <input type="number" id="calc_fee" value="2.49" step="0.01" min="0">
-
-      <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
-        <button class="btn" type="button" onclick="calculateSavings()">Calculate Savings</button>
-        <button class="btn" type="button" onclick="resetCalc()" style="background:#eee;color:#333">Reset</button>
-      </div>
-
-      <div id="calc_result" style="margin-top:16px;font-weight:700"></div>
-    </div>
-  </div>
-</section>
-<section class="calculator-section" style="margin-top:20px">
-  <h3>Billing Cost Savings Calculator</h3>
-
-  <label>Annual Collections (USD)</label>
-  <input type="number" id="collections" value="250000">
-
-  <label>In-house Annual Salary (per biller)</label>
-  <input type="number" id="salary" value="50000">
-
-  <label>Overheads (annual)</label>
-  <input type="number" id="overheads" value="20000">
-
-  <label>Our Fee (% of collections)</label>
-  <input type="number" id="fee" value="2.49" step="0.01">
-
-  <button class="btn" onclick="calculateSavings()">Calculate Savings</button>
-
-  <div id="result" style="margin-top:16px;font-weight:bold"></div>
-</section>
-          <!-- LEFT: Billing Cost Savings Calculator -->
-    </div>
-  </div>
-  <!-- RIGHT: Let’s Talk Form -->
-  </div>
 </div>
     <!-- contact form -->
     <form action="https://formspree.io/f/mvzklyjd" method="POST" style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(10,20,50,0.04)">
