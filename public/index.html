@@ -1335,7 +1335,65 @@ BOOK A FREE CONSULTATION
 >
       <h3>Dental Billing</h3>
       <p>Specialised dental claim processing, CDT coding, and PPO negotiation to maximize reimbursement.</p>
-    </a>
+    </a><!-- Optometry service card (paste into your services grid where other cards are) -->
+<style>
+/* Small, self-contained styles — adjust variables if you want a different blue */
+:root{--card-width:320px;--card-accent:#1e90d6;--card-text:#555;}
+.pcp-service-card{
+  width:var(--card-width);
+  display:inline-block;
+  vertical-align:top;
+  margin:18px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color:var(--card-text);
+}
+.pcp-service-card .card-media{
+  width:100%;
+  height:170px;
+  overflow:hidden;
+  border-radius:8px;
+  background:#f4f4f4;
+  display:block;
+}
+.pcp-service-card .card-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:8px;
+}
+.pcp-service-card h3{
+  margin:12px 0 6px;
+  font-size:18px;
+  color:var(--card-accent); /* match other titles */
+  line-height:1.1;
+}
+.pcp-service-card p.lead{
+  margin:0;
+  font-size:13px;
+  line-height:1.35;
+  color:var(--card-text);
+  max-height:2.7em; /* limit to ~2 lines */
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+</style>
+
+<article class="pcp-service-card" aria-labelledby="optometry-title">
+  <a href="/services/optometry-billing.html" style="text-decoration:none;color:inherit;">
+    <figure class="card-media" role="img" aria-label="Optometry — eye exam equipment">
+      <!-- Replace this src with the real path to the optometry image you uploaded -->
+      <img src="/path/to/optometry-eye.jpg" alt="Optometry — microscope and eye imaging equipment">
+    </figure>
+
+    <h3 id="optometry-title">Optometry Billing</h3>
+
+    <!-- Two-line summary only (keeps card concise like DRG) -->
+    <p class="lead">
+      Billing for eye exams, diagnostic imaging and vision care — accurate CPT/ICD coding and faster reimbursements.
+    </p>
+  </a>
+</article>
 <a class="service-card" href="/credentialing.html">
  <img 
   src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1200&q=80" 
@@ -1376,67 +1434,26 @@ BOOK A FREE CONSULTATION
      alt="DRG Audit & Compliance">
       <h3>Comprehensive Auditing / DRG Review</h3>
       <p>Chart audits and DRG reviews to ensure compliance and correct reimbursements.</p>
-    </a><!-- REPLACE your existing PPO card with this block -->
-<article class="service-card" style="border-radius:10px; overflow:hidden; background:#fff;">
-  <a href="/services/ppo-fee-optimization.html" style="display:block;">
-    <!-- office / conference room image (Unsplash) -->
-    <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?w=1400&q=60&auto=format&fit=crop"
-         alt="Office conference room" style="width:100%;height:150px;object-fit:cover;display:block;">
+    </a><article class="service-card" style="width:31%;display:inline-block;vertical-align:top;margin:0 1% 30px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 0 0 rgba(0,0,0,0);">
+  <a href="/services/ppo-fee-schedule.html" style="display:block;">
+    <!-- office / conference room image -->
+    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1400&q=60&auto=format&fit=crop" 
+         alt="Office conference room" 
+         style="width:100%;height:150px;object-fit:cover;display:block;">
   </a>
 
   <div style="padding:14px;">
-    <!-- Title link — will pick up your site color; fallback to DRG-blue -->
-    <h3 style="margin:0 0 8px; font-size:18px; line-height:1.15;">
-      <a href="/services/ppo-fee-optimization.html" style="text-decoration:none; color:inherit;">
-        PPO Fee Schedule Optimization
-      </a>
+    <h3 style="margin:0 0 8px;font-size:18px;line-height:1.15;color:#1e77b7;">
+      <a href="/services/ppo-fee-schedule.html" style="text-decoration:none;color:inherit;">PPO Fee Schedule Optimization</a>
     </h3>
 
-    <!-- short description like your DRG card -->
-    <p style="margin:0 0 10px; color:#666; font-size:14px;">
-      We review PPO contracts and compare contracted reimbursement rates with what your practice actually receives. 
-      We identify underpayments and help recover lost revenue through appeals and adjustments.
+    <p style="margin:0;color:#666;font-size:14px;line-height:1.4;max-height:3.0em;overflow:hidden;">
+      We review PPO contracts and compare contracted rates with payments actually received.
+      We identify underpayments and help recover lost revenue.
     </p>
-
-    <!-- small meta / compact detail (keeps card compact like DRG) -->
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
-      <span style="color:#8a8a8a;font-size:13px;">Revenue recovery</span>
-      <a href="/services/ppo-fee-optimization.html" class="button-small" style="background:#2b9bd6;color:#fff;padding:7px 10px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;">
-        Details
-      </a>
-    </div>
   </div>
 </article>
 <!-- end PPO card -->
-</div><div <!-- REPLACE your existing Optometry card with this block -->
-<article class="service-card" style="border-radius:10px; overflow:hidden; background:#fff;">
-  <a href="/services/optometry-billing.html" style="display:block;">
-    <!-- eye optics image (Unsplash) -->
-    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1400&q=60&auto=format&fit=crop"
-         alt="Optical instruments and eye care" style="width:100%;height:150px;object-fit:cover;display:block;">
-  </a>
-
-  <div style="padding:14px;">
-    <h3 style="margin:0 0 8px; font-size:18px; line-height:1.15;">
-      <a href="/services/optometry-billing.html" style="text-decoration:none; color:inherit;">
-        Optometry Billing
-      </a>
-    </h3>
-
-    <p style="margin:0 0 10px; color:#666; font-size:14px;">
-      Billing and coding for eye care — exams, diagnostic procedures and vision plans. We handle CPT/ICD coding, claim
-      submission, and denial follow-up to maximize reimbursements.
-    </p>
-
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
-      <span style="color:#8a8a8a;font-size:13px;">Vision & medical billing</span>
-      <a href="/services/optometry-billing.html" class="button-small" style="background:#2b9bd6;color:#fff;padding:7px 10px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;">
-        Details
-      </a>
-    </div>
-  </div>
-</article>
-<!-- end Optometry card -->
 </section><!-- REAL RESULTS FROM REAL PRACTICES — paste this immediately after the </section> that closes #services -->
 <section id="real-results" style="padding:48px 6%;background:#fbfbfb;">
   <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start;">
