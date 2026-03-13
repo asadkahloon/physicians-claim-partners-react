@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Pricing — Medical & Dental Billing</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#5b9ea0;
+    --muted:#6b6b6b;
+    --card-bg: rgba(255,255,255,0.95);
+    --dark-bg: #0f1720;
+    --glass: rgba(255,255,255,0.06);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Montserrat",system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color:#1f2933;
+    background:#f6f6f6;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+  }
+
+  /* HERO */
+  .hero{
+    min-height:60vh;
+    display:flex;
+    align-items:center;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.0.3&s=8b8f6f8f57f7a49f2f7c6b7e4b56b6a9');
+    background-size:cover;
+    background-position:center;
+    transform:scale(1.04);
+    filter:brightness(.45);
+    z-index:0;
+  }
+  .hero-inner{
+    position:relative;z-index:2;
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:64px 24px;
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:32px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:44px;
+    margin:0 0 12px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-shadow:0 6px 18px rgba(0,0,0,0.45);
+  }
+  .hero p.lead{
+    margin:0 0 18px;
+    color:rgba(255,255,255,0.92);
+    max-width:780px;
+  }
+  .cta-row{display:flex;gap:12px;align-items:center}
+  .btn{
+    display:inline-block;
+    padding:12px 18px;border-radius:8px;
+    background:var(--accent);color:#fff;text-decoration:none;font-weight:600;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+  }
+  .btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.12);color:#fff}
+
+  .hero-side{
+    background:rgba(255,255,255,0.06);
+    padding:20px;border-radius:12px;backdrop-filter: blur(3px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+  }
+  .hero-side h4{margin:0 0 8px;color:#fff}
+  .hero-side p{margin:0;color:rgba(255,255,255,0.9);font-size:14px}
+
+  /* PRICING CARDS */
+  .section{padding:72px 24px; max-width:1200px; margin:0 auto}
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+    margin-top:24px;
+  }
+  .card{
+    background:var(--card-bg);
+    border-radius:12px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 8px 30px rgba(16,24,32,0.08);
+    transform:translateY(0);
+    transition:transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s;
+    position:relative;overflow:hidden;
+  }
+  .card:hover{ transform:translateY(-8px); box-shadow:0 18px 40px rgba(16,24,32,0.14); }
+  .card .meta{ font-weight:700; color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:1px;}
+  .card h3{ margin:12px 0 4px; font-size:20px;}
+  .price{ font-weight:800; font-size:20px; color:var(--accent); margin-bottom:8px;}
+  .card p{ color:#333; font-size:14px; margin:10px 0 0; }
+
+  /* animated ring */
+  .ring{ position:absolute; right:-40px; top:-40px; width:140px; height:140px; border-radius:50%;
+    background: linear-gradient(90deg, rgba(91,158,160,0.06), rgba(91,158,160,0.06));
+    filter:blur(18px); transform:rotate(12deg); pointer-events:none;
+  }
+
+  /* comparison table */
+  .compare{ margin-top:44px; background:#fff; padding:22px; border-radius:12px; box-shadow:0 12px 30px rgba(0,0,0,0.04)}
+  table{ width:100%; border-collapse:collapse; font-size:15px }
+  th,td{ padding:14px; text-align:left; border-bottom:1px solid #eee }
+  th{ background:#fbfbfb; font-weight:700 }
+  .tick{color:green; font-weight:700}
+
+  /* FAQ */
+  .faq{ margin-top:36px }
+  .accordion{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.04)}
+  .acc-item{ border-bottom:1px solid #eee }
+  .acc-head{ padding:16px 20px; cursor:pointer; display:flex; justify-content:space-between; align-items:center }
+  .acc-body{ padding:0 20px; max-height:0; overflow:hidden; transition:max-height .35s ease; background: #fff; color:#333 }
+  .acc-head h4{ margin:0; font-size:15px }
+
+  /* Trust & HIPAA */
+  .trust{ display:flex; gap:18px; align-items:center; padding:24px; background:linear-gradient(180deg,#fff,#fbfbfb); border-radius:10px; margin-top:28px }
+  .badge{ padding:12px 14px; border-radius:8px; background:#fff; box-shadow:0 8px 20px rgba(0,0,0,0.04); font-weight:700}
+
+  /* Schedule demo CTA */
+  .schedule{ text-align:center; margin:48px 0 24px }
+  .schedule .book{ display:inline-block; padding:14px 22px; border-radius:999px; background:#3b6b6c;color:#fff; text-decoration:none; font-weight:700; }
+
+  /* Responsive */
+  @media (max-width:1024px){
+    .hero-inner{grid-template-columns:1fr}
+    .cards{ grid-template-columns: repeat(2, 1fr) }
+  }
+  @media (max-width:640px){
+    .cards{ grid-template-columns: 1fr }
+    .hero h1{ font-size:32px }
+    .hero-inner{ padding:36px 16px }
+  }
+
+  footer{ background:#0b1116; color:#cbd5db; padding:36px 24px; margin-top:36px }
+  footer .wrap{ max-width:1100px; margin:0 auto; display:flex; gap:20px; justify-content:space-between; flex-wrap:wrap; align-items:center}
+  footer a{ color:inherit; text-decoration:none }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" aria-label="Hero: Pricing for outsourced billing">
+  <div class="hero-inner">
+    <div>
+      <h1>Transparent and affordable medical & dental billing</h1>
+      <p class="lead">Outsourced insurance & patient billing built for practices. Clear pricing, faster collections, and less time chasing claims—so your team focuses on patients.</p>
+      <div class="cta-row">
+        <a class="btn" href="#pricing">See Pricing</a>
+        <a class="btn ghost" href="#how">How it works</a>
+      </div>
+    </div>
+    <aside class="hero-side" aria-hidden="false">
+      <h4>Pricing highlights</h4>
+      <p><strong>Insurance billing:</strong> 2% (starts at $1,300 / month)</p>
+      <p><strong>Patient billing:</strong> 0.4% (starts at $450 / month)</p>
+      <p><strong>Recare calls:</strong> starts at $350 / month</p>
+      <p style="margin-top:12px;font-size:13px;color:rgba(255,255,255,0.85)">We work with Dentrix, EagleSoft, OpenDental, Dolphin and other major systems — no migration required.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="section" id="pricing">
+  <h2 style="margin:0;font-size:28px">Pricing plans</h2>
+  <p style="color:var(--muted); margin-top:6px">Animated cards — prices shown are starting tiers. Contact us for tailored quotes.</p>
+
+  <div class="cards" aria-live="polite">
+    <div class="card" role="article">
+      <div class="ring"></div>
+      <div class="meta">Insurance billing</div>
+      <h3>Complete insurance billing</h3>
+      <div class="price">2% of collected revenue <div style="font-size:13px;color:#666;font-weight:600;margin-top:6px">Minimum $1,300 / month</div></div>
+      <p>Claims submission, denial management, appeals, follow-up and monthly reporting. We handle all payer follow-up so your AR moves.</p>
+    </div>
+
+    <div class="card" role="article">
+      <div class="meta">Patient billing</div>
+      <h3>Patient billing & statements</h3>
+      <div class="price">0.4% of collected patient balances <div style="font-size:13px;color:#666;font-weight:600;margin-top:6px">Minimum $450 / month</div></div>
+      <p>Patient invoicing, statements, online payment setup and outgoing balance follow-up to reduce mystery write-offs.</p>
+    </div>
+
+    <div class="card" role="article">
+      <div class="meta">Recare & outreach</div>
+      <h3>Recare calls & reminders</h3>
+      <div class="price">$350 / month starting</div>
+      <p>Automated & manual recall outreach to book hygiene and perio visits — improves patient retention and chair occupancy.</p>
+    </div>
+
+    <div class="card" role="article">
+      <div class="meta">Insurance verification</div>
+      <h3>Eligibility & verification</h3>
+      <div class="price">$230 / month starting</div>
+      <p>Insurance eligibility checks, benefits verification, and pre-authorizations when required — reduce denials and no-shows.</p>
+    </div>
+  </div>
+
+  <!-- comparison table -->
+  <div class="compare" style="margin-top:28px">
+    <h3 style="margin:0 0 12px">In-house vs Outsourcing — comparison</h3>
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>In-house</th><th>Outsourcing (us)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Monthly cost</td><td>High (salaries + benefits)</td><td>Low & variable (pay for what you need)</td></tr>
+        <tr><td>Expert billing staff</td><td>Depends on hiring</td><td><span class="tick">Specialist team included</span></td></tr>
+        <tr><td>Scalability</td><td>Slow</td><td><span class="tick">Fast</span></td></tr>
+        <tr><td>Denial management</td><td>Often inconsistent</td><td><span class="tick">Proven workflows</span></td></tr>
+        <tr><td>Reporting & analytics</td><td>Basic</td><td><span class="tick">Actionable weekly/monthly reporting</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FAQ accordion -->
+  <div class="faq">
+    <h3 style="margin:18px 0 8px">Frequently asked questions</h3>
+    <div class="accordion" id="faq">
+      <div class="acc-item">
+        <div class="acc-head"><h4>How do you charge 2% for insurance billing?</h4><div class="acc-toggle">+</div></div>
+        <div class="acc-body"><p style="padding:12px 0 18px;margin:0">We bill on collections: we take a 2% fee on the funds we bring in for insurance collections. There is a minimum monthly fee of $1,300 to cover onboarding and ongoing account management.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head"><h4>Do you work with our practice management system?</h4><div class="acc-toggle">+</div></div>
+        <div class="acc-body"><p style="padding:12px 0 18px">Yes. We integrate directly with Dentrix, OpenDental, EagleSoft, Dolphin, Eaglesoft, and most cloud & on-prem systems — we work inside your existing workflow.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head"><h4>How quickly will we see results?</h4><div class="acc-toggle">+</div></div>
+        <div class="acc-body"><p style="padding:12px 0 18px">Most practices see improved collections and movement of AR within the first billing cycle (30–45 days). For backlog cleanup, visible results appear within weeks.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust & HIPAA -->
+  <div class="trust" role="contentinfo" aria-label="Trust and compliance">
+    <div style="flex:1">
+      <div class="badge">✔ HIPAA-compliant</div>
+      <div style="margin-top:12px;color:#333">We sign a Business Associate Agreement (BAA) and use strict access controls & encryption.</div>
+    </div>
+    <div style="width:1px;background:#eee;height:48px;margin:0 14px"></div>
+    <div>
+      <div class="badge">✔ Trusted partners</div>
+      <div style="margin-top:12px;color:#333">Long-term partnerships with clinics and multiple PM systems — trained billing specialists and secure operations.</div>
+    </div>
+  </div>
+
+  <!-- Schedule demo CTA -->
+  <div class="schedule" id="how">
+    <p style="margin:0 0 12px;color:var(--muted)">Want a live walkthrough? Schedule a demo — we’ll review your current AR and show quick wins.</p>
+    <a class="book" href="#" id="bookDemo" data-calendly-url="https://calendly.com/your-demo-link">Schedule Demo</a>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='0' y='60' font-size='22' fill='%23ffffff' font-family='Montserrat, Arial'>YourBillingCo</text%3E%3C/svg%3E" alt="logo" style="height:44px">
+      <p style="margin:8px 0 0; color:#97a0a6; max-width:320px">Medical & dental billing — collections, patient billing, recare and verification. We keep your revenue flowing.</p>
+    </div>
+    <div style="min-width:220px">
+      <h4 style="margin:0 0 8px;color:#fff">Contact</h4>
+      <div style="color:#97a0a6">info@yourbillingco.example • (555) 123-4567</div>
+    </div>
+    <div style="min-width:220px">
+      <h4 style="margin:0 0 8px;color:#fff">Links</h4>
+      <div style="color:#97a0a6"><a href="#pricing">Pricing</a> • <a href="#how">How it works</a> • <a href="#faq">FAQ</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // accordion
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var head = item.querySelector('.acc-head');
+    head.addEventListener('click', function(){
+      var body = item.querySelector('.acc-body');
+      var open = body.style.maxHeight && body.style.maxHeight !== '0px';
+      // close all
+      document.querySelectorAll('.acc-body').forEach(function(b){ b.style.maxHeight = null; b.previousElementSibling.querySelector('.acc-toggle').textContent = '+' });
+      if(!open){
+        body.style.maxHeight = body.scrollHeight + 'px';
+        head.querySelector('.acc-toggle').textContent = '–';
+      } else {
+        body.style.maxHeight = null;
+        head.querySelector('.acc-toggle').textContent = '+';
+      }
+    });
+  });
+
+  // simple animated number entry for cards (optional)
+  window.addEventListener('load', function(){
+    var cards = document.querySelectorAll('.card');
+    cards.forEach(function(c,i){
+      c.style.opacity=0;
+      setTimeout(function(){ c.style.transition='opacity .6s ease, transform .6s'; c.style.opacity=1; c.style.transform='translateY(0)'; }, 120*i);
+    });
+  });
+
+  // demo booking placeholder
+  document.getElementById('bookDemo').addEventListener('click', function(e){
+    e.preventDefault();
+    var url = this.dataset.calendlyUrl || '';
+    if(!url || url.indexOf('calendly')===-1){
+      alert('Replace the data-calendly-url attribute on the Schedule Demo button with your calendar link (e.g. Calendly).');
+      return;
+    }
+    window.open(url, '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>
