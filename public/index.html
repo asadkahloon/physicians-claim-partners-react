@@ -1694,53 +1694,110 @@ BOOK A FREE CONSULTATION
     <p>Contact us or schedule a free demo via the CTA — we’ll onboard your practice in a phased approach.</p>
   </div>
 </section> <!-- END faq --><!-- START: "We work inside your existing software" section -->
-<section id="we-work-inside" style="font-family:Inter, system-ui, Arial, sans-serif;">
-  <div style="
-    background-image: linear-gradient(rgba(6,16,25,0.6), rgba(6,16,25,0.6)), url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1600&q=80');
-    background-size:cover;
-    background-position:center;
-    color:#fff;
-    padding:72px 6%;
-    ">
-    <div style="max-width:1200px;margin:0 auto;display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
-      <!-- Left text column -->
-      <div style="flex:1 1 520px;min-width:280px;">
-        <h2 style="font-size:48px;margin:0 0 10px;line-height:1.02;text-transform:uppercase;letter-spacing:0.6px;">
-          We work inside your existing software
-        </h2>
+<section id="work-inside-software" style="font-family: Georgia, 'Times New Roman', serif; color: #fff;">
+  <style>
+    /* Minimal internal styles so you can drop this block in any HTML file */
+    #work-inside-software { position: relative; overflow: hidden; }
+    #work-inside-software .bg {
+      background-image: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      padding: 90px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #work-inside-software .overlay {
+      width: 100%;
+      max-width: 1200px;
+      background: rgba(8,10,14,0.65);
+      border-radius: 6px;
+      padding: 48px;
+      display: flex;
+      gap: 36px;
+      box-sizing: border-box;
+    }
+    #work-inside-software .col-left { flex: 1 1 520px; min-width: 280px; }
+    #work-inside-software h2 { margin: 0 0 10px 0; font-size: 44px; letter-spacing: 1px; line-height: 1.02; }
+    #work-inside-software h3 { margin: 0 0 18px 0; font-size: 14px; font-weight: normal; color: #e6e6e6; }
+    #work-inside-software p { margin: 0 0 14px 0; color: #d9d9d9; line-height: 1.7; font-size: 15px; }
+    #work-inside-software .software-list { margin-top: 8px; color: #fff; font-weight: 600; }
+    #work-inside-software .col-right {
+      width: 320px;
+      min-width: 220px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:14px;
+    }
+    /* logos block (text-based) */
+    #work-inside-software .logos {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      padding: 18px;
+      border-radius: 8px;
+      text-align: right;
+    }
+    #work-inside-software .logo-name { font-weight:700; font-size:20px; color:#fff; margin:6px 0; }
+    #work-inside-software .note { font-size:13px; color:#cfcfcf; line-height:1.4; text-align: right; }
+    #work-inside-software .cta {
+      margin-top: 8px;
+      display:inline-block;
+      background:#cda89b;
+      color:#fff;
+      padding:10px 14px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:0.6px;
+    }
+    /* responsive */
+    @media (max-width:880px){
+      #work-inside-software .overlay { flex-direction: column; align-items:stretch; }
+      #work-inside-software .col-right { align-items:flex-start; text-align:left; }
+      #work-inside-software .logos { text-align:left; }
+    }
+  </style>
 
-        <h3 style="font-size:16px;margin:10px 0 20px;color:rgba(255,255,255,0.92);text-transform:uppercase;letter-spacing:0.5px;">
-          No new systems. No migration. No retraining your team
-        </h3>
+  <div class="bg" role="img" aria-label="Office space background">
+    <div class="overlay" aria-hidden="false">
 
-        <p style="color:rgba(255,255,255,0.88);font-size:15px;line-height:1.65;margin:0 0 12px;">
-          One of the first questions practices ask us is whether they need to change anything about how their office runs. The answer is no.
-          We work directly inside your practice management software — the same system your team uses every day. Your front desk keeps their normal workflow.
-          Nothing changes on your end except that the billing gets done.
+      <div class="col-left">
+        <h2>WE WORK INSIDE YOUR EXISTING SOFTWARE</h2>
+
+        <h3>NO NEW SYSTEMS. NO MIGRATION. NO RETRAINING YOUR TEAM</h3>
+
+        <p>
+          One of the first questions practices ask us is whether they need to change anything about how their office runs. The answer
+          is no. We work directly inside your practice management software — the same system your team uses every day. Your front desk
+          keeps their normal workflow. Nothing changes on your end except that the billing gets done.
         </p>
 
-        <p style="color:rgba(255,255,255,0.86);font-size:15px;line-height:1.6;margin:8px 0 0;">
-          We currently work with:
-          <strong style="color:#ffffff">Dentrix · Eaglesoft · OpenDental · Dolphin · And others</strong>
+        <p class="software-list">
+          We currently work with: Dentrix · Eaglesoft · OpenDental · Dolphin · And others
         </p>
 
-        <p style="color:rgba(255,255,255,0.8);font-size:14px;margin-top:18px;">
+        <p style="margin-top:14px; font-size:13px; color:#cfcfcf;">
           If your software isn't listed here, ask us. Chances are we already work with it or can accommodate it quickly.
         </p>
       </div>
 
-      <!-- Right small column (just text link, no extra logos) -->
-      <div style="flex:0 0 300px;min-width:220px;text-align:right;">
-        <p style="color:rgba(255,255,255,0.9);font-weight:700;margin:0 0 10px;">Software should never be the reason a practice doesn't get its billing under control.</p>
+      <div class="col-right" aria-hidden="false">
+        <div class="logos" role="group" aria-label="Supported software logos (text)">
+          <!-- You can replace these text lines with real image logos if you have them -->
+          <div class="logo-name">OpenDental</div>
+          <div class="logo-name">DENTRIX</div>
+          <div class="logo-name">eaglesoft</div>
+          <div style="height:6px"></div>
+          <div class="note">
+            Software should never be the reason a practice doesn't get its billing under control.
+            If you're not sure whether we can work with your system, just ask us before you assume we can't.
+          </div>
+        </div>
 
-        <p style="color:rgba(255,255,255,0.76);font-size:14px;line-height:1.6;margin:0 0 16px;">
-          If you’re not sure whether we can work with your system, just ask us before you assume we can't.
-        </p>
-
-        <a href="#supported-software" style="display:inline-block;background:transparent;border:1px solid rgba(255,255,255,0.12);padding:10px 14px;border-radius:8px;color:#fff;text-decoration:none;font-weight:700;">
-          See all supported software
-        </a>
+        <a href="#supported-software" class="cta">SEE ALL SUPPORTED SOFTWARE</a>
       </div>
+
     </div>
   </div>
 </section>
